@@ -1,10 +1,16 @@
 [
   {
     "Id": 1,
-    "Name": "Merkury"
+    "Type": "landing",
+    "Name": "Merkury",
+    "Img": "./img/landings/merkury.png",
+    "Link": "https://notequal21.github.io/merkury/"
   },
   {
     "Id": 2,
-    "Name": "Cakes"
+    "Name": "Cakes",
+    "Type": "landing",
+    "Img": "./img/landings/cakes.png",
+    "Link": "https://notequal21.github.io/cakes/"
   }
 ]
