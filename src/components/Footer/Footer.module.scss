@@ -1,0 +1,21 @@
+.footer {
+  &Body {
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &Btns {
+    display: flex;
+    a {
+      margin: 0 0 0 20px;
+      color: #000;
+      &:hover {
+        color: rgb(80, 80, 80);
+      }
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+}

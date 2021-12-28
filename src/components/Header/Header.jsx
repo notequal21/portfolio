@@ -9,7 +9,7 @@ let Header = () => {
           <div className={style.headerBody__logo}>
             LOGO
           </div>
-          <div className={style.headerBody__btns}>
+          <div className={style.headerBtns}>
             <Link to='main'>Lorem</Link>
             <Link to='main'>Lorem</Link>
             <Link to='main'>Lorem</Link>
