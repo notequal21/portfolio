@@ -6,17 +6,19 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className={`${style.wrapper}`}>
-      <div className={`${style.content}`}>
-        <Header />
+    <>
+      <div className={`${style.wrapper}`}>
+        <div className={`${style.content}`}>
+          <Header />
 
-        <Routes>
-          <Route path='' element={<Main />} />
-        </Routes>
+          <Routes>
+            <Route path='*' element={<Main />} />
+          </Routes>
+        </div>
+
+        <Footer />
       </div>
-
-      <Footer />
-    </div>
+    </>
   );
 }
 

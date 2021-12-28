@@ -1,0 +1,22 @@
+.header {
+  &Body {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {}
+    &__btns {
+      display: flex;
+      a {
+        margin: 0 0 0 20px;
+        color: #000;
+        &:hover {
+          color: rgb(40, 40, 40);
+        }
+        &:first-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
