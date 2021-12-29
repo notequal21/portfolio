@@ -1,4 +1,5 @@
 .footer {
+  margin: 100px 0 0 0;
   &Body {
     height: 200px;
     display: flex;
@@ -8,7 +9,7 @@
   &Btns {
     display: flex;
     a {
-      margin: 0 0 0 20px;
+      margin: 0 0 0 50px;
       color: #000;
       &:hover {
         color: rgb(80, 80, 80);

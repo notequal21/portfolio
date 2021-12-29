@@ -10,10 +10,9 @@ let Header = () => {
             LOGO
           </div>
           <div className={style.headerBtns}>
-            <Link to='main'>Lorem</Link>
-            <Link to='main'>Lorem</Link>
-            <Link to='main'>Lorem</Link>
-            <Link to='main'>Lorem</Link>
+            <Link to=''>Главная</Link>
+            <Link to='portfolio'>Портфолио</Link>
+            <Link to='contacts'>Контакты</Link>
           </div>
         </div>
       </div>

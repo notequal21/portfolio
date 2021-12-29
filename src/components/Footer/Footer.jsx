@@ -8,10 +8,9 @@ let Footer = () => {
         <div className={style.footerBody}>
           <div className={style.footer__logo}>LOGO</div>
           <div className={style.footerBtns}>
-            <Link to='main'>Lorem</Link>
-            <Link to='main'>Lorem</Link>
-            <Link to='main'>Lorem</Link>
-            <Link to='main'>Lorem</Link>
+            <Link to=''>Главная</Link>
+            <Link to='portfolio'>Портфолио</Link>
+            <Link to='contacts'>Контакты</Link>
           </div>
         </div>
       </div>

@@ -3,6 +3,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
 import { Routes, Route } from "react-router-dom";
+import Portfolio from "./components/Portfolio/Portfolio";
+import Contacts from "./components/Contacts/Contacts";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
 
           <Routes>
             <Route path='*' element={<Main />} />
+            <Route path='portfolio' element={<Portfolio />} />
+            <Route path='contacts' element={<Contacts />} />
           </Routes>
         </div>
 
