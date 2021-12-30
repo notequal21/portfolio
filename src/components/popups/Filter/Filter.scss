@@ -1,0 +1,10 @@
+.filter {
+  border-radius: 15px;
+  padding: 15px;
+  &__close {}
+  &__title {}
+  &Body {
+    display: flex;
+    &__item {}
+  }
+}
