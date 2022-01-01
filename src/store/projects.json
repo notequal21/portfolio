@@ -1,8 +1,8 @@
 [
   {
     "Id": 1,
-    "Type": "landing",
     "Name": "Merkury",
+    "Type": "landing",
     "Img": "https://i.ibb.co/z6Bf5yX/merkury.png",
     "Link": "https://notequal21.github.io/merkury/"
   },
@@ -43,8 +43,8 @@
   },
   {
     "Id": 7,
-    "Name": "Cakes",
-    "Type": "Pixture",
+    "Name": "Pixture",
+    "Type": "landing",
     "Img": "https://i.ibb.co/jJhR3Fk/pixture.png",
     "Link": "https://notequal21.github.io/pixture/"
   },

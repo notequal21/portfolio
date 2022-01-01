@@ -1,7 +1,7 @@
 import Popup from 'reactjs-popup';
 import './Filter.scss'
 
-let FilterPopup = () => {
+let FilterPopup = ({ applyFilterType }) => {
   return (
     <Popup
       trigger={<button className="button"> FILTER </button>}
@@ -16,15 +16,24 @@ let FilterPopup = () => {
           </button>
           <div className='filter__title'> Filter </div>
           <div className='filterBody'>
-            <div className='filterBody__item'>
-              PortfolioItem
-            </div>
-            <div className='filterBody__item'>
-              PortfolioItem2
-            </div>
-            <div className='filterBody__item'>
-              PortfolioItem3
-            </div>
+            <button onClick={() => {
+              close()
+              applyFilterType('react')
+            }} className='filterBody__item'>
+              React
+            </button>
+            <button onClick={() => {
+              close()
+              applyFilterType('multipage')
+            }} className='filterBody__item'>
+              Multipages
+            </button>
+            <button onClick={() => {
+              close()
+              applyFilterType('landing')
+            }} className='filterBody__item'>
+              Landings
+            </button>
           </div>
         </div>
       )}
