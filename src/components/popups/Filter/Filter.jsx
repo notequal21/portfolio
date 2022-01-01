@@ -4,7 +4,7 @@ import './Filter.scss'
 let FilterPopup = () => {
   return (
     <Popup
-      trigger={<button className="button"> Open Modal </button>}
+      trigger={<button className="button"> FILTER </button>}
       modal
       nested
       lockScroll
@@ -26,16 +26,6 @@ let FilterPopup = () => {
               PortfolioItem3
             </div>
           </div>
-          {/* <div className="actions">
-          <button
-            className="button"
-            onClick={() => {
-              close();
-            }}
-          >
-            close modal
-          </button>
-        </div> */}
         </div>
       )}
     </Popup>

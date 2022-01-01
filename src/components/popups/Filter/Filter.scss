@@ -1,10 +1,30 @@
 .filter {
   border-radius: 15px;
   padding: 15px;
+  background-color: #fff;
   &__close {}
-  &__title {}
+  &__title {
+    font-size: 40px;
+  }
   &Body {
     display: flex;
-    &__item {}
+    padding: 20px 0 0 0;
+    &__item {
+      cursor: pointer;
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      border-radius: 23px;
+      margin: 0 0 0 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:first-child {
+        margin: 0;
+      }
+    }
   }
+}
+.popup-overlay  {
+  background-color: rgba($color: #000, $alpha: 0.3);
 }
