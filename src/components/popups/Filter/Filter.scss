@@ -19,6 +19,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      &.active {
+        border: 1px solid red;
+      }
       &:first-child {
         margin: 0;
       }

@@ -14,7 +14,7 @@ let Portfolio = () => {
       list.push(<PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />)
     }
     return list
-  })
+  }).reverse()
 
   let landingsProjectsList = projects.map(item => {
     let list = []
@@ -22,19 +22,23 @@ let Portfolio = () => {
       list.push(<PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />)
     }
     return list
-  })
+  }).reverse()
 
   let multipagesProjectsList = projects.map(item => {
     let list = []
-    if (item.Type === 'landing') {
+    if (item.Type === 'multipage') {
       list.push(<PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />)
     }
     return list
-  })
+  }).reverse()
 
 
   let applyFilterType = (type) => {
-    store.filterType = type
+    if (store.filterType === type) {
+      store.filterType = 'all'
+    } else {
+      store.filterType = type
+    }
   }
 
   if (store.filterType === 'all') {
