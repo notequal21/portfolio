@@ -13,7 +13,7 @@ let Header = () => {
             <Link to=''>Главная</Link>
             <Link to='portfolio'>Портфолио</Link>
             <Link to='resume'>Резюме</Link>
-            <Link to='contacts'>Контакты</Link>
+            {/* <Link to='contacts'>Контакты</Link> */}
           </div>
         </div>
       </div>
