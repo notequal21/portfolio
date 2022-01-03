@@ -11,6 +11,9 @@
     a {
       margin: 0 0 0 50px;
       color: #000;
+      @media (max-width:767px) {
+        margin: 0 0 0 20px;
+      }
       &:hover {
         color: rgb(80, 80, 80);
       }

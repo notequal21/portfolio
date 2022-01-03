@@ -2,9 +2,15 @@
   margin: 50px 0 0 0;
   &Body {
     display: flex;
+    @media (max-width:992px) {
+      flex-direction: column;
+    }
   }
   &Col {
     flex: 1 1 50%;
+    @media (max-width:992px) {
+      flex: 0 0 auto;
+    }
     &__image {
       height: auto;
       // width: calc(100% - 100px);
@@ -17,6 +23,10 @@
       overflow: hidden;
       border-radius: 30% 70% 27% 73% / 71% 24% 76% 29% ;
       position: relative;
+      @media (max-width:575px) {
+        width: 100%;
+        padding: 0 0 100% 0;
+      }
       img {
         position: absolute;
         width: 100%;
@@ -31,13 +41,20 @@
       font-size: 28px;
     }
     &__pos {
-      margin: 10px 0 0 0;
-      font-size: 20px;
+      margin: 15px 0 0 0;
+      font-size: 16px;
+      font-style: italic;
+      color: rgba($color: #000, $alpha: 0.5);
     }
     &__about {
-      margin: 20px 0 0 0;
+      margin: 30px 0 0 0;
       font-size: 18px;
-      max-width: 460px;
+      line-height: 21px;
+      max-width: 630px;
+      font-family: Roboto;
+      p {
+        margin: 13px 0 0 0;
+      }
     }
   }
 }
@@ -48,10 +65,20 @@
     font-size: 32px;
   }
   &Body {
-    margin: 40px 0 0 0;
+    margin: 30px 0 0 0;
     display: flex;
+    @media (max-width:992px) {
+      flex-direction: column;
+    }
     &__col {
       flex: 1 1 50%;
+      @media (max-width:992px) {
+        flex: 0 0 auto;
+        margin: 20px 0 0 0;
+        &:first-child {
+          margin: 0;
+        }
+      }
     }
     &__item {
       display: flex;
@@ -69,15 +96,34 @@
 }
 
 .mystack {
-  margin: 100px 0 0 0;
+  margin: 200px 0 0 0;
+  @media (max-width:992px) {
+    margin: 70px 0 0 0;
+  }
+  &__title {
+    font-size: 36px;
+  }
   &Body {
-    margin: 40px 0 0 0;
+    margin: 30px 0 0 0;
     display: flex;
+    @media (max-width:992px) {
+      flex-direction: column;
+    }
     &__col {
       flex: 1 1 50%;
+      @media (max-width:992px) {
+        flex: 0 0 auto;
+        margin: 30px 0 0 0;
+        &:first-child {
+          margin: 0;
+        }
+      }
     }
     &__text {
       max-width: 420px;
+      font-size: 18px;
+      line-height: 21px;
+      font-family: Roboto;
     }
     &__list {
       &Item {
@@ -85,6 +131,7 @@
         &::before {
           content: '✅';
           display: inline-block;
+          margin: 0 5px 0 0;
         }
         &:first-child {
           margin: 0;

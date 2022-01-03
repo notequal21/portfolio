@@ -19,6 +19,9 @@
   &Body {
     display: flex;
     padding: 20px 0 0 0;
+    @media (max-width:767px) {
+      flex-wrap: wrap;
+    }
     &__item {
       cursor: pointer;
       width: 200px;
@@ -31,6 +34,13 @@
       justify-content: center;
       align-items: center;
       transition: all .3s ease;
+      @media (max-width:767px) {
+        width: 100%;
+        margin: 20px 0 0 0;
+        &:first-child {
+          margin: 0;
+        }
+      }
       &:hover {
         border: 5px solid rgb(187, 235, 110);
       }

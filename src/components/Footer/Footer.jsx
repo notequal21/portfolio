@@ -10,7 +10,9 @@ let Footer = () => {
           <div className={style.footerBtns}>
             <Link to=''>Главная</Link>
             <Link to='portfolio'>Портфолио</Link>
-            <Link to='contacts'>Контакты</Link>
+            <a target={`_blank`} href="https://notequal.notion.site/5563732749bd4087ba5441b23f684a08">Резюме</a>
+            {/* <Link to='resume'>Резюме</Link> */}
+            {/* <Link to='contacts'>Контакты</Link> */}
           </div>
         </div>
       </div>
