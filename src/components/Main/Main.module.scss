@@ -7,8 +7,13 @@
     flex: 1 1 50%;
     &__image {
       height: auto;
-      width: calc(100% - 100px);
-      padding: 0 0 83.4% 0;
+      // width: calc(100% - 100px);
+      // padding: 0 0 83.4% 0;
+      
+      width: calc(75% - 100px);
+      padding: 0 0 61.5% 0;
+      margin: 0 auto;
+
       overflow: hidden;
       border-radius: 30% 70% 27% 73% / 71% 24% 76% 29% ;
       position: relative;
