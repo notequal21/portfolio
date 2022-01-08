@@ -44,9 +44,11 @@
         transform: scale(1.1);
         .portfolioBody__itemName {
           transform: translate(0, 0);
+          opacity: 1;
         }
         .portfolioBody__itemType {
           transform: translate(0, 0);
+          opacity: 1;
         }
         .portfolioBody__itemInfo {
           opacity: 1;
@@ -103,16 +105,22 @@
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.3);
-        transform: translate(-100%, 0);
+        // transform: translate(-100%, 0);
+        opacity: 0;
+        transform: rotate(-45deg) translate(-115%, -15%);
         transition: all .3s ease;
+        padding: 10px 20px;
       }
       &Type {
         position: absolute;
         bottom: 0;
         right: 0;
         background-color: rgba(0, 0, 0, 0.3);
-        transform: translate(100%, 0);
+        // transform: translate(100%, 0);
+        opacity: 0;
+        transform: rotate(-45deg) translate(115%, 15%);
         transition: all .3s ease;
+        padding: 10px 20px;
       } 
     }
   }
