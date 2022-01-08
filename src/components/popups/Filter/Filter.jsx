@@ -16,51 +16,27 @@ let FilterPopup = ({ applyFilterType, filterType }) => {
           </button>
           <div className='filter__title'> Filter </div>
           <div className='filterBody'>
-            {
-              filterType === 'react'
-                ? <button onClick={() => {
-                  close()
-                  applyFilterType('react')
-                }} className='filterBody__item active'>
-                  React
-                </button>
-                : <button onClick={() => {
-                  close()
-                  applyFilterType('react')
-                }} className='filterBody__item'>
-                  React
-                </button>
-            }
-            {
-              filterType === 'multipage'
-                ? <button onClick={() => {
-                  close()
-                  applyFilterType('multipage')
-                }} className='filterBody__item active'>
-                  Multipages
-                </button>
-                : <button onClick={() => {
-                  close()
-                  applyFilterType('multipage')
-                }} className='filterBody__item'>
-                  Multipages
-                </button>
-            }
-            {
-              filterType === 'landing'
-                ? <button onClick={() => {
-                  close()
-                  applyFilterType('landing')
-                }} className='filterBody__item active'>
-                  Landings
-                </button>
-                : <button onClick={() => {
-                  close()
-                  applyFilterType('landing')
-                }} className='filterBody__item'>
-                  Landings
-                </button>
-            }
+            <button onClick={() => {
+              close()
+              applyFilterType('react')
+            }} className={`filterBody__item 
+            ${filterType === 'react' ? 'active' : ''}`}>
+              React
+            </button>
+            <button onClick={() => {
+              close()
+              applyFilterType('multipage')
+            }} className={`filterBody__item 
+            ${filterType === 'multipage' ? 'active' : ''}`}>
+              Multipages
+            </button>
+            <button onClick={() => {
+              close()
+              applyFilterType('landing')
+            }} className={`filterBody__item 
+            ${filterType === 'landing' ? 'active' : ''}`}>
+              Landings
+            </button>
           </div>
         </div>
       )}
