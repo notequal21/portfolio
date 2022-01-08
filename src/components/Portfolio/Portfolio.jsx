@@ -1,7 +1,6 @@
 import style from './Portfolio.module.scss'
 import projects from '../../store/projects.json'
 import FilterPopup from '../popups/Filter/Filter'
-import store from '../../store/store'
 import { useState } from 'react'
 
 let Portfolio = () => {
@@ -33,6 +32,8 @@ let Portfolio = () => {
     return list
   }).reverse()
 
+
+
   const [filterType, changeFilterType] = useState('all')
 
   let applyFilterType = (type) => {
@@ -50,7 +51,7 @@ let Portfolio = () => {
           <div className={`${style.portfolio__title}`}>
             Мои работы
           </div>
-          <FilterPopup applyFilterType={applyFilterType} />
+          <FilterPopup applyFilterType={applyFilterType} filterType={filterType} />
         </div>
         <div className={`${style.portfolioBody}`}>
 
