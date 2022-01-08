@@ -14,17 +14,16 @@ let Portfolio = () => {
     if (filterType === type) {
       changeFilterType('all')
       changeProjectsList(projects.map(item =>
-        <PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />).reverse())
+        <PortfolioItem key={item.Id} type={item.Type}
+          name={item.Name} img={item.Img} link={item.Link} />)
+        .reverse())
     }
     else {
       changeFilterType(type)
-      changeProjectsList(projects.map(item => {
-        let list = []
-        if (item.Type === type) {
-          list.push(<PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />)
-        }
-        return list
-      }).reverse())
+      changeProjectsList(projects.filter(item => item.Type === type)
+        .map(item => <PortfolioItem key={item.Id} type={item.Type}
+          name={item.Name} img={item.Img} link={item.Link} />))
+        .reverse()
     }
   }
 
