@@ -1,5 +1,10 @@
 .footer {
   margin: 100px 0 0 0;
+  &__logo {
+    a {
+      color: #000;
+    }
+  }
   &Body {
     height: 200px;
     display: flex;

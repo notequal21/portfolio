@@ -4,7 +4,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &__logo {}
+    &__logo {
+      a {
+        color: #000;
+      }
+    }
   }
   &Btns {
     display: flex;

@@ -6,7 +6,11 @@ let Footer = () => {
     <div className={style.footer}>
       <div className="container">
         <div className={style.footerBody}>
-          <div className={style.footer__logo}>LOGO</div>
+          <div className={style.footer__logo}>
+            <a target={`_blank`} href="https://github.com/notequal21">
+              notequal21
+            </a>
+          </div>
           <div className={style.footerBtns}>
             <Link to=''>Главная</Link>
             <Link to='portfolio'>Портфолио</Link>

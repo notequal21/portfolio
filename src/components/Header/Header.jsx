@@ -7,7 +7,9 @@ let Header = () => {
       <div className="container">
         <div className={style.headerBody}>
           <div className={style.headerBody__logo}>
-            LOGO
+            <a target={`_blank`} href="https://github.com/notequal21">
+              notequal21
+            </a>
           </div>
           <div className={style.headerBtns}>
             {/* <Link to=''>Главная</Link> */}
