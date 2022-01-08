@@ -19,9 +19,11 @@ let Portfolio = () => {
     else {
       changeFilterType(type)
       changeProjectsList(projects.map(item => {
+        let list = []
         if (item.Type === type) {
-          return <PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />
+          list.push(<PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />)
         }
+        return list
       }).reverse())
     }
   }

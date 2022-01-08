@@ -35,10 +35,19 @@
       position: relative;
       overflow: hidden;
       margin: 0 0 40px 40px;
+      transition: all .4s ease;
       &:nth-child(odd) {
         margin: 0 0 40px 0;
       }
       &:hover {
+        z-index: 1;
+        transform: scale(1.1);
+        .portfolioBody__itemName {
+          transform: translate(0, 0);
+        }
+        .portfolioBody__itemType {
+          transform: translate(0, 0);
+        }
         .portfolioBody__itemInfo {
           opacity: 1;
           transform: translate(0);
@@ -76,19 +85,34 @@
         top: 0;
         left: 0;
         width: 100%;
+        // height: 100%;
         color: #fff;
         display: flex;
         justify-content: space-between;
-        background-color: rgba(0, 0, 0, 0.3);
-        padding: 20px;
-        opacity: 0;
-        transform: translate(0, -100%);
+
+        padding: 0 0 51.8% 0;
+        // opacity: 0;
+        // background-color: rgba(0, 0, 0, 0.3);
+        // padding: 20px;
+        // transform: translate(0, -100%);
         transition: all .3s ease;
         font-size: 50px;
       }
       &Name {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        transform: translate(-100%, 0);
+        transition: all .3s ease;
       }
       &Type {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        transform: translate(100%, 0);
+        transition: all .3s ease;
       } 
     }
   }
