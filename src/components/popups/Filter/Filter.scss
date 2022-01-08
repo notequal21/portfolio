@@ -13,7 +13,7 @@
 .filter {
   border-radius: 15px;
   padding: 15px;
-  background-color: #fff;
+  background-color: rgb(62, 62, 62);
   animation: popupOpen .3s 1;
   &Button {
     padding: 10px 20px;
@@ -38,7 +38,7 @@
     }
     &:hover {
       &::before {
-        transform: skew(57deg, -28deg);
+        transform: skew(55deg, -20deg);
       }
     }
   }
@@ -57,6 +57,7 @@
   }
   &__title {
     font-size: 40px;
+    color: #fff;
   }
   &Body {
     display: flex;
@@ -76,6 +77,8 @@
       justify-content: center;
       align-items: center;
       transition: all .3s ease;
+      background-color: rgb(62, 62, 62);
+      color: #fff;
       &:hover {
         transform: scale(1.1);
       }

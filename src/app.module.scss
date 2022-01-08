@@ -3,6 +3,16 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-image: url('./assets/img/bg/04.png');
+  background-attachment: fixed;
+  color: #fff;
+  a {
+    color: #fff;
+    transition: all .3s ease;
+    &:hover {
+      color: rgb(200, 200, 200);
+    }
+  }
 }
 .content {
   flex: 1 1 auto;

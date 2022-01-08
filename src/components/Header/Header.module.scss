@@ -4,22 +4,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &__logo {
-      a {
-        color: #000;
-      }
-    }
+    // &__logo {
+    //   a {
+    //     color: #000;
+    //   }
+    // }
   }
   &Btns {
     display: flex;
     a {
       margin: 0 0 0 50px;
-      color: #000;
+      // color: #000;
       @media (max-width:767px) {
         margin: 0 0 0 20px;
       }
       &:hover {
-        color: rgb(80, 80, 80);
+        // color: rgb(80, 80, 80);
       }
       &:first-child {
         margin: 0;
