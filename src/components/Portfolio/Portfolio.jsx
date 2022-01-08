@@ -5,42 +5,24 @@ import { useState } from 'react'
 
 let Portfolio = () => {
 
-  let allProjectsList = projects.map(item =>
-    <PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />).reverse()
-
-  let reactProjectsList = projects.map(item => {
-    let list = []
-    if (item.Type === 'react') {
-      list.push(<PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />)
-    }
-    return list
-  }).reverse()
-
-  let landingsProjectsList = projects.map(item => {
-    let list = []
-    if (item.Type === 'landing') {
-      list.push(<PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />)
-    }
-    return list
-  }).reverse()
-
-  let multipagesProjectsList = projects.map(item => {
-    let list = []
-    if (item.Type === 'multipage') {
-      list.push(<PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />)
-    }
-    return list
-  }).reverse()
-
-
-
   const [filterType, changeFilterType] = useState('all')
 
-  let applyFilterType = (type) => {
+  const [projectsList, changeProjectsList] = useState(projects.map(item =>
+    <PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />).reverse())
+
+  let applyFilterType = (type = 'all') => {
     if (filterType === type) {
       changeFilterType('all')
-    } else {
+      changeProjectsList(projects.map(item =>
+        <PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />).reverse())
+    }
+    else {
       changeFilterType(type)
+      changeProjectsList(projects.map(item => {
+        if (item.Type === type) {
+          return <PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />
+        }
+      }).reverse())
     }
   }
 
@@ -55,10 +37,7 @@ let Portfolio = () => {
         </div>
         <div className={`${style.portfolioBody}`}>
 
-          {filterType == 'all' ? allProjectsList : ''}
-          {filterType == 'react' ? reactProjectsList : ''}
-          {filterType == 'multipage' ? multipagesProjectsList : ''}
-          {filterType == 'landing' ? landingsProjectsList : ''}
+          {projectsList}
 
         </div>
       </div>
