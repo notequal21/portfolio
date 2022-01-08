@@ -2,6 +2,7 @@ import style from './Portfolio.module.scss'
 import projects from '../../store/projects.json'
 import FilterPopup from '../popups/Filter/Filter'
 import store from '../../store/store'
+import { useState } from 'react'
 
 let Portfolio = () => {
 
@@ -32,83 +33,36 @@ let Portfolio = () => {
     return list
   }).reverse()
 
+  const [filterType, changeFilterType] = useState('all')
 
   let applyFilterType = (type) => {
-    if (store.filterType === type) {
-      store.filterType = 'all'
+    if (filterType === type) {
+      changeFilterType('all')
     } else {
-      store.filterType = type
+      changeFilterType(type)
     }
   }
 
-  if (store.filterType === 'all') {
-    return (
-      <div className={`${style.portfolio}`}>
-        <div className="container">
-          <div className={`${style.portfolioRow}`}>
-            <div className={`${style.portfolio__title}`}>
-              Мои работы
-            </div>
-            <FilterPopup applyFilterType={applyFilterType} />
+  return (
+    <div className={`${style.portfolio}`}>
+      <div className="container">
+        <div className={`${style.portfolioRow}`}>
+          <div className={`${style.portfolio__title}`}>
+            Мои работы
           </div>
-          <div className={`${style.portfolioBody}`}>
-            {allProjectsList}
-          </div>
+          <FilterPopup applyFilterType={applyFilterType} />
+        </div>
+        <div className={`${style.portfolioBody}`}>
+
+          {filterType == 'all' ? allProjectsList : ''}
+          {filterType == 'react' ? reactProjectsList : ''}
+          {filterType == 'multipage' ? multipagesProjectsList : ''}
+          {filterType == 'landing' ? landingsProjectsList : ''}
+
         </div>
       </div>
-    )
-  }
-  if (store.filterType === 'react') {
-    return (
-      <div className={`${style.portfolio}`}>
-        <div className="container">
-          <div className={`${style.portfolioRow}`}>
-            <div className={`${style.portfolio__title}`}>
-              Мои работы
-            </div>
-            <FilterPopup applyFilterType={applyFilterType} />
-          </div>
-          <div className={`${style.portfolioBody}`}>
-            {reactProjectsList}
-          </div>
-        </div>
-      </div>
-    )
-  }
-  if (store.filterType === 'multipage') {
-    return (
-      <div className={`${style.portfolio}`}>
-        <div className="container">
-          <div className={`${style.portfolioRow}`}>
-            <div className={`${style.portfolio__title}`}>
-              Мои работы
-            </div>
-            <FilterPopup applyFilterType={applyFilterType} />
-          </div>
-          <div className={`${style.portfolioBody}`}>
-            {multipagesProjectsList}
-          </div>
-        </div>
-      </div>
-    )
-  }
-  if (store.filterType === 'landing') {
-    return (
-      <div className={`${style.portfolio}`}>
-        <div className="container">
-          <div className={`${style.portfolioRow}`}>
-            <div className={`${style.portfolio__title}`}>
-              Мои работы
-            </div>
-            <FilterPopup applyFilterType={applyFilterType} />
-          </div>
-          <div className={`${style.portfolioBody}`}>
-            {landingsProjectsList}
-          </div>
-        </div>
-      </div>
-    )
-  }
+    </div>
+  )
 }
 
 let PortfolioItem = (props) => {
