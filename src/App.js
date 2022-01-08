@@ -15,10 +15,13 @@ function App() {
           <Header />
 
           <Routes>
-            <Route path='*' element={<Main />} />
-            <Route path='portfolio' element={<Portfolio />} />
+
+            <Route path='*' element={<Portfolio />} />
+
+            {/* <Route path='*' element={<Main />} /> */}
+            {/* <Route path='portfolio' element={<Portfolio />} /> */}
             {/* <Route path='contacts' element={<Contacts />} /> */}
-            <Route path='resume' element={<Resume />} />
+            {/* <Route path='resume' element={<Resume />} /> */}
           </Routes>
         </div>
 
