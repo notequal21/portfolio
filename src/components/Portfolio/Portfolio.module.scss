@@ -99,6 +99,12 @@
         // transform: translate(0, -100%);
         transition: all .3s ease;
         font-size: 50px;
+        @media (max-width:767px) {
+          padding: 0 0 45.1% 0;
+        }
+        @media (max-width:500px) {
+          padding: 0 0 61% 0;
+        }
       }
       &Name {
         position: absolute;
@@ -110,6 +116,10 @@
         transform: rotate(-45deg) translate(-115%, -15%);
         transition: all .3s ease;
         padding: 10px 20px;
+        @media (max-width:767px) {
+          opacity: 1;
+          transform: translate(0);
+        }
       }
       &Type {
         position: absolute;
@@ -121,6 +131,10 @@
         transform: rotate(-45deg) translate(115%, 15%);
         transition: all .3s ease;
         padding: 10px 20px;
+        @media (max-width:767px) {
+          opacity: 1;
+          transform: translate(0);
+        }
       } 
     }
   }
