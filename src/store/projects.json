@@ -82,5 +82,12 @@
     "Type": "multipage",
     "Img": "https://i.ibb.co/YbfhxD2/nftop.png",
     "Link": "https://notequal21.github.io/NFTop/"
+  },
+  {
+    "Id": 13,
+    "Name": "Weather app",
+    "Type": "react",
+    "Img": "https://i.ibb.co/nM2yfF9/Screenshot-2022-01-11-190201.png",
+    "Link": "https://notequal21.github.io/weather/"
   }
 ]
