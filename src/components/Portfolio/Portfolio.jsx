@@ -20,10 +20,10 @@ let Portfolio = () => {
     }
     else {
       changeFilterType(type)
-      changeProjectsList(projects.filter(item => item.Type === type)
+      changeProjectsList(projects.filter(item => item.Type === type).reverse()
         .map(item => <PortfolioItem key={item.Id} type={item.Type}
           name={item.Name} img={item.Img} link={item.Link} />))
-        .reverse()
+
     }
   }
 
