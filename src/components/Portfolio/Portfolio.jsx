@@ -50,7 +50,7 @@ let PortfolioItem = (props) => {
   return (
     <a target='_blank' rel='noreferrer' href={props.link} className={`${style.portfolioBody__item}`}>
       <div className={`${style.portfolioBody__itemImg}`}>
-        <img src={props.img} alt="WorkImg" />
+        <img src={`./img/${props.img}`} alt="WorkImg" />
       </div>
       <div className={`${style.portfolioBody__itemInfo}`}>
         <div className={`${style.portfolioBody__itemName}`}>{props.name}</div>
