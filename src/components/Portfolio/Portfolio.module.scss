@@ -140,6 +140,10 @@
         transform: rotate(-45deg) translate(115%, 15%);
         transition: all .3s ease;
         padding: 10px 20px;
+        svg {
+          width: 100px;
+          height: auto;
+        }
         @media (max-width:767px) {
           opacity: 1;
           transform: translate(0);

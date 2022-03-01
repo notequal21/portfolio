@@ -2,6 +2,9 @@ import style from './Portfolio.module.scss'
 import projects from '../../store/projects.json'
 import FilterPopup from '../popups/Filter/Filter'
 import { useState } from 'react'
+import VueSvg from '../../assets/icons/VueSvg'
+import ReactSvg from '../../assets/icons/ReactSvg'
+import NoFrameworkSvg from '../../assets/icons/MultipageSvg'
 
 let Portfolio = () => {
 
@@ -46,15 +49,19 @@ let Portfolio = () => {
   )
 }
 
-let PortfolioItem = (props) => {
+let PortfolioItem = ({ link, img, name, type }) => {
   return (
-    <a target='_blank' rel='noreferrer' href={props.link} className={`${style.portfolioBody__item}`}>
+    <a target='_blank' rel='noreferrer' href={link} className={`${style.portfolioBody__item}`}>
       <div className={`${style.portfolioBody__itemImg}`}>
-        <img src={`./img/${props.img}`} alt="WorkImg" />
+        <img src={`./img/${img}`} alt="WorkImg" />
       </div>
       <div className={`${style.portfolioBody__itemInfo}`}>
-        <div className={`${style.portfolioBody__itemName}`}>{props.name}</div>
-        <div className={`${style.portfolioBody__itemType}`}>{props.type}</div>
+        <div className={`${style.portfolioBody__itemName}`}>{name}</div>
+        <div className={`${style.portfolioBody__itemType}`}>
+          {type === 'react' ? <ReactSvg /> : ''}
+          {type === 'vue' ? <VueSvg /> : ''}
+          {type === 'nofw' ? <NoFrameworkSvg /> : ''}
+        </div>
       </div>
     </a>
   )

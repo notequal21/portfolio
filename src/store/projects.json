@@ -51,15 +51,15 @@
   {
     "Id": 8,
     "Name": "Will Towers",
-    "Type": "multipage",
-    "Img": "multipage/willTowers.png",
+    "Type": "nofw",
+    "Img": "nofw/willTowers.png",
     "Link": "https://willtowers.ru/"
   },
   {
     "Id": 9,
     "Name": "SmartPay",
-    "Type": "multipage",
-    "Img": "multipage/smartpay.png",
+    "Type": "nofw",
+    "Img": "nofw/smartpay.png",
     "Link": "https://notequal21.github.io/smartpay/"
   },
   {
@@ -79,8 +79,8 @@
   {
     "Id": 12,
     "Name": "NFTop",
-    "Type": "multipage",
-    "Img": "multipage/nftop.png",
+    "Type": "nofw",
+    "Img": "nofw/nftop.png",
     "Link": "https://notequal21.github.io/NFTop/"
   },
   {
