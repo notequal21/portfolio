@@ -1,4 +1,7 @@
-import Popup from 'reactjs-popup';
+import Popup from 'reactjs-popup'
+import NoFrameworkSvg from '../../../assets/icons/MultipageSvg'
+import ReactSvg from '../../../assets/icons/ReactSvg'
+import VueSvg from '../../../assets/icons/VueSvg'
 import './Filter.scss'
 
 let FilterPopup = ({ applyFilterType, filterType }) => {
@@ -21,28 +24,21 @@ let FilterPopup = ({ applyFilterType, filterType }) => {
               applyFilterType('react')
             }} className={`filterBody__item 
             ${filterType === 'react' ? 'active' : ''}`}>
-              React
+              <ReactSvg />
             </button>
             <button onClick={() => {
               close()
               applyFilterType('vue')
             }} className={`filterBody__item 
             ${filterType === 'vue' ? 'active' : ''}`}>
-              Vue
+              <VueSvg />
             </button>
             <button onClick={() => {
               close()
-              applyFilterType('multipage')
+              applyFilterType('nofw')
             }} className={`filterBody__item 
-            ${filterType === 'multipage' ? 'active' : ''}`}>
-              Multipages
-            </button>
-            <button onClick={() => {
-              close()
-              applyFilterType('landing')
-            }} className={`filterBody__item 
-            ${filterType === 'landing' ? 'active' : ''}`}>
-              Landings
+            ${filterType === 'nofw' ? 'active' : ''}`}>
+              <NoFrameworkSvg />
             </button>
           </div>
         </div>
