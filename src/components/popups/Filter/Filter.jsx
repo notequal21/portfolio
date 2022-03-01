@@ -25,6 +25,13 @@ let FilterPopup = ({ applyFilterType, filterType }) => {
             </button>
             <button onClick={() => {
               close()
+              applyFilterType('vue')
+            }} className={`filterBody__item 
+            ${filterType === 'vue' ? 'active' : ''}`}>
+              Vue
+            </button>
+            <button onClick={() => {
+              close()
               applyFilterType('multipage')
             }} className={`filterBody__item 
             ${filterType === 'multipage' ? 'active' : ''}`}>
