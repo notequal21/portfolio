@@ -96,5 +96,12 @@
     "Type": "react",
     "Img": "react/coolgirls.png",
     "Link": "https://notequal21.github.io/coolgirls/"
+  },
+  {
+    "Id": 15,
+    "Name": "Weather Check",
+    "Type": "vue",
+    "Img": "vue/coolgirls.png",
+    "Link": "https://notequal21.github.io/weather-vue/"
   }
 ]
