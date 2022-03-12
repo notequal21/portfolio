@@ -1,0 +1,35 @@
+.filter {
+  display: flex;
+  &__item {
+    cursor: pointer;
+    width: 75px;
+    height: 75px;
+    border: 3px solid rgb(144, 199, 255);
+    border-radius: 18px;
+    font-size: 32px;
+    margin: 0 0 0 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    &:first-child {
+      margin: 0;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+    &.active {
+      border: 3px solid rgb(115, 236, 74);
+    }
+  }
+}

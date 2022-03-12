@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 
-// let Tick = () => {
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -14,9 +13,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-// }
-// setInterval(() => {
-//   Tick()
-// }, 100);
 
 reportWebVitals();

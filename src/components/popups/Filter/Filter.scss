@@ -90,15 +90,6 @@
       }
       &:hover {
         transform: scale(1.1);
-      }
-      @media (max-width:767px) {
-        width: 100%;
-        margin: 20px 0 0 0;
-        &:first-child {
-          margin: 0;
-        }
-      }
-      &:hover {
         border: 5px solid rgb(187, 235, 110);
       }
       &.active {
@@ -106,6 +97,13 @@
       }
       &:first-child {
         margin: 0;
+      }
+      @media (max-width:767px) {
+        width: 100%;
+        margin: 20px 0 0 0;
+        &:first-child {
+          margin: 0;
+        }
       }
     }
   }

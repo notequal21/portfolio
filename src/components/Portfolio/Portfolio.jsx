@@ -1,10 +1,10 @@
 import style from './Portfolio.module.scss'
 import projects from '../../store/projects.json'
-import FilterPopup from '../popups/Filter/Filter'
 import { useState } from 'react'
 import VueSvg from '../../assets/icons/VueSvg'
 import ReactSvg from '../../assets/icons/ReactSvg'
 import NoFrameworkSvg from '../../assets/icons/MultipageSvg'
+import Filter from '../common/Filter/Filter'
 
 let Portfolio = () => {
 
@@ -37,7 +37,7 @@ let Portfolio = () => {
           <div className={`${style.portfolio__title}`}>
             Мои работы
           </div>
-          <FilterPopup applyFilterType={applyFilterType} filterType={filterType} />
+          <Filter applyFilterType={applyFilterType} filterType={filterType} />
         </div>
         <div className={`${style.portfolioBody}`}>
 
