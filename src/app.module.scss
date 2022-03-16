@@ -8,10 +8,11 @@
   background-attachment: fixed;
   color: var(--font-color);
   a {
+    // color: #fff;
     color: var(--font-color);
     transition: all .3s ease;
     &:hover {
-      color: rgb(130, 130, 130);
+      color: rgb(200, 200, 200);
     }
   }
 }
