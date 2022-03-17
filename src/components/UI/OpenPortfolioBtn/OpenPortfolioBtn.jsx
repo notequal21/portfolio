@@ -3,7 +3,12 @@ import style from './OpenPortfolioBtn.module.scss'
 
 let OpenPortfolioBtn = () => {
   return (<>
-    <NavLink to={'/portfolio'} className={style.btn}>
+    <NavLink to={'/portfolio'} onClick={() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }} className={style.btn}>
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
           <filter id="gooey">

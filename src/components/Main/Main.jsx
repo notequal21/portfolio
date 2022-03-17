@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import style from './Main.module.scss'
 import myImg from '../../assets/img/components/main/img.jpg'
 import OpenPortfolioBtn from '../UI/OpenPortfolioBtn/OpenPortfolioBtn'
+
 
 let Main = () => {
   return (
