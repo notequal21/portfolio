@@ -3,7 +3,7 @@ import style from './OpenPortfolioBtn.module.scss'
 
 let OpenPortfolioBtn = () => {
   return (<>
-    <NavLink to={'/portfolio'} onClick={() => {
+    <NavLink to='..' onClick={() => {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'

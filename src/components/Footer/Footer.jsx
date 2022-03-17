@@ -12,8 +12,18 @@ let Footer = () => {
             </a>
           </div>
           <div className={style.footerBtns}>
-            {/* <Link to=''>Главная</Link> */}
-            <Link to='portfolio'>Портфолио</Link>
+            <Link to='main' onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              })
+            }}>Главная</Link>
+            <Link to='' onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              })
+            }}>Портфолио</Link>
             <a target={`_blank`} href="https://notequal.notion.site/5563732749bd4087ba5441b23f684a08">Резюме</a>
             {/* <Link to='resume'>Резюме</Link> */}
             {/* <Link to='contacts'>Контакты</Link> */}

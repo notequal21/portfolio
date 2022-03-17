@@ -18,8 +18,8 @@ function App() {
           <Header />
 
           <Routes>
-            <Route path='/portfolio' element={<Portfolio />} />
-            <Route path='*' element={<Main />} />
+            <Route path='*' element={<Portfolio />} />
+            <Route path='/main' element={<Main />} />
 
             {/* <Route path='portfolio' element={<Portfolio />} /> */}
             {/* <Route path='contacts' element={<Contacts />} /> */}
