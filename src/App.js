@@ -19,9 +19,9 @@ function App() {
 
           <Routes>
 
-            <Route path='*' element={<Portfolio />} />
+            <Route path='/portfolio' element={<Portfolio />} />
+            <Route path='*' element={<Main />} />
 
-            {/* <Route path='*' element={<Main />} /> */}
             {/* <Route path='portfolio' element={<Portfolio />} /> */}
             {/* <Route path='contacts' element={<Contacts />} /> */}
             {/* <Route path='resume' element={<Resume />} /> */}

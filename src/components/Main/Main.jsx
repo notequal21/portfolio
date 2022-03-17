@@ -16,11 +16,11 @@ let MainBlock = () => {
     <div className={`${style.main}`}>
       <div className="container">
         <div className={`${style.mainBody}`}>
-          <div className={`${style.mainCol}`}>
+          {/* <div className={`${style.mainCol}`}>
             <div className={`${style.mainCol__image}`}>
               <img src={myImg} alt='img' />
             </div>
-          </div>
+          </div> */}
           <div className={`${style.mainCol}`}>
             <div className={`${style.mainCol__name}`}>
               Кирилл Махнёв
@@ -30,14 +30,15 @@ let MainBlock = () => {
             </div>
             <div className={`${style.mainCol__about}`}>
               <p>
-                Привет!
-              </p>
-              <p>
                 Свертаю твой макет быстро и качественно!
               </p>
-              <p>
-                Версткой занимаюсь больше года, <br /> могу сверстать макет любой сложности!
-              </p>
+              <ul>
+                <li>Адаптивная верстка</li>
+                <li>Кроссбраузерная верстка</li>
+                <li>С поддержкой retina экранов</li>
+                <li>Верстка на React</li>
+                <li>Верстка на Vue</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -56,27 +57,27 @@ let AdvantagesBlock = () => {
         <div className={`${style.advantagesBody}`}>
           <div className={`${style.advantagesBody__col}`}>
             <div className={`${style.advantagesBody__item}`}>
-              Профессиональный подход к каждому заказу!
+              Выполненная работа в срок.
             </div>
             <div className={`${style.advantagesBody__item}`}>
-              Выполненная работа в срок!
+              Всегда на связи.
             </div>
             <div className={`${style.advantagesBody__item}`}>
-              Качественный и оптимизированный код!
+              Профессиональный подход к каждому заказу.
             </div>
             <div className={`${style.advantagesBody__item}`}>
-              Адаптивная, валидная верстка!
+              Качественный и оптимизированный код.
             </div>
             <div className={`${style.advantagesBody__item}`}>
-              Всегда на связи!
+              Адаптивная, валидная верстка.
             </div>
           </div>
           <div className={`${style.advantagesBody__col}`}>
             <div className={`${style.advantagesBody__item}`}>
-              Ваш сайт будет отлично отображаться на всех устройствах
+              Ваш сайт будет отлично отображаться на всех устройствах.
             </div>
             <div className={`${style.advantagesBody__item}`}>
-              Ваши клиенты оценят удобный, быстрый сайт.
+              Ваши клиенты оценят удобный и быстрый сайт.
             </div>
             <div className={`${style.advantagesBody__item}`}>
               С момента начала работы будет доступен тестовый домен.
@@ -99,21 +100,41 @@ let MyStackBlock = () => {
     <div className={`${style.mystack}`}>
       <div className="container">
         <div className={`${style.mystack__title}`}>
-          Мой стэк
+          Обо мне 😎
         </div>
         <div className={`${style.mystackBody}`}>
           <div className={`${style.mystackBody__col}`}>
             <div className={`${style.mystackBody__text}`}>
-              В работе использую лучшие современные технологии, чтобы вам и вашим клиентам было удобно пользоваться сайтом.
+              <p>
+                С 2020 года изучаю Frontend технологии. Опыт в разработке более двух лет. 🔥
+              </p>
+              <p>
+                Верстаю адаппитво, кроссбраузерно, это стандарт)
+              </p>
+              <p>
+                Общительный, уверенный и спокойный!)
+              </p>
+              <p>
+                Открыт всему новому! Всегда обучаюсь, и делаю это быстро !)
+              </p>
+              <p className={style.important}>
+                В работе использую лучшие современные технологии, чтобы вам и вашим клиентам было удобно пользоваться сайтом.
+              </p>
             </div>
           </div>
           <div className={`${style.mystackBody__col}`}>
             <div className={`${style.mystackBody__list}`}>
               <div className={`${style.mystackBody__listItem}`}>
-                React ( Hooks, Class Components )
+                React
               </div>
               <div className={`${style.mystackBody__listItem}`}>
-                Redux ( Thunk, Middleware )
+                Redux
+              </div>
+              <div className={`${style.mystackBody__listItem}`}>
+                Vue
+              </div>
+              <div className={`${style.mystackBody__listItem}`}>
+                Vuex
               </div>
               <div className={`${style.mystackBody__listItem}`}>
                 JavaScript
@@ -128,13 +149,13 @@ let MyStackBlock = () => {
                 sass/SCSS
               </div>
               <div className={`${style.mystackBody__listItem}`}>
-                Gulp, Webpack
-              </div>
-              <div className={`${style.mystackBody__listItem}`}>
-                HTTP
+                Pug
               </div>
               <div className={`${style.mystackBody__listItem}`}>
                 axios
+              </div>
+              <div className={`${style.mystackBody__listItem}`}>
+                HTTP
               </div>
               <div className={`${style.mystackBody__listItem}`}>
                 Rest API
@@ -143,13 +164,16 @@ let MyStackBlock = () => {
                 GIT
               </div>
               <div className={`${style.mystackBody__listItem}`}>
+                Gulp
+              </div>
+              <div className={`${style.mystackBody__listItem}`}>
                 npm/yarn
               </div>
               <div className={`${style.mystackBody__listItem}`}>
                 БЭМ
               </div>
               <div className={`${style.mystackBody__listItem}`}>
-                Figma, Photoshop
+                Figma, Zeplin, Photoshop
               </div>
             </div>
           </div>

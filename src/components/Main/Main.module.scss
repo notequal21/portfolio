@@ -7,6 +7,10 @@
     }
   }
   &Col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     flex: 1 1 50%;
     @media (max-width:992px) {
       flex: 0 0 auto;
@@ -52,6 +56,23 @@
       line-height: 21px;
       max-width: 630px;
       font-family: Roboto;
+      ul {
+        margin: 20px 0 0 20px;
+        font-size: 16px;
+        opacity: 0.7;
+        li {
+          display: flex;
+          margin: 4px 0 0 0;
+          &:first-child {
+            margin: 0;
+          }
+          &::before {
+            content: '🔥';
+            display: block;
+            margin: 0 5px 0 0;
+          }
+        }
+      }
       p {
         margin: 13px 0 0 0;
       }
@@ -62,7 +83,7 @@
 .advantages {
   margin: 100px 0 0 0;
   &__title {
-    font-size: 32px;
+    font-size: 36px;
   }
   &Body {
     margin: 30px 0 0 0;
@@ -81,6 +102,7 @@
       }
     }
     &__item {
+      font-size: 18px;
       display: flex;
       margin: 20px 0 0 0;
       &:first-child {
@@ -124,12 +146,21 @@
       font-size: 18px;
       line-height: 21px;
       font-family: Roboto;
+      p {
+        margin: 10px 0 0 0;
+        &.important {
+          margin: 15px 0 0 0;
+          font-weight: 600;
+        }
+      }
     }
     &__list {
       &Item {
         margin: 20px 0 0 0;
+        font-size: 16px;
+        font-weight: 600;
         &::before {
-          content: '✅';
+          content: '-';
           display: inline-block;
           margin: 0 5px 0 0;
         }
