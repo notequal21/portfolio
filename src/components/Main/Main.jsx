@@ -1,5 +1,6 @@
 import style from './Main.module.scss'
 import myImg from '../../assets/img/components/main/img.jpg'
+import OpenPortfolioBtn from '../UI/OpenPortfolioBtn/OpenPortfolioBtn'
 
 let Main = () => {
   return (
@@ -177,6 +178,9 @@ let MyStackBlock = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className={style.portfolioBtn}>
+          <OpenPortfolioBtn />
         </div>
       </div>
     </div>
