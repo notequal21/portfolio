@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 const App = lazy(() => import("./App"));
 
 function AppLoader() {
@@ -16,9 +16,9 @@ function AppLoader() {
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <AppLoader />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
