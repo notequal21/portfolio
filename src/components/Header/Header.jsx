@@ -1,7 +1,20 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import style from './Header.module.scss'
 
 let Header = () => {
+
+  let [isLoader, isLoaderChange] = useState(false)
+  let isLoaderToggle = () => {
+    console.log(isLoader)
+    isLoaderChange(!isLoader)
+    setTimeout(() => {
+      console.log(isLoader)
+      isLoaderChange(!isLoader)
+    }, 300)
+  }
+
+
   return (
     <div className={style.header}>
       <div className="container">
@@ -13,11 +26,13 @@ let Header = () => {
           </div>
           <div className={style.headerBtns}>
             <Link to='main' onClick={() => {
+              isLoaderToggle()
               window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
               })
             }}>Главная</Link>
+            {isLoader ? <Loader /> : ''}
             <Link to='' onClick={() => {
               window.scrollTo({
                 top: 0,
@@ -33,6 +48,14 @@ let Header = () => {
       </div>
     </div>
   )
+}
+
+let Loader = () => {
+  return (<>
+    <div className={style.loader}>
+      loader
+    </div>
+  </>)
 }
 
 export default Header
