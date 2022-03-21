@@ -21,17 +21,17 @@ let OpenPortfolioBtn = () => {
 
       <button className={style.gooeyButton}>
         Портфолио
-        <span class={style.bubbles}>
-          <span class={style.bubble}></span>
-          <span class={style.bubble}></span>
-          <span class={style.bubble}></span>
-          <span class={style.bubble}></span>
-          <span class={style.bubble}></span>
-          <span class={style.bubble}></span>
-          <span class={style.bubble}></span>
-          <span class={style.bubble}></span>
-          <span class={style.bubble}></span>
-          <span class={style.bubble}></span>
+        <span className={style.bubbles}>
+          <span className={style.bubble}></span>
+          <span className={style.bubble}></span>
+          <span className={style.bubble}></span>
+          <span className={style.bubble}></span>
+          <span className={style.bubble}></span>
+          <span className={style.bubble}></span>
+          <span className={style.bubble}></span>
+          <span className={style.bubble}></span>
+          <span className={style.bubble}></span>
+          <span className={style.bubble}></span>
         </span>
       </button>
     </NavLink>

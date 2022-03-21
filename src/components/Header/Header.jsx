@@ -5,13 +5,8 @@ import style from './Header.module.scss'
 let Header = () => {
 
   let [isLoader, isLoaderChange] = useState(false)
-  let isLoaderToggle = () => {
-    console.log(isLoader)
+  let isLoaderToggle = async () => {
     isLoaderChange(!isLoader)
-    setTimeout(() => {
-      console.log(isLoader)
-      isLoaderChange(!isLoader)
-    }, 300)
   }
 
 
