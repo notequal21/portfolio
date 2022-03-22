@@ -1,8 +1,14 @@
 import style from './Main.module.scss'
 import OpenPortfolioBtn from '../UI/OpenPortfolioBtn/OpenPortfolioBtn'
+import { useEffect } from 'react'
 
 
-let Main = () => {
+let Main = (props) => {
+
+  useEffect(() => {
+    // props.links = document.querySelectorAll(`.link`)
+  })
+
   return (
     <>
       <MainBlock />
@@ -179,7 +185,7 @@ let MyStackBlock = () => {
             </div>
           </div>
         </div>
-        <div className={style.portfolioBtn}>
+        <div className={`${style.portfolioBtn} link link_hiden`}>
           <OpenPortfolioBtn />
         </div>
       </div>

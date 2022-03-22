@@ -5,8 +5,9 @@ import VueSvg from '../../assets/icons/VueSvg'
 import ReactSvg from '../../assets/icons/ReactSvg'
 import NoFrameworkSvg from '../../assets/icons/MultipageSvg'
 import Filter from '../common/Filter/Filter'
+import { useEffect } from 'react'
 
-let Portfolio = () => {
+let Portfolio = (props) => {
 
   const [filterType, changeFilterType] = useState('all')
 
@@ -28,6 +29,10 @@ let Portfolio = () => {
           name={item.Name} img={item.Img} link={item.Link} />))
     }
   }
+
+  useEffect(() => {
+    // props.links = document.querySelectorAll(`.link`)
+  })
 
   return (
     <div className={`${style.portfolio}`}>

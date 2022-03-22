@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import style from './Header.module.scss'
 
-let Header = () => {
+let Header = (props) => {
+
+  let navigate = useNavigate()
 
   let [isLoader, isLoaderChange] = useState(false)
   let isLoaderToggle = () => {
@@ -25,30 +27,35 @@ let Header = () => {
             </a>
           </div>
           <div className={style.headerBtns}>
-            <Link to='main'
-              className='link'
+            {isLoader ? <Loader /> : ''}
+            <div className='link'
               onClick={() => {
+
                 isLoaderToggle()
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth'
-                })
+                setTimeout(() => {
+                  navigate('main')
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })
+                }, 500)
+
               }}>
               Главная
-            </Link>
-            {isLoader ? <Loader /> : ''}
-            <Link to=''
-              className='link'
+            </div>
+            <div className='link'
               onClick={() => {
                 isLoaderToggle()
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth'
-                })
+                setTimeout(() => {
+                  navigate('')
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })
+                }, 500)
               }}>
               Портфолио
-            </Link>
-
+            </div>
             <a
               target={`_blank`}
               className='link'

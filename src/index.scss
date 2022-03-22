@@ -80,6 +80,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
   &.active {
     transform: scale(0);
   }
+	&.hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
 }
 .follower {
   position: fixed;
@@ -97,4 +101,17 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     background: #1378ef;
 		z-index: 0;
   }
+	&.hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+@media (max-width: 767px) {
+	.cursor {
+		display: none;
+	}
+	.follower {
+		display: none;
+	}
 }
