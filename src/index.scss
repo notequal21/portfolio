@@ -21,6 +21,10 @@ code {
 	padding: 0;
 	margin: 0;
 	border: 0;
+	cursor: none !important;
+	&:hover {
+		cursor: none !important;
+	}
 }
 *,*:before,*:after{
 	-moz-box-sizing: border-box;
@@ -55,10 +59,42 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 
-
-
 .container {
 	max-width: 1530px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+
+.cursor {
+  position: fixed;
+  background: #1378ef;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1111;
+  transform: scale(1) translate(-2px, -2px);
+  transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+  &.active {
+    transform: scale(0);
+  }
+}
+.follower {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #1378ef;
+  border-radius: 100%;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1111;
+  transform: scale(1);
+  transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform, .2s cubic-bezier(.75, -0.27, .3, 1.33) background;
+  &.active {
+    transform: scale(2);
+    background: #1378ef;
+		z-index: 0;
+  }
 }
