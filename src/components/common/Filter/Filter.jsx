@@ -11,21 +11,21 @@ let Filter = ({ applyFilterType, filterType }) => {
           onClick={() => {
             applyFilterType('react')
           }}
-          className={`${style.filter__item} ${filterType === 'react' ? style.active : ''}`}>
+          className={`${style.filter__item} link ${filterType === 'react' ? style.active : ''}`}>
           <ReactSvg />
         </button>
         <button
           onClick={() => {
             applyFilterType('vue')
           }}
-          className={`${style.filter__item} ${filterType === 'vue' ? style.active : ''}`}>
+          className={`${style.filter__item} link ${filterType === 'vue' ? style.active : ''}`}>
           <VueSvg />
         </button>
         <button
           onClick={() => {
             applyFilterType('nofw')
           }}
-          className={`${style.filter__item} ${filterType === 'nofw' ? style.active : ''}`}>
+          className={`${style.filter__item} link ${filterType === 'nofw' ? style.active : ''}`}>
           <NoFrameworkSvg />
         </button>
       </div>

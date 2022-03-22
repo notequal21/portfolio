@@ -50,7 +50,11 @@ let Portfolio = () => {
 
 let PortfolioItem = ({ link, img, name, type }) => {
   return (
-    <a target='_blank' rel='noreferrer' href={link} className={`${style.portfolioBody__item}`}>
+    <a
+      target='_blank'
+      rel='noreferrer'
+      href={link}
+      className={`${style.portfolioBody__item} link link_portfolio`}>
       <div className={`${style.portfolioBody__itemImg}`}>
         <img src={`./img/${img}`} alt="WorkImg" />
       </div>

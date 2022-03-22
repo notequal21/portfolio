@@ -7,24 +7,42 @@ let Footer = () => {
       <div className="container">
         <div className={style.footerBody}>
           <div className={style.footer__logo}>
-            <a target={`_blank`} href="https://github.com/notequal21">
+            <a
+              target={`_blank`}
+              className='link'
+              href="https://github.com/notequal21">
               notequal21
             </a>
           </div>
           <div className={style.footerBtns}>
-            <Link to='main' onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-              })
-            }}>Главная</Link>
-            <Link to='' onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-              })
-            }}>Портфолио</Link>
-            <a target={`_blank`} href="https://notequal.notion.site/5563732749bd4087ba5441b23f684a08">Резюме</a>
+            <Link
+              to='main'
+              className='link'
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+                })
+              }}>
+              Главная
+            </Link>
+            <Link
+              to=''
+              className='link'
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+                })
+              }}>
+              Портфолио
+            </Link>
+            <a
+              target={`_blank`}
+              className='link'
+              href="https://notequal.notion.site/5563732749bd4087ba5441b23f684a08">
+              Резюме
+            </a>
             {/* <Link to='resume'>Резюме</Link> */}
             {/* <Link to='contacts'>Контакты</Link> */}
           </div>
