@@ -10,7 +10,20 @@ import Particles from "react-tsparticles";
 import particlesConfig from "./assets/particlesConfig.json";
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleLoader } from './store/loader.js'
+
 let App = () => {
+
+  const isLoader = useSelector((state) => state.loader.isLoader)
+  const dispatch = useDispatch()
+
+  const withLoader = () => {
+    dispatch(toggleLoader())
+    setTimeout(() => {
+      dispatch(toggleLoader())
+    }, 1000)
+  }
 
   let changeCursor = () => {
     const cursor = document.querySelector(`.cursor`)
@@ -75,19 +88,20 @@ let App = () => {
       <div className={`${style.wrapper}`}>
         <Particles params={particlesConfig} className={style.particles} />
         <div className={`${style.content}`}>
-          <Header />
+          <Header withLoader={withLoader} isLoader={isLoader} />
 
           <Routes>
-            <Route path='*' element={<Portfolio />} />
-            <Route path='/main' element={<Main />} />
+            <Route path='*' element={<Portfolio withLoader={withLoader} />} />
+            <Route path='/main' element={<Main withLoader={withLoader} />} />
 
             {/* <Route path='portfolio' element={<Portfolio />} /> */}
             {/* <Route path='contacts' element={<Contacts />} /> */}
             {/* <Route path='resume' element={<Resume />} /> */}
           </Routes>
+
+          <Footer withLoader={withLoader} />
         </div>
 
-        <Footer />
       </div>
     </>
   );

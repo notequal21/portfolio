@@ -1,18 +1,9 @@
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 import style from './Header.module.scss'
 
-let Header = (props) => {
+let Header = ({ withLoader, isLoader, ...props }) => {
 
   let navigate = useNavigate()
-
-  let [isLoader, isLoaderChange] = useState(false)
-  let isLoaderToggle = () => {
-    isLoaderChange(!isLoader)
-    setTimeout(() => {
-      isLoaderChange(isLoader)
-    }, 1000)
-  }
 
   return (
     <div className={style.header}>
@@ -30,8 +21,8 @@ let Header = (props) => {
             {isLoader ? <Loader /> : ''}
             <div className='link'
               onClick={() => {
+                withLoader()
 
-                isLoaderToggle()
                 setTimeout(() => {
                   navigate('main')
                   window.scrollTo({
@@ -45,7 +36,8 @@ let Header = (props) => {
             </div>
             <div className='link'
               onClick={() => {
-                isLoaderToggle()
+                withLoader()
+
                 setTimeout(() => {
                   navigate('')
                   window.scrollTo({

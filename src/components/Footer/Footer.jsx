@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom'
 import style from './Footer.module.scss'
+import { useNavigate } from 'react-router-dom'
 
-let Footer = () => {
+let Footer = ({ withLoader, isLoader, ...props }) => {
+
+  let navigate = useNavigate()
+
   return (
     <div className={style.footer}>
       <div className="container">
@@ -15,28 +18,35 @@ let Footer = () => {
             </a>
           </div>
           <div className={style.footerBtns}>
-            <Link
-              to='main'
-              className='link'
+            <div className='link'
               onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth'
-                })
+                withLoader()
+
+                setTimeout(() => {
+                  navigate('main')
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })
+                }, 500)
+
               }}>
               Главная
-            </Link>
-            <Link
-              to=''
-              className='link'
+            </div>
+            <div className='link'
               onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth'
-                })
+                withLoader()
+
+                setTimeout(() => {
+                  navigate('')
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })
+                }, 500)
               }}>
               Портфолио
-            </Link>
+            </div>
             <a
               target={`_blank`}
               className='link'

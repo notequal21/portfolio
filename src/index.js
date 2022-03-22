@@ -4,7 +4,6 @@ import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import { store } from './store/store'
 import { Provider } from 'react-redux'
-
 import { HashRouter } from "react-router-dom";
 const App = lazy(() => import("./App"));
 

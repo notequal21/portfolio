@@ -1,14 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 import style from './OpenPortfolioBtn.module.scss'
 
-let OpenPortfolioBtn = () => {
+let OpenPortfolioBtn = ({ withLoader, ...props }) => {
+  let navigate = useNavigate()
+
   return (<>
-    <NavLink to='..' onClick={() => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      })
-    }} className={style.btn}>
+    <div className={`${style.btn} link`}>
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
           <filter id="gooey">
@@ -19,7 +16,18 @@ let OpenPortfolioBtn = () => {
         </defs>
       </svg>
 
-      <button className={style.gooeyButton}>
+      <button className={style.gooeyButton}
+        onClick={() => {
+          withLoader()
+
+          setTimeout(() => {
+            navigate('..')
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            })
+          }, 500)
+        }}>
         Портфолио
         <span className={style.bubbles}>
           <span className={style.bubble}></span>
@@ -34,7 +42,7 @@ let OpenPortfolioBtn = () => {
           <span className={style.bubble}></span>
         </span>
       </button>
-    </NavLink>
+    </div>
   </>)
 }
 
