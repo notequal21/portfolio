@@ -11,15 +11,18 @@ import particlesConfig from "./assets/particlesConfig.json";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleLoader } from './store/loader.js'
+import { setLoaderPos, toggleLoader } from './store/loader.js'
 
 let App = () => {
 
   const isLoader = useSelector((state) => state.loader.isLoader)
+  const loaderX = useSelector((state) => state.loader.pos.x)
+  const loaderY = useSelector((state) => state.loader.pos.y)
   const dispatch = useDispatch()
 
-  const withLoader = () => {
+  const withLoader = (x, y) => {
     dispatch(toggleLoader())
+    dispatch(setLoaderPos({ x, y }))
     setTimeout(() => {
       dispatch(toggleLoader())
     }, 1000)

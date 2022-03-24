@@ -17,8 +17,8 @@ let OpenPortfolioBtn = ({ withLoader, ...props }) => {
       </svg>
 
       <button className={style.gooeyButton}
-        onClick={() => {
-          withLoader()
+        onClick={(e) => {
+          withLoader(e.clientX, e.clientY)
 
           setTimeout(() => {
             navigate('..')

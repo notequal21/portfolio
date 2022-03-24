@@ -1,7 +1,12 @@
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import style from './Header.module.scss'
 
 let Header = ({ withLoader, isLoader, ...props }) => {
+
+  const loaderX = useSelector((state) => state.loader.pos.x)
+  const loaderY = useSelector((state) => state.loader.pos.y)
 
   let navigate = useNavigate()
 
@@ -18,10 +23,10 @@ let Header = ({ withLoader, isLoader, ...props }) => {
             </a>
           </div>
           <div className={style.headerBtns}>
-            {isLoader ? <Loader /> : ''}
+            {isLoader ? <Loader loaderX={loaderX} loaderY={loaderY} /> : ''}
             <div className='link'
-              onClick={() => {
-                withLoader()
+              onClick={(e) => {
+                withLoader(e.clientX, e.clientY)
 
                 setTimeout(() => {
                   navigate('main')
@@ -35,8 +40,8 @@ let Header = ({ withLoader, isLoader, ...props }) => {
               Главная
             </div>
             <div className='link'
-              onClick={() => {
-                withLoader()
+              onClick={(e) => {
+                withLoader(e.clientX, e.clientY)
 
                 setTimeout(() => {
                   navigate('')
@@ -63,7 +68,16 @@ let Header = ({ withLoader, isLoader, ...props }) => {
   )
 }
 
-let Loader = () => {
+let Loader = ({ loaderX, loaderY }) => {
+
+  let posX = loaderX
+  let posY = loaderY
+
+  useEffect(() => {
+    document.querySelector(`.${style.loader}`).style.left = `${posX}px`
+    document.querySelector(`.${style.loader}`).style.top = `${posY}px`
+  }, [])
+
   return (<>
     <div className={style.loader}></div>
   </>)

@@ -19,8 +19,8 @@ let Footer = ({ withLoader, isLoader, ...props }) => {
           </div>
           <div className={style.footerBtns}>
             <div className='link'
-              onClick={() => {
-                withLoader()
+              onClick={(e) => {
+                withLoader(e.clientX, e.clientY)
 
                 setTimeout(() => {
                   navigate('main')
@@ -34,8 +34,8 @@ let Footer = ({ withLoader, isLoader, ...props }) => {
               Главная
             </div>
             <div className='link'
-              onClick={() => {
-                withLoader()
+              onClick={(e) => {
+                withLoader(e.clientX, e.clientY)
 
                 setTimeout(() => {
                   navigate('')
