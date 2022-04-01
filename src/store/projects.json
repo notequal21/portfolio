@@ -4,14 +4,14 @@
     "Name": "Luftbase",
     "Type": "nofw",
     "Img": "nofw/luftbase.webp",
-    "Link": "https://notequal21.github.io/luftbase/"
+    "Link": "https://demo.notequal.website/luftbase/"
   },
   {
     "Id": 1,
     "Name": "Pixture",
     "Type": "nofw",
     "Img": "nofw/pixture.webp",
-    "Link": "https://notequal21.github.io/pixture/"
+    "Link": "https://demo.notequal.website/pixture/"
   },
   {
     "Id": 2,
@@ -25,48 +25,41 @@
     "Name": "SmartPay",
     "Type": "nofw",
     "Img": "nofw/smartpay.webp",
-    "Link": "https://notequal21.github.io/smartpay/"
+    "Link": "https://demo.notequal.website/smartpay/"
   },
   {
     "Id": 4,
     "Name": "LCS",
     "Type": "nofw",
     "Img": "nofw/lcs.webp",
-    "Link": "https://notequal21.github.io/lcs/"
+    "Link": "https://demo.notequal.website/lcs/"
   },
   {
     "Id": 5,
     "Name": "Hookah",
     "Type": "react",
     "Img": "react/hookah.webp",
-    "Link": "https://notequal21.github.io/hookah-react/"
+    "Link": "https://demo.notequal.website/hookah-react/"
   },
   {
     "Id": 6,
     "Name": "NFTop",
     "Type": "nofw",
     "Img": "nofw/nftop.webp",
-    "Link": "https://notequal21.github.io/NFTop/"
+    "Link": "https://demo.notequal.website/NFTop/"
   },
   {
     "Id": 7,
-    "Name": "Weather app",
-    "Type": "react",
-    "Img": "react/weather.webp",
-    "Link": "https://notequal21.github.io/weather/"
-  },
-  {
-    "Id": 8,
     "Name": "Cool Girls NFT",
     "Type": "react",
     "Img": "react/coolgirls.webp",
-    "Link": "https://notequal21.github.io/coolgirls/"
+    "Link": "https://demo.notequal.website/coolgirls/"
   },
   {
-    "Id": 9,
+    "Id": 8,
     "Name": "Weather Check",
     "Type": "vue",
     "Img": "vue/weathercheck.webp",
-    "Link": "https://notequal21.github.io/weather-vue/"
+    "Link": "https://demo.notequal.website/weather-vue/"
   }
 ]

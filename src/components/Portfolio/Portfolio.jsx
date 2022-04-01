@@ -4,8 +4,9 @@ import projects from '../../store/projects.json'
 import { useState } from 'react'
 import Filter from '../common/Filter/Filter'
 import { useEffect } from 'react'
+import PortfolioItem from './PortfolioItem/PortfolioItem'
 
-const PortfolioItem = lazy(() => import("./PortfolioItem/PortfolioItem"));
+// const PortfolioItem = lazy(() => import("./PortfolioItem/PortfolioItem"));
 
 let Portfolio = (props) => {
 
