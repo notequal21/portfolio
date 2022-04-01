@@ -1,7 +1,8 @@
+import React, { lazy } from "react";
 import style from "./app.module.scss"
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Main from "./components/Main/Main";
+// import Main from "./components/Main/Main";
 import { Routes, Route } from "react-router-dom";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Contacts from "./components/Contacts/Contacts";
@@ -12,6 +13,8 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { useDispatch, useSelector } from 'react-redux'
 import { setLoaderPos, toggleLoader } from './store/loader.js'
+
+const Main = lazy(() => import("./components/Main/Main"));
 
 let App = () => {
 
