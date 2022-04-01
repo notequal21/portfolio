@@ -1,11 +1,11 @@
+import React, { lazy } from "react";
 import style from './Portfolio.module.scss'
 import projects from '../../store/projects.json'
 import { useState } from 'react'
-import VueSvg from '../../assets/icons/VueSvg'
-import ReactSvg from '../../assets/icons/ReactSvg'
-import NoFrameworkSvg from '../../assets/icons/MultipageSvg'
 import Filter from '../common/Filter/Filter'
 import { useEffect } from 'react'
+
+const PortfolioItem = lazy(() => import("./PortfolioItem/PortfolioItem"));
 
 let Portfolio = (props) => {
 
@@ -50,28 +50,6 @@ let Portfolio = (props) => {
         </div>
       </div>
     </div>
-  )
-}
-
-let PortfolioItem = ({ link, img, name, type }) => {
-  return (
-    <a
-      target='_blank'
-      rel='noreferrer'
-      href={link}
-      className={`${style.portfolioBody__item} link link_portfolio`}>
-      <div className={`${style.portfolioBody__itemImg}`}>
-        <img src={`./img/${img}`} alt="WorkImg" />
-      </div>
-      <div className={`${style.portfolioBody__itemInfo}`}>
-        <div className={`${style.portfolioBody__itemName}`}>{name}</div>
-        <div className={`${style.portfolioBody__itemType}`}>
-          {type === 'react' ? <ReactSvg /> : ''}
-          {type === 'vue' ? <VueSvg /> : ''}
-          {type === 'nofw' ? <NoFrameworkSvg /> : ''}
-        </div>
-      </div>
-    </a>
   )
 }
 
