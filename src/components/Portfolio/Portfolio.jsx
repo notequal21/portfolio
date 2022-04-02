@@ -1,19 +1,22 @@
-import React, { lazy } from "react";
+import React, { lazy, Suspense } from "react";
 import style from './Portfolio.module.scss'
 import projects from '../../store/projects.json'
 import { useState } from 'react'
 import Filter from '../common/Filter/Filter'
 import { useEffect } from 'react'
-import PortfolioItem from './PortfolioItem/PortfolioItem'
+// import PortfolioItem from './PortfolioItem/PortfolioItem'
 
-// const PortfolioItem = lazy(() => import("./PortfolioItem/PortfolioItem"));
+const PortfolioItem = lazy(() => import("./PortfolioItem/PortfolioItem"));
 
 let Portfolio = (props) => {
 
   const [filterType, changeFilterType] = useState('all')
 
   const [projectsList, changeProjectsList] = useState(projects.map(item =>
-    <PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />).reverse())
+    <Suspense fallback={<div></div>}>
+      <PortfolioItem key={item.Id} type={item.Type} name={item.Name} img={item.Img} link={item.Link} />
+    </Suspense>
+  ).reverse())
 
   let applyFilterType = (type = 'all') => {
     if (filterType === type) {

@@ -1,10 +1,10 @@
-import React, { lazy } from "react";
+import React, { lazy, Suspense } from "react";
 import style from "./app.module.scss"
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Main from "./components/Main/Main";
+// import Main from "./components/Main/Main";
 import { Routes, Route } from "react-router-dom";
-import Portfolio from "./components/Portfolio/Portfolio";
+// import Portfolio from "./components/Portfolio/Portfolio";
 // import Contacts from "./components/Contacts/Contacts";
 // import Resume from "./components/Resume/Resume";
 import Particles from "react-tsparticles";
@@ -15,8 +15,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setLoaderPos, toggleLoader } from './store/loader.js'
 
 // const Header = lazy(() => import("./components/Header/Header"));
-// const Main = lazy(() => import("./components/Main/Main"));
-// const Portfolio = lazy(() => import("./components/Portfolio/Portfolio"));
+const Main = lazy(() => import("./components/Main/Main"));
+const Portfolio = lazy(() => import("./components/Portfolio/Portfolio"));
 
 let App = () => {
 
@@ -99,8 +99,16 @@ let App = () => {
           <Header withLoader={withLoader} isLoader={isLoader} />
 
           <Routes>
-            <Route path='*' element={<Portfolio withLoader={withLoader} />} />
-            <Route path='/main' element={<Main withLoader={withLoader} />} />
+            <Route path='*' element={
+              <Suspense fallback={<div></div>}>
+                <Portfolio />
+              </Suspense>
+            } />
+            <Route path='/main' element={
+              <Suspense fallback={<div></div>}>
+                <Main withLoader={withLoader} />
+              </Suspense>
+            } />
 
             {/* <Route path='portfolio' element={<Portfolio />} /> */}
             {/* <Route path='contacts' element={<Contacts />} /> */}
