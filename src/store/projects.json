@@ -61,5 +61,12 @@
     "Type": "vue",
     "Img": "vue/weathercheck.jpg",
     "Link": "https://demo.notequal.website/weather-vue/"
+  },
+  {
+    "Id": 9,
+    "Name": "NFT Banker",
+    "Type": "nofw",
+    "Img": "nofw/nftbanker.jpg",
+    "Link": "https://demo.notequal.website/nftbanker/"
   }
 ]
