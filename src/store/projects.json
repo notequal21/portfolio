@@ -68,5 +68,19 @@
     "Type": "nofw",
     "Img": "nofw/nftbanker.jpg",
     "Link": "https://demo.notequal.website/nftbanker/"
+  },
+  {
+    "Id": 10,
+    "Name": "Advertex",
+    "Type": "nofw",
+    "Img": "nofw/advertex.jpg",
+    "Link": "https://demo.notequal.website/advertex/"
+  },
+  {
+    "Id": 11,
+    "Name": "Yeezypay",
+    "Type": "nofw",
+    "Img": "nofw/yeezypay.jpg",
+    "Link": "https://demo.notequal.website/yeezypay/sitemap.html"
   }
 ]
