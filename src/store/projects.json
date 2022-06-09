@@ -15,69 +15,62 @@
   },
   {
     "Id": 2,
-    "Name": "Will Towers",
-    "Type": "nofw",
-    "Img": "nofw/willTowers.jpg",
-    "Link": "https://willtowers.ru/"
-  },
-  {
-    "Id": 3,
     "Name": "SmartPay",
     "Type": "nofw",
     "Img": "nofw/smartpay.jpg",
     "Link": "https://demo.notequal.website/smartpay/"
   },
   {
-    "Id": 4,
+    "Id": 3,
     "Name": "LCS",
     "Type": "nofw",
     "Img": "nofw/lcs.jpg",
     "Link": "https://demo.notequal.website/lcs/"
   },
   {
-    "Id": 5,
+    "Id": 4,
     "Name": "Hookah",
     "Type": "react",
     "Img": "react/hookah.jpg",
     "Link": "https://demo.notequal.website/hookah-react/"
   },
   {
-    "Id": 6,
+    "Id": 5,
     "Name": "NFTop",
     "Type": "nofw",
     "Img": "nofw/nftop.jpg",
     "Link": "https://demo.notequal.website/NFTop/"
   },
   {
-    "Id": 7,
+    "Id": 6,
     "Name": "Cool Girls NFT",
     "Type": "react",
     "Img": "react/coolgirls.jpg",
     "Link": "https://demo.notequal.website/coolgirls/"
   },
   {
-    "Id": 8,
+    "Id": 7,
     "Name": "Weather Check",
     "Type": "vue",
     "Img": "vue/weathercheck.jpg",
     "Link": "https://demo.notequal.website/weather-vue/"
   },
   {
-    "Id": 9,
+    "Id": 8,
     "Name": "NFT Banker",
     "Type": "nofw",
     "Img": "nofw/nftbanker.jpg",
     "Link": "https://demo.notequal.website/nftbanker/"
   },
   {
-    "Id": 10,
+    "Id": 9,
     "Name": "Advertex",
     "Type": "nofw",
     "Img": "nofw/advertex.jpg",
     "Link": "https://demo.notequal.website/advertex/"
   },
   {
-    "Id": 11,
+    "Id": 10,
     "Name": "Yeezypay",
     "Type": "nofw",
     "Img": "nofw/yeezypay.jpg",
