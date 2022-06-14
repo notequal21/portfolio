@@ -1,57 +1,36 @@
 .header {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+
   &Body {
-    height: 60px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    // &__logo {
-    //   a {
-    //     color: #000;
-    //   }
-    // }
-  }
-  &Btns {
-    display: flex;
-    div {
-      margin: 0 0 0 50px;
-      @media (max-width:767px) {
-        margin: 0 0 0 20px;
-      }
-      &:first-child {
-        margin: 0;
+    justify-content: space-between;
+
+    &__github {
+      display: flex;
+      align-items: center;
+      font-size: 22px;
+      color: #000;
+
+      img {
+        margin: 0 10px 0 0;
       }
     }
-    a {
-      margin: 0 0 0 50px;
-      @media (max-width:767px) {
-        margin: 0 0 0 20px;
-      }
-      &:first-child {
-        margin: 0;
+
+    &__menu {
+      display: flex;
+      align-items: center;
+
+      &Item {
+        font-size: 18px;
+        color: #000;
+
+        &:not(:first-child) {
+          margin: 0 0 0 50px;
+        }
       }
     }
-  }
-}
-
-.loader {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  z-index: 111111;
-  border-radius: 50%;
-  background-color: #1378ef;
-  animation: loader 1s;
-  // transition: all 1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0s;
-}
-
-@keyframes loader {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(200, 200);
-  }
-  100% {
-    transform: scale(0);
   }
 }

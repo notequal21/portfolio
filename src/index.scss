@@ -1,117 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import 'normalize.css';
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
-  margin: 0;
-  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  //   sans-serif;
-	font-family: 'Montserrat';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: roboto;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
-
-*{
-	padding: 0;
-	margin: 0;
-	border: 0;
-	cursor: none !important;
-	&:hover {
-		cursor: none !important;
-	}
-}
-*,*:before,*:after{
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
-
-nav,footer,header,aside{display: block;}
-
-html,body{
-	height: 100%;
-	width: 100%;
-	font-size: 100%;
-	line-height: 1;
-	font-size: 14px;
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
-input,button,textarea{font-family:inherit;}
-
-input::-ms-clear{display: none;}
-button{cursor: pointer;}
-button::-moz-focus-inner {padding:0;border:0;}
-a, a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style: none;}
-img{vertical-align: top;}
-
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
-
 
 .container {
-	max-width: 1530px;
+  // max-width: 1470px;
+  max-width: 2590px;
   margin: 0 auto;
   padding: 0 15px;
-}
 
+  &.small {
+    max-width: 1310px;
 
-.cursor {
-  position: fixed;
-  background: #1378ef;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  user-select: none;
-  pointer-events: none;
-  z-index: 1111;
-  transform: scale(1) translate(-2px, -2px);
-  transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
-  &.active {
-    transform: scale(0);
+    @media (min-width:1440px) {
+      padding: 0 15px;
+    }
   }
-	&.hidden {
-		opacity: 0;
-		visibility: hidden;
-	}
-}
-.follower {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #1378ef;
-  border-radius: 100%;
-  user-select: none;
-  pointer-events: none;
-  z-index: 1111;
-  transform: scale(1);
-  transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform, .2s cubic-bezier(.75, -0.27, .3, 1.33) background;
-  &.active {
-    transform: scale(2);
-    background: #1378ef;
-		z-index: 0;
+
+  @media (min-width:1440px) {
+    padding: 0 50px;
   }
-	&.hidden {
-		opacity: 0;
-		visibility: hidden;
-	}
 }
 
-@media (max-width: 767px) {
-	.cursor {
-		display: none;
-	}
-	.follower {
-		display: none;
-	}
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 1 auto;
 }
