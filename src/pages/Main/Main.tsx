@@ -1,6 +1,16 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper';
 import s from "./Main.module.scss"
+import './Slider.scss';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import projects from "../../store/projects.json"
+import reviews from "../../store/reviews.json"
+import { PortfolioItem } from '../Portfolio/Portfolio';
 
 const Main = () => {
+
   return (
     <>
       <MainContent />
@@ -11,6 +21,13 @@ const Main = () => {
 }
 
 const MainContent = () => {
+
+  const projectsListSlider = projects.map(item =>
+    <SwiperSlide key={item.Id}>
+      <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
+    </SwiperSlide>
+  ).reverse()
+
   return (
     <>
       <div className={s.main}>
@@ -48,7 +65,26 @@ const MainContent = () => {
             </div>
             <div className={s.mainBody__col}>
               <div className={s.mainBody__colSlider}>
-
+                <Swiper
+                  modules={[Autoplay, Navigation, Pagination]}
+                  className={s.slider}
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                  }}
+                  navigation
+                  loop
+                  pagination={{
+                    clickable: true,
+                    bulletClass: s.bullet,
+                    bulletActiveClass: s.bulletActive,
+                    modifierClass: 'bullet__list',
+                  }}
+                >
+                  {projectsListSlider}
+                </Swiper>
               </div>
             </div>
           </div>
@@ -59,6 +95,18 @@ const MainContent = () => {
 }
 
 const Advantages = () => {
+  const reviewsItems = reviews.map(item =>
+    <SwiperSlide key={item.Id}>
+      <div className={s.review}>
+        <span className={s.reviewName}>
+          {item.Name}
+        </span>
+        <span className={s.reviewContent}>
+          “{item.Content}”
+        </span>
+      </div>
+    </SwiperSlide>
+  )
   return (
     <>
       <div className={s.advantages}>
@@ -95,7 +143,28 @@ const Advantages = () => {
             </div>
             <div className={s.advantagesBody__col}>
               <div className={s.advantagesBody__colSlider}>
-
+                <Swiper
+                  modules={[Autoplay, Navigation, Pagination]}
+                  className={s.slider}
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }}
+                  autoHeight
+                  navigation
+                  grabCursor
+                  loop
+                  pagination={{
+                    clickable: true,
+                    bulletClass: `${s.bullet} ${s.bulletLight}`,
+                    bulletActiveClass: s.bulletActive,
+                    modifierClass: 'bullet__list-light',
+                  }}
+                >
+                  {reviewsItems}
+                </Swiper>
               </div>
             </div>
           </div>

@@ -21,14 +21,20 @@ const Portfolio = () => {
   )
 }
 
-const PortfolioItem = ({ link, img, name }: any) => {
+export const PortfolioItem = ({ link, img, name, isSlider }: any) => {
+  console.log(isSlider);
+
   return (
     <>
       <a
         target='_blank'
         rel='noreferrer'
         href={link}
-        className={s.portfolioBody__item}>
+        className={`
+        link
+        ${s.portfolioBody__item} 
+        ${isSlider ? s.slider : ''}
+        `}>
         <img src={`./assets/img/${img}`} alt="" />
         <span>{name}</span>
       </a>

@@ -12,6 +12,12 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+
+  cursor: none !important;
+
+  &:hover {
+    cursor: none !important;
+  }
 }
 
 :focus,
@@ -127,4 +133,65 @@ body {
 
 .content {
   flex: 1 1 auto;
+}
+
+.cursor {
+  position: fixed;
+  background: #1378ef;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1111;
+  transform: scale(1) translate(-2px, -2px);
+  transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+
+  &.active {
+    transform: scale(0);
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.link {
+  position: relative;
+  z-index: 1;
+}
+
+.follower {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #1378ef;
+  border-radius: 100%;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1111;
+  transform: scale(1);
+  transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform, .2s cubic-bezier(.75, -0.27, .3, 1.33) background;
+
+  &.active {
+    transform: scale(2);
+    background: #1378ef;
+    z-index: 0;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  .cursor {
+    display: none;
+  }
+
+  .follower {
+    display: none;
+  }
 }

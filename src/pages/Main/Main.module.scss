@@ -59,12 +59,59 @@
 
       &Slider {
         width: 100%;
-        max-width: 500px;
-        height: 300px;
-        background-color: rgb(167, 167, 167);
+        max-width: 600px;
+        height: 0;
+        background-color: #1378EF;
+        border: 1px solid #1378ef;
         margin: 0 0 0 auto;
+        position: relative;
+        padding: 0 0 50%;
+        transition: all .3s ease;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &:hover {
+          transform: scale(1.05);
+          border-radius: 15px;
+        }
+
+        .slider {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
+  }
+}
+
+.bullet {
+  cursor: pointer;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: .7;
+
+  &:not(:first-child) {
+    margin: 0 0 0 10px;
+  }
+
+  &Light {
+    background-color: #000;
+    opacity: .4;
+  }
+
+  &Active {
+    width: 30px;
+    height: 10px;
+    border-radius: 50px;
+    transition: all .3s ease;
+    background-color: #1378EF;
+    opacity: 1;
   }
 }
 
@@ -137,10 +184,31 @@
 
       &Slider {
         width: 100%;
-        max-width: 500px;
-        height: 175px;
-        background-color: rgb(167, 167, 167);
+        max-width: 600px;
         margin: 0 0 0 auto;
+
+        .slider {
+          padding: 0 0 30px;
+        }
+
+        .review {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          &Name {
+            display: block;
+            font-size: 22px;
+          }
+
+          &Content {
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            margin: 15px 0 0;
+            padding: 0 50px;
+          }
+        }
       }
 
       &Stack {
