@@ -22,7 +22,6 @@ const Portfolio = () => {
 }
 
 export const PortfolioItem = ({ link, img, name, isSlider }: any) => {
-  console.log(isSlider);
 
   return (
     <>
@@ -31,7 +30,6 @@ export const PortfolioItem = ({ link, img, name, isSlider }: any) => {
         rel='noreferrer'
         href={link}
         className={`
-        link
         ${s.portfolioBody__item} 
         ${isSlider ? s.slider : ''}
         `}>
