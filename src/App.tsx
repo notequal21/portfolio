@@ -92,8 +92,8 @@ function App() {
 
           <div className={s.content}>
             <Routes>
-              <Route path="/" element={<Portfolio />} />
-              <Route path="/main" element={<Main />} />
+              <Route path="/" element={<Main />} />
+              <Route path="/portfolio" element={<Portfolio />} />
             </Routes>
           </div>
         </div>
