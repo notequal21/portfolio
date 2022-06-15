@@ -16,6 +16,16 @@
       transition: all .3s ease;
       border-radius: 5px;
 
+      @media (max-width:992px) {
+        flex: 0 0 calc(50% - 15px);
+        padding: 0 0 24%;
+      }
+
+      @media (max-width:545px) {
+        flex: 0 0 100%;
+        padding: 0 0 50%;
+      }
+
       &.slider {
         border: none;
 

@@ -2,8 +2,19 @@
   &Body {
     display: flex;
 
+    @media (max-width:992px) {
+      flex-direction: column;
+    }
+
     &__col {
       flex: 0 0 50%;
+
+      @media (max-width:992px) {
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
       &Hello {
         font-size: 40px;
@@ -39,7 +50,6 @@
 
           li {
             display: flex;
-            // align-items: center;
 
             &:not(:first-child) {
               margin: 10px 0 0;
@@ -50,7 +60,6 @@
               display: block;
               width: 10px;
               height: 10px;
-              // background-color: #969696;
               margin: 0 15px 0 0;
             }
           }
@@ -69,6 +78,10 @@
         transition: all .3s ease;
         border-radius: 5px;
         overflow: hidden;
+
+        @media (max-width:992px) {
+          margin: 50px auto 0;
+        }
 
         &:hover {
           transform: scale(1.05);
@@ -118,16 +131,39 @@
 .advantages {
   margin: 150px 0 0;
 
+  @media (max-width:767px) {
+    margin: 100px 0 0;
+  }
+
   &.about {
     .advantagesBody {
       align-items: flex-start;
       justify-content: space-between;
 
+      @media (max-width:992px) {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+      }
+
       &__col {
+        &:nth-child(1) {
+          @media (max-width:992px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: center;
+          }
+        }
+
         &:nth-child(2) {
           // margin: 0 0 0 150px;
           padding: 0 0 0 50px;
           max-width: 500px;
+
+          @media (max-width:992px) {
+            margin: 50px 0 0;
+          }
         }
       }
     }
@@ -137,8 +173,19 @@
     display: flex;
     align-items: center;
 
+    @media (max-width:992px) {
+      flex-direction: column;
+    }
+
     &__col {
       flex: 0 0 50%;
+
+      @media (max-width:992px) {
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
       &Title {
         font-size: 36px;
@@ -186,6 +233,14 @@
         width: 100%;
         max-width: 600px;
         margin: 0 0 0 auto;
+
+        @media (max-width:992px) {
+          margin: 50px auto 0;
+        }
+
+        @media (max-width:767px) {
+          max-width: 100vw;
+        }
 
         .slider {
           padding: 0 0 30px;

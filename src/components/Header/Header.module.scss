@@ -17,6 +17,15 @@
       img {
         margin: 0 10px 0 0;
       }
+
+      @media (max-width:767px) {
+        font-size: 18px;
+
+        img {
+          width: 22px;
+          margin: 0 5px 0 0;
+        }
+      }
     }
 
     &__menu {
@@ -29,6 +38,14 @@
 
         &:not(:first-child) {
           margin: 0 0 0 50px;
+        }
+
+        @media (max-width:767px) {
+          font-size: 16px;
+
+          &:not(:first-child) {
+            margin: 0 0 0 20px;
+          }
         }
       }
     }
