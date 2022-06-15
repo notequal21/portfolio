@@ -8,6 +8,7 @@ import 'swiper/css/pagination';
 import projects from "../../store/projects.json"
 import reviews from "../../store/reviews.json"
 import { PortfolioItem } from '../Portfolio/Portfolio';
+import { useCallback, useEffect, useState } from 'react';
 
 const Main = () => {
 
@@ -22,11 +23,30 @@ const Main = () => {
 
 const MainContent = () => {
 
+  const [currentDate, setCurrentDate] = useState(new Date(Date.now()).getHours())
+  const [helloWord, setHelloWord] = useState('Здравствуйте!')
+
+  const setCurrentTime = useCallback(() => {
+    setCurrentDate(new Date(Date.now()).getHours())
+    if (currentDate >= 6 && currentDate <= 12) {
+      setHelloWord('⛅ Доброе утро!')
+    } else if (currentDate >= 12 && currentDate <= 18) {
+      setHelloWord('🌞 Добрый день!')
+    } else if (currentDate >= 18 && currentDate <= 24) {
+      setHelloWord('🌆 Добрый вечер!')
+    } else {
+      setHelloWord('👋 Здравствуйте!')
+    }
+  }, [currentDate])
   const projectsListSlider = projects.map(item =>
     <SwiperSlide key={item.Id}>
       <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
     </SwiperSlide>
   ).reverse()
+
+  useEffect(() => {
+    setCurrentTime()
+  }, [setCurrentDate, currentDate, setCurrentTime])
 
   return (
     <>
@@ -35,7 +55,7 @@ const MainContent = () => {
           <div className={s.mainBody}>
             <div className={s.mainBody__col}>
               <div className={s.mainBody__colHello}>
-                Добрый день!
+                {helloWord}
               </div>
               <div className={s.mainBody__colIm}>
                 <span>Я</span> Кирилл Махнёв

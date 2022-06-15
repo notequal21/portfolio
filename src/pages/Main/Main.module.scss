@@ -39,19 +39,19 @@
 
           li {
             display: flex;
-            align-items: center;
+            // align-items: center;
 
             &:not(:first-child) {
               margin: 10px 0 0;
             }
 
             &::before {
-              content: '';
+              content: '🔥';
               display: block;
               width: 10px;
               height: 10px;
-              background-color: #969696;
-              margin: 0 10px 0 0;
+              // background-color: #969696;
+              margin: 0 15px 0 0;
             }
           }
         }
@@ -151,19 +151,19 @@
         li {
           font-size: 18px;
           display: flex;
-          align-items: center;
+          // align-items: center;
 
           &:not(:first-child) {
             margin: 10px 0 0;
           }
 
           &::before {
-            content: '';
+            content: '✅';
             display: block;
             width: 10px;
             height: 10px;
-            background-color: #969696;
-            margin: 0 10px 0 0;
+            // background-color: #969696;
+            margin: 0 20px 0 0;
           }
         }
       }
@@ -217,18 +217,18 @@
 
         li {
           display: flex;
-          align-items: center;
+          // align-items: center;
 
           &:not(:first-child) {
             margin: 10px 0 0;
           }
 
           &::before {
-            content: '';
+            content: '-';
             display: block;
             width: 10px;
             height: 10px;
-            background-color: #969696;
+            // background-color: #969696;
             margin: 0 10px 0 0;
           }
         }
