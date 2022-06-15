@@ -1,0 +1,13 @@
+.bullet__listbullets {
+  display: flex;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%) translate3d(0, 0, 0) !important;
+}
+
+.bullet__list-lightbullets {
+  display: flex;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%) translate3d(0, 0, 0) !important;
+}
