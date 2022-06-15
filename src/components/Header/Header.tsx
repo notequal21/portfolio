@@ -30,7 +30,7 @@ const Header = ({ withLoader, isLoader, ...props }: any) => {
                   withLoader(e.clientX, e.clientY)
 
                   setTimeout(() => {
-                    navigate('main')
+                    navigate('/')
                     window.scrollTo({
                       top: 0,
                       behavior: 'smooth'
@@ -45,7 +45,7 @@ const Header = ({ withLoader, isLoader, ...props }: any) => {
                   withLoader(e.clientX, e.clientY)
 
                   setTimeout(() => {
-                    navigate('/')
+                    navigate('portfolio')
                     window.scrollTo({
                       top: 0,
                       behavior: 'smooth'
