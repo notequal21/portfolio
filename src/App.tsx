@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import s from "./App.module.scss";
 import Main from "./pages/Main/Main";
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { gsap } from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoaderPos, toggleLoader } from "./store/loader";
@@ -11,8 +11,8 @@ import { setLoaderPos, toggleLoader } from "./store/loader";
 function App() {
 
   const isLoader = useSelector((state: any) => state.loader.isLoader)
-  const loaderX = useSelector((state: any) => state.loader.pos.x)
-  const loaderY = useSelector((state: any) => state.loader.pos.y)
+  // const loaderX = useSelector((state: any) => state.loader.pos.x)
+  // const loaderY = useSelector((state: any) => state.loader.pos.y)
   const dispatch = useDispatch()
 
   const withLoader = (x: any, y: any) => {
@@ -23,10 +23,11 @@ function App() {
     }, 1000)
   }
 
-  let changeCursor = () => {
+  let changeCursor = useCallback(() => {
     const cursor = document.querySelector(`.cursor`)
     const follower = document.querySelector(`.follower`)
     let links = document.querySelectorAll(`.link`)
+    let portfolioLinks = document.querySelectorAll(`.portfolioLink`)
 
     let posX = 0
     let posY = 0
@@ -61,7 +62,7 @@ function App() {
       mouseY = e.clientY
     })
 
-    links.forEach(link => {
+    links.forEach((link: any) => {
       link.addEventListener('mouseenter', () => {
         cursor?.classList.add('active')
         follower?.classList.add('active')
@@ -71,13 +72,20 @@ function App() {
         follower?.classList.remove('active')
       })
     })
-  }
-
+    portfolioLinks.forEach((link: any) => {
+      link.addEventListener('mouseenter', () => {
+        cursor?.classList.add('active')
+        follower?.classList.add('activePortfolio')
+      })
+      link.addEventListener('mouseleave', () => {
+        cursor?.classList.remove('active')
+        follower?.classList.remove('activePortfolio')
+      })
+    })
+  }, [isLoader])
   useEffect(() => {
-    setInterval(() => {
-    }, 1000)
     changeCursor()
-  }, [])
+  }, [changeCursor])
 
   return (
     <>

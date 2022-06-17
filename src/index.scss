@@ -12,7 +12,12 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
 
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
   cursor: none !important;
 
   &:hover {
@@ -157,7 +162,7 @@ body {
   }
 }
 
-.link {
+.link .portfolioLink {
   position: relative;
   z-index: 1;
 }
@@ -178,6 +183,11 @@ body {
     transform: scale(2);
     background: #1378ef;
     z-index: 0;
+  }
+
+  &.activePortfolio {
+    transform: scale(2);
+    background: #1378ef;
   }
 
   &.hidden {

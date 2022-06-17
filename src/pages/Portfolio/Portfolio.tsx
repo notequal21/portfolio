@@ -30,6 +30,7 @@ export const PortfolioItem = ({ link, img, name, isSlider }: any) => {
         rel='noreferrer'
         href={link}
         className={`
+        portfolioLink
         ${s.portfolioBody__item} 
         ${isSlider ? s.slider : ''}
         `}>
