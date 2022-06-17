@@ -13,6 +13,17 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
+  // cursor: none !important;
+
+  // &:hover {
+  //   cursor: none !important;
+  // }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
   cursor: none !important;
 
   &:hover {
