@@ -71,27 +71,34 @@
   },
   {
     "Id": 10,
+    "Name": "BotSwap",
+    "Type": "react",
+    "Img": "react/botswap",
+    "Link": "botswap.app/"
+  },
+  {
+    "Id": 11,
     "Name": "Code Metal",
     "Type": "nofw",
     "Img": "nofw/metal",
     "Link": "http://demo.notequal.website/metal/sitemap.html"
   },
   {
-    "Id": 11,
+    "Id": 12,
     "Name": "CruxBits",
     "Type": "react",
     "Img": "react/cruxbits",
     "Link": "http://crux.digit-nova.com/"
   },
   {
-    "Id": 12,
+    "Id": 13,
     "Name": "Paradox - landing",
     "Type": "vue",
     "Img": "vue/paradox-index",
     "Link": "https://paradox.notequal.website/"
   },
   {
-    "Id": 13,
+    "Id": 14,
     "Name": "Paradox - dashboard",
     "Type": "vue",
     "Img": "vue/paradox-dashboard",
