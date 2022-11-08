@@ -3,70 +3,105 @@
     "Id": 0,
     "Name": "Luftbase",
     "Type": "nofw",
-    "Img": "nofw/luftbase.jpg",
+    "Img": "nofw/luftbase",
     "Link": "https://demo.notequal.website/luftbase/"
   },
   {
     "Id": 1,
     "Name": "Pixture",
     "Type": "nofw",
-    "Img": "nofw/pixture.jpg",
+    "Img": "nofw/pixture",
     "Link": "https://demo.notequal.website/pixture/"
   },
   {
     "Id": 2,
-    "Name": "SmartPay",
+    "Name": "Will Towers",
     "Type": "nofw",
-    "Img": "nofw/smartpay.jpg",
-    "Link": "https://demo.notequal.website/smartpay/"
+    "Img": "nofw/willtowers",
+    "Link": "https://willtowers.ru/"
   },
   {
     "Id": 3,
-    "Name": "LCS",
+    "Name": "SmartPay",
     "Type": "nofw",
-    "Img": "nofw/lcs.jpg",
-    "Link": "https://demo.notequal.website/lcs/"
+    "Img": "nofw/smartpay",
+    "Link": "https://demo.notequal.website/smartpay/"
   },
   {
     "Id": 4,
-    "Name": "NFTop",
+    "Name": "LCS",
     "Type": "nofw",
-    "Img": "nofw/nftop.jpg",
-    "Link": "https://demo.notequal.website/NFTop/"
+    "Img": "nofw/lcs",
+    "Link": "https://demo.notequal.website/lcs/"
   },
   {
     "Id": 5,
-    "Name": "Cool Girls NFT",
-    "Type": "react",
-    "Img": "react/coolgirls.jpg",
-    "Link": "https://demo.notequal.website/coolgirls/"
+    "Name": "NFTop",
+    "Type": "nofw",
+    "Img": "nofw/nftop",
+    "Link": "https://demo.notequal.website/NFTop/"
   },
   {
     "Id": 6,
     "Name": "Weather Check",
     "Type": "vue",
-    "Img": "vue/weathercheck.jpg",
+    "Img": "vue/weathercheck",
     "Link": "https://demo.notequal.website/weather-vue/"
   },
   {
     "Id": 7,
     "Name": "NFT Banker",
     "Type": "nofw",
-    "Img": "nofw/nftbanker.jpg",
+    "Img": "nofw/nftbanker",
     "Link": "https://demo.notequal.website/nftbanker/"
   },
   {
     "Id": 8,
     "Name": "Advertex",
     "Type": "nofw",
-    "Img": "nofw/advertex.jpg",
+    "Img": "nofw/advertex",
     "Link": "https://demo.notequal.website/advertex/"
   },
   {
     "Id": 9,
-    "Name": "Yeezypay",
+    "Name": "Atlant",
     "Type": "nofw",
-    "Img": "nofw/yeezypay.jpg",
-    "Link": "https://demo.notequal.website/yeezypay/sitemap.html"
+    "Img": "nofw/atlant",
+    "Link": "https://demo.notequal.website/inproc/sitemap.html"
+  },
+  {
+    "Id": 10,
+    "Name": "BotSwap",
+    "Type": "react",
+    "Img": "react/botswap",
+    "Link": "botswap.app/"
+  },
+  {
+    "Id": 11,
+    "Name": "Code Metal",
+    "Type": "nofw",
+    "Img": "nofw/metal",
+    "Link": "http://demo.notequal.website/metal/sitemap.html"
+  },
+  {
+    "Id": 12,
+    "Name": "CruxBits",
+    "Type": "react",
+    "Img": "react/cruxbits",
+    "Link": "http://crux.digit-nova.com/"
+  },
+  {
+    "Id": 13,
+    "Name": "Paradox - landing",
+    "Type": "vue",
+    "Img": "vue/paradox-index",
+    "Link": "https://paradox.notequal.website/"
+  },
+  {
+    "Id": 14,
+    "Name": "Paradox - dashboard",
+    "Type": "vue",
+    "Img": "vue/paradox-dashboard",
+    "Link": "https://paradox.notequal.website/overview"
   }
 ]

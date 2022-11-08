@@ -34,7 +34,16 @@ export const PortfolioItem = ({ link, img, name, isSlider }: any) => {
         ${s.portfolioBody__item} 
         ${isSlider ? s.slider : ''}
         `}>
-        <img src={`./assets/img/${img}`} alt="" />
+        <picture>
+          <source type="image/webp" srcSet={`./assets/img/${img}.webp`} />
+          <source type="image/jpeg" srcSet={`./assets/img/${img}.jpg`} />
+          <img src={`./assets/img/${img}.jpg`} alt="" />
+        </picture>
+        {/* <picture>
+  <source type="image/webp" srcset="image.webp">
+  <source type="image/jpeg" srcset="image.jpg">
+  <img src="image.jpg" alt="Изображение">
+</picture> */}
         <span>{name}</span>
       </a>
     </>
