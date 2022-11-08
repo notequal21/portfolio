@@ -3,6 +3,7 @@ import projects from "../../store/projects.json"
 
 const Portfolio = () => {
 
+  // List of protfolio items
   const projectsList = projects.map(item =>
     <PortfolioItem key={item.Id} name={item.Name} img={item.Img} link={item.Link} />
   ).reverse()
@@ -39,11 +40,6 @@ export const PortfolioItem = ({ link, img, name, isSlider }: any) => {
           <source type="image/jpeg" srcSet={`./assets/img/${img}.jpg`} />
           <img src={`./assets/img/${img}.jpg`} alt="" />
         </picture>
-        {/* <picture>
-  <source type="image/webp" srcset="image.webp">
-  <source type="image/jpeg" srcset="image.jpg">
-  <img src="image.jpg" alt="Изображение">
-</picture> */}
         <span>{name}</span>
       </a>
     </>
