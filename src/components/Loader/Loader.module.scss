@@ -4,7 +4,7 @@
   height: 30px;
   z-index: 111111;
   border-radius: 50%;
-  background-color: #1378ef;
+  background-color: var(--primary-color);
   animation: loader 1s;
 
   @media (max-width:767px) {
