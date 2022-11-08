@@ -23,9 +23,11 @@ const Main = () => {
 
 const MainContent = () => {
 
+  // Hello word vars
   const [currentDate, setCurrentDate] = useState(new Date(Date.now()).getHours())
   const [helloWord, setHelloWord] = useState('Здравствуйте!')
 
+  // Set hello word
   const setCurrentTime = useCallback(() => {
     setCurrentDate(new Date(Date.now()).getHours())
     if (currentDate >= 6 && currentDate <= 12) {
@@ -38,6 +40,7 @@ const MainContent = () => {
       setHelloWord('👋 Здравствуйте!')
     }
   }, [currentDate])
+  // Slider for main screen 
   const projectsListSlider = projects.map(item =>
     <SwiperSlide key={item.Id}>
       <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
@@ -115,6 +118,7 @@ const MainContent = () => {
 }
 
 const Advantages = () => {
+  // Reviews slider
   const reviewsItems = reviews.map(item =>
     <SwiperSlide key={item.Id}>
       <div className={s.review}>
