@@ -11,10 +11,9 @@ import { setLoaderPos, toggleLoader } from "./store/loader";
 function App() {
 
   const isLoader = useSelector((state: any) => state.loader.isLoader)
-  // const loaderX = useSelector((state: any) => state.loader.pos.x)
-  // const loaderY = useSelector((state: any) => state.loader.pos.y)
   const dispatch = useDispatch()
 
+  // Loader for change page
   const withLoader = (x: any, y: any) => {
     dispatch(toggleLoader())
     dispatch(setLoaderPos({ x, y }))
@@ -23,6 +22,7 @@ function App() {
     }, 1000)
   }
 
+  // Custom cursor
   let changeCursor = useCallback(() => {
     const cursor = document.querySelector(`.cursor`)
     const follower = document.querySelector(`.follower`)
@@ -83,7 +83,9 @@ function App() {
       })
     })
   }, [isLoader])
+
   useEffect(() => {
+    // custom cursor
     changeCursor()
   }, [changeCursor])
 
