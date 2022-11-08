@@ -146,7 +146,7 @@ body {
 // Cusrom cursor
 .cursor {
   position: fixed;
-  background: #1378ef;
+  background: var(--primary-color);
   width: 10px;
   height: 10px;
   border-radius: 100%;
@@ -175,7 +175,7 @@ body {
   position: fixed;
   width: 30px;
   height: 30px;
-  border: 1px solid #1378ef;
+  border: 1px solid var(--primary-color);
   border-radius: 100%;
   user-select: none;
   pointer-events: none;
@@ -185,13 +185,13 @@ body {
 
   &.active {
     transform: scale(2);
-    background: #1378ef;
+    background: var(--primary-color);
     z-index: 0;
   }
 
   &.activePortfolio {
     transform: scale(2);
-    background: #1378ef;
+    background: var(--primary-color);
   }
 
   &.hidden {

@@ -18,7 +18,7 @@
 
       &Hello {
         font-size: 40px;
-        color: #000000;
+        color: var(--primary-font-color);
       }
 
       &Im {
@@ -70,8 +70,8 @@
         width: 100%;
         max-width: 600px;
         height: 0;
-        background-color: #1378EF;
-        border: 1px solid #1378ef;
+        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
         margin: 0 0 0 auto;
         position: relative;
         padding: 0 0 50%;
@@ -123,7 +123,7 @@
     height: 10px;
     border-radius: 50px;
     transition: all .3s ease;
-    background-color: #1378EF;
+    background-color: var(--primary-color);
     opacity: 1;
   }
 }
@@ -272,7 +272,6 @@
 
         li {
           display: flex;
-          // align-items: center;
 
           &:not(:first-child) {
             margin: 10px 0 0;
@@ -283,7 +282,6 @@
             display: block;
             width: 10px;
             height: 10px;
-            // background-color: #969696;
             margin: 0 10px 0 0;
           }
         }

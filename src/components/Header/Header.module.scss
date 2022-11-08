@@ -12,7 +12,7 @@
       display: flex;
       align-items: center;
       font-size: 22px;
-      color: #000;
+      color: var(--primary-font-color);
 
       img {
         margin: 0 10px 0 0;
@@ -34,7 +34,7 @@
 
       &Item {
         font-size: 18px;
-        color: #000;
+        color: var(--primary-font-color);
 
         &:not(:first-child) {
           margin: 0 0 0 50px;
