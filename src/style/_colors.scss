@@ -1,4 +1,6 @@
 :root {
   --primary-color: #00cd5e; // 1378ef
   --primary-font-color: #000;
+
+  @media (prefers-color-scheme: light) {}
 }
