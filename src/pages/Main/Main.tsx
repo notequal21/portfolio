@@ -42,13 +42,14 @@ const MainContent = () => {
   }, [currentDate])
 
   // Slider for main screen 
-  const projectsListSlider = projects.map(item =>
-    item.IsBest ?
-      <SwiperSlide key={item.Id}>
-        <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
-      </SwiperSlide>
-      : null
+  const projectsListFiltered = projects.filter(item =>
+    item.IsBest
   ).reverse()
+
+  const projectsListSlider = projectsListFiltered.map(item =>
+    <SwiperSlide key={item.Id}>
+      <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
+    </SwiperSlide>)
 
   useEffect(() => {
     setCurrentTime()
