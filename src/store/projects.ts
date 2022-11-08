@@ -10,6 +10,20 @@ const initialState = [
   },
   {
     "IsBest": false,
+    "Name": "GetPort",
+    "Type": "nofw",
+    "Img": "nofw/getport",
+    "Link": "https://demo.notequal.website/get-port/"
+  },
+  {
+    "IsBest": false,
+    "Name": "Yeezypay - finance",
+    "Type": "nofw",
+    "Img": "nofw/yeezypay-finance",
+    "Link": "http://demo.notequal.website/yeezypay_finance/"
+  },
+  {
+    "IsBest": false,
     "Name": "Pixture",
     "Type": "nofw",
     "Img": "nofw/pixture",
@@ -52,10 +66,24 @@ const initialState = [
   },
   {
     "IsBest": false,
+    "Name": "Yeezypay",
+    "Type": "nofw",
+    "Img": "nofw/yeezypay",
+    "Link": "https://demo.notequal.website/yeezypay/sitemap.html"
+  },
+  {
+    "IsBest": false,
     "Name": "NFT Banker",
     "Type": "nofw",
     "Img": "nofw/nftbanker",
     "Link": "https://demo.notequal.website/nftbanker/"
+  },
+  {
+    "IsBest": false,
+    "Name": "Yeezypay - conf",
+    "Type": "nofw",
+    "Img": "nofw/yeezypay-conf",
+    "Link": "http://demo.notequal.website/yeezypay_conf/"
   },
   {
     "IsBest": false,
