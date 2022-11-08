@@ -1,10 +1,11 @@
+import { useSelector } from "react-redux"
 import s from "./Portfolio.module.scss"
-import projects from "../../store/projects.json"
 
 const Portfolio = () => {
 
   // List of protfolio items
-  const projectsList = projects.map(item =>
+  const projectsListState = useSelector((state: any) => state.projects)
+  const projectsList = projectsListState.map((item: any) =>
     <PortfolioItem key={item.Id} name={item.Name} img={item.Img} link={item.Link} />
   ).reverse()
 
