@@ -1,6 +1,7 @@
 [
   {
     "Id": 0,
+    "IsBest": false,
     "Name": "Luftbase",
     "Type": "nofw",
     "Img": "nofw/luftbase",
@@ -8,6 +9,7 @@
   },
   {
     "Id": 1,
+    "IsBest": false,
     "Name": "Pixture",
     "Type": "nofw",
     "Img": "nofw/pixture",
@@ -15,6 +17,7 @@
   },
   {
     "Id": 2,
+    "IsBest": false,
     "Name": "Will Towers",
     "Type": "nofw",
     "Img": "nofw/willtowers",
@@ -22,6 +25,7 @@
   },
   {
     "Id": 3,
+    "IsBest": false,
     "Name": "SmartPay",
     "Type": "nofw",
     "Img": "nofw/smartpay",
@@ -29,6 +33,7 @@
   },
   {
     "Id": 4,
+    "IsBest": false,
     "Name": "LCS",
     "Type": "nofw",
     "Img": "nofw/lcs",
@@ -36,6 +41,7 @@
   },
   {
     "Id": 5,
+    "IsBest": false,
     "Name": "NFTop",
     "Type": "nofw",
     "Img": "nofw/nftop",
@@ -43,6 +49,7 @@
   },
   {
     "Id": 6,
+    "IsBest": false,
     "Name": "Weather Check",
     "Type": "vue",
     "Img": "vue/weathercheck",
@@ -50,6 +57,7 @@
   },
   {
     "Id": 7,
+    "IsBest": false,
     "Name": "NFT Banker",
     "Type": "nofw",
     "Img": "nofw/nftbanker",
@@ -57,6 +65,7 @@
   },
   {
     "Id": 8,
+    "IsBest": false,
     "Name": "Advertex",
     "Type": "nofw",
     "Img": "nofw/advertex",
@@ -64,6 +73,7 @@
   },
   {
     "Id": 9,
+    "IsBest": false,
     "Name": "Atlant",
     "Type": "nofw",
     "Img": "nofw/atlant",
@@ -71,6 +81,7 @@
   },
   {
     "Id": 10,
+    "IsBest": true,
     "Name": "BotSwap",
     "Type": "react",
     "Img": "react/botswap",
@@ -78,6 +89,7 @@
   },
   {
     "Id": 11,
+    "IsBest": true,
     "Name": "Code Metal",
     "Type": "nofw",
     "Img": "nofw/metal",
@@ -85,6 +97,7 @@
   },
   {
     "Id": 12,
+    "IsBest": true,
     "Name": "CruxBits",
     "Type": "react",
     "Img": "react/cruxbits",
@@ -92,6 +105,7 @@
   },
   {
     "Id": 13,
+    "IsBest": true,
     "Name": "Paradox - landing",
     "Type": "vue",
     "Img": "vue/paradox-index",
@@ -99,6 +113,7 @@
   },
   {
     "Id": 14,
+    "IsBest": true,
     "Name": "Paradox - dashboard",
     "Type": "vue",
     "Img": "vue/paradox-dashboard",

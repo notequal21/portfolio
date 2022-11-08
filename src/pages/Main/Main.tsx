@@ -40,11 +40,14 @@ const MainContent = () => {
       setHelloWord('👋 Здравствуйте!')
     }
   }, [currentDate])
+
   // Slider for main screen 
   const projectsListSlider = projects.map(item =>
-    <SwiperSlide key={item.Id}>
-      <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
-    </SwiperSlide>
+    item.IsBest ?
+      <SwiperSlide key={item.Id}>
+        <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
+      </SwiperSlide>
+      : null
   ).reverse()
 
   useEffect(() => {
