@@ -106,6 +106,8 @@ function App() {
               <Route path="/portfolio" element={<Portfolio />} />
             </Routes>
           </div>
+
+          <Header withLoader={withLoader} isLoader={isLoader} />
         </div>
       </div>
     </>
