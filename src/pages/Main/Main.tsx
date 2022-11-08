@@ -5,10 +5,10 @@ import './Slider.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import projects from "../../store/projects.json"
 import reviews from "../../store/reviews.json"
 import { PortfolioItem } from '../Portfolio/Portfolio';
 import { useCallback, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Main = () => {
 
@@ -22,7 +22,6 @@ const Main = () => {
 }
 
 const MainContent = () => {
-
   // Hello word vars
   const [currentDate, setCurrentDate] = useState(new Date(Date.now()).getHours())
   const [helloWord, setHelloWord] = useState('Здравствуйте!')
@@ -42,11 +41,8 @@ const MainContent = () => {
   }, [currentDate])
 
   // Slider for main screen 
-  const projectsListFiltered = projects.filter(item =>
-    item.IsBest
-  ).reverse()
-
-  const projectsListSlider = projectsListFiltered.map(item =>
+  const projectsListFiltered = useSelector((state: any) => state.projects.filter((item: any) => item.IsBest))
+  const projectsListSlider = projectsListFiltered.map((item: any) =>
     <SwiperSlide key={item.Id}>
       <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
     </SwiperSlide>)
