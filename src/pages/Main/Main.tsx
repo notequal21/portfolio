@@ -41,8 +41,8 @@ const MainContent = () => {
 
   // Slider for main screen 
   const projectsListStateFiltered = useSelector((state: any) => state.projects.filter((item: any) => item.IsBest))
-  const projectsListSlider = projectsListStateFiltered.map((item: any) =>
-    <SwiperSlide key={item.Id}>
+  const projectsListSlider = projectsListStateFiltered.map((item: any, index: number) =>
+    <SwiperSlide key={index}>
       <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
     </SwiperSlide>)
 
@@ -119,8 +119,8 @@ const MainContent = () => {
 const Advantages = () => {
   // Reviews slider
   const reviewsListState = useSelector((state: any) => state.reviews)
-  const reviewsItems = reviewsListState.map((item: any) =>
-    <SwiperSlide key={item.Id}>
+  const reviewsItems = reviewsListState.map((item: any, index: number) =>
+    <SwiperSlide key={index}>
       <div className={s.review}>
         <span className={s.reviewName}>
           {item.Name}
