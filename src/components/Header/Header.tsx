@@ -1,6 +1,6 @@
 import s from "./Header.module.scss"
 import gitHubLogo from "../../assets/img/icons/github-logo.svg"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 import Loader from "../Loader/Loader"
 

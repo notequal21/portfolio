@@ -11,7 +11,7 @@ let Loader = ({ loaderX, loaderY }: any) => {
       document.querySelector<HTMLElement>(`.${s.loader}`)!.style.left = `${posX}px`
       document.querySelector<HTMLElement>(`.${s.loader}`)!.style.top = `${posY}px`
     }
-  }, [])
+  })
 
   return (<>
     <div className={s.loader}></div>

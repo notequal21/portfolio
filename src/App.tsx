@@ -82,7 +82,7 @@ function App() {
         follower?.classList.remove('activePortfolio')
       })
     })
-  }, [isLoader])
+  }, [])
 
   useEffect(() => {
     // custom cursor
