@@ -5,7 +5,6 @@ import './Slider.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import reviews from "../../store/reviews.json"
 import { PortfolioItem } from '../Portfolio/Portfolio';
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -119,7 +118,8 @@ const MainContent = () => {
 
 const Advantages = () => {
   // Reviews slider
-  const reviewsItems = reviews.map(item =>
+  const reviewsList = useSelector((state: any) => state.reviews)
+  const reviewsItems = reviewsList.map((item: any) =>
     <SwiperSlide key={item.Id}>
       <div className={s.review}>
         <span className={s.reviewName}>
