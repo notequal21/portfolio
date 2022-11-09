@@ -6,9 +6,14 @@ import Loader from "../Loader/Loader"
 
 const Header = ({ withLoader, isLoader, ...props }: any) => {
 
+  // projects count
+  const projectsCountState = useSelector((state: any) => state.projects.length)
+
+  // loader 
   const loaderX = useSelector((state: any) => state.loader.pos.x)
   const loaderY = useSelector((state: any) => state.loader.pos.y)
   let navigate = useNavigate()
+
 
   return (
     <>
@@ -40,7 +45,7 @@ const Header = ({ withLoader, isLoader, ...props }: any) => {
                 }}>
                 Главная
               </div>
-              <div className={`${s.headerBody__menuItem} link`}
+              <div className={`${s.headerBody__menuItem} ${s.count} counterLink`}
                 onClick={(e) => {
                   withLoader(e.clientX, e.clientY)
 
@@ -54,6 +59,9 @@ const Header = ({ withLoader, isLoader, ...props }: any) => {
 
                 }}>
                 Портфолио
+                <span>
+                  {projectsCountState > 9 ? '9+' : projectsCountState}
+                </span>
               </div>
             </div>
           </div>

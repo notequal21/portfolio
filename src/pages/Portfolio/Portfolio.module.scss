@@ -28,7 +28,7 @@
       }
 
       &._isBest {
-        border-color: #FFA00B;
+        border-color: var(--best-project-border-color);
       }
 
       &.slider {

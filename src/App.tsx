@@ -28,6 +28,7 @@ function App() {
     const follower = document.querySelector(`.follower`)
     let links = document.querySelectorAll(`.link`)
     let portfolioLinks = document.querySelectorAll(`.portfolioLink`)
+    let counterLinks = document.querySelectorAll(`.counterLink`)
 
     let posX = 0
     let posY = 0
@@ -82,7 +83,21 @@ function App() {
         follower?.classList.remove('activePortfolio')
       })
     })
+    counterLinks.forEach((link: any) => {
+      link.addEventListener('mouseenter', () => {
+        cursor?.classList.add('active')
+        follower?.classList.add('activeCounter')
+      })
+      link.addEventListener('mouseleave', () => {
+        cursor?.classList.remove('active')
+        follower?.classList.remove('activeCounter')
+      })
+    })
   }, [])
+
+  // projects count
+  const projectsCountState = useSelector((state: any) => state.projects.length)
+
 
   useEffect(() => {
     // custom cursor
@@ -93,7 +108,11 @@ function App() {
     <>
       {/* Custom Cursor */}
       <div className={'cursor'}></div>
-      <div className={'follower'}></div>
+      <div className={'follower'}>
+        <div className="follower__counter">
+          {projectsCountState}
+        </div>
+      </div>
 
       {/* Content */}
       <div className="wrapper">
