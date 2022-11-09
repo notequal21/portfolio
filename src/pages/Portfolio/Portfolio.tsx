@@ -5,8 +5,15 @@ const Portfolio = () => {
 
   // List of protfolio items
   const projectsListState = useSelector((state: any) => state.projects)
+
   const projectsList = projectsListState.map((item: any, index: number) =>
-    <PortfolioItem key={index} name={item.Name} img={item.Img} link={item.Link} />
+    <PortfolioItem
+      key={index}
+      name={item.Name}
+      img={item.Img}
+      link={item.Link}
+      isBest={item.IsBest}
+    />
   ).reverse()
 
 
@@ -23,7 +30,7 @@ const Portfolio = () => {
   )
 }
 
-export const PortfolioItem = ({ link, img, name, isSlider }: any) => {
+export const PortfolioItem = ({ link, img, name, isSlider, isBest }: any) => {
 
   return (
     <>
@@ -34,6 +41,7 @@ export const PortfolioItem = ({ link, img, name, isSlider }: any) => {
         className={`
         portfolioLink
         ${s.portfolioBody__item} 
+        ${isBest ? s._isBest : ''}
         ${isSlider ? s.slider : ''}
         `}>
         <picture>
