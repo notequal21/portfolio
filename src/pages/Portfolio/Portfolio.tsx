@@ -41,6 +41,7 @@ export const PortfolioItem = ({ link, img, name, isSlider, isBest, type }: any) 
         href={link}
         data-project-type={type}
         data-isbest={isBest}
+        data-isslider={isSlider}
         className={`
         cursorHover
         portfolioLink

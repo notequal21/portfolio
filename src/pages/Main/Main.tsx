@@ -43,7 +43,14 @@ const MainContent = () => {
   const projectsListStateFiltered = useSelector((state: any) => state.projects.filter((item: any) => item.IsBest))
   const projectsListSlider = projectsListStateFiltered.map((item: any, index: number) =>
     <SwiperSlide key={index}>
-      <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
+      <PortfolioItem
+        isSlider
+        name={item.Name}
+        img={item.Img}
+        link={item.Link}
+        isBest={item.IsBest}
+        type={item.Type}
+      />
     </SwiperSlide>)
 
   useEffect(() => {

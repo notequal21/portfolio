@@ -73,10 +73,13 @@ function App() {
           follower?.classList.add('active')
         } else if (link.classList.contains('portfolioLink')) {
           follower?.classList.add('activePortfolio')
-          setProjectName(link.childNodes[1].innerHTML)
           if (link.dataset.isbest === 'true') {
             follower?.classList.add('_isBest')
           }
+          if (link.dataset.isslider === 'true') {
+            follower?.classList.add('_isSlider')
+          }
+          setProjectName(link.childNodes[1].innerHTML)
           setProjectType(link.dataset.projectType)
         } else if (link.classList.contains('counterLink')) {
           follower?.classList.add('activeCounter')
@@ -90,6 +93,9 @@ function App() {
           follower?.classList.remove('activePortfolio')
           if (follower?.classList.contains('_isBest')) {
             follower?.classList.remove('_isBest')
+          }
+          if (follower?.classList.contains('_isSlider')) {
+            follower?.classList.remove('_isSlider')
           }
         } else if (link.classList.contains('counterLink')) {
           follower?.classList.remove('activeCounter')
