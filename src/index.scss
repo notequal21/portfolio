@@ -185,9 +185,21 @@ body {
   transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform, .2s cubic-bezier(.75, -0.27, .3, 1.33) background;
 
   &__counter {
+    position: absolute;
     opacity: 0;
     transform: scale(0);
     color: #fff;
+
+    transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+  }
+
+  &__projectType {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 10px;
 
     transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
   }
@@ -199,8 +211,13 @@ body {
   }
 
   &.activePortfolio {
-    transform: scale(2);
+    transform: scale(2.5);
     background: var(--primary-color);
+
+    .follower__projectType {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   &.activeCounter {

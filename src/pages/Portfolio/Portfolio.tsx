@@ -13,6 +13,7 @@ const Portfolio = () => {
       img={item.Img}
       link={item.Link}
       isBest={item.IsBest}
+      type={item.Type}
     />
   ).reverse()
 
@@ -30,7 +31,7 @@ const Portfolio = () => {
   )
 }
 
-export const PortfolioItem = ({ link, img, name, isSlider, isBest }: any) => {
+export const PortfolioItem = ({ link, img, name, isSlider, isBest, type }: any) => {
 
   return (
     <>
@@ -38,6 +39,7 @@ export const PortfolioItem = ({ link, img, name, isSlider, isBest }: any) => {
         target='_blank'
         rel='noreferrer'
         href={link}
+        data-project-type={type}
         className={`
         cursorHover
         portfolioLink

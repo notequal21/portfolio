@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import s from "./App.module.scss";
 import Main from "./pages/Main/Main";
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { gsap } from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoaderPos, toggleLoader } from "./store/loader";
@@ -23,10 +23,11 @@ function App() {
   }
 
   // Custom cursor
+  const [projectType, setProjectType] = useState('React')
   let changeCursor = useCallback(() => {
     const cursor = document.querySelector(`.cursor`)
     const follower = document.querySelector(`.follower`)
-    let cursorHover = document.querySelectorAll(`.cursorHover`)
+    const cursorHover = document.querySelectorAll(`.cursorHover`)
 
     let posX = 0
     let posY = 0
@@ -61,13 +62,14 @@ function App() {
       mouseY = e.clientY
     })
 
-    cursorHover.forEach((link) => {
+    cursorHover.forEach((link: any) => {
       link.addEventListener('mouseenter', () => {
         cursor?.classList.add('active')
         if (link.classList.contains('link')) {
           follower?.classList.add('active')
         } else if (link.classList.contains('portfolioLink')) {
           follower?.classList.add('activePortfolio')
+          setProjectType(link.dataset.projectType)
         } else if (link.classList.contains('counterLink')) {
           follower?.classList.add('activeCounter')
         }
@@ -101,6 +103,9 @@ function App() {
       <div className={'follower'}>
         <div className="follower__counter">
           {projectsCountState}
+        </div>
+        <div className="follower__projectType">
+          {projectType}
         </div>
       </div>
 
