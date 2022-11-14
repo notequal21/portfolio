@@ -65,12 +65,18 @@ function App() {
     })
 
     cursorHover.forEach((link: any) => {
+
       link.addEventListener('mouseenter', () => {
         cursor?.classList.add('active')
         if (link.classList.contains('link')) {
           follower?.classList.add('active')
         } else if (link.classList.contains('portfolioLink')) {
           follower?.classList.add('activePortfolio')
+          console.log(link.dataset.isbest);
+
+          if (link.dataset.isbest === 'true') {
+            follower?.classList.add('_isBest')
+          }
           setProjectType(link.dataset.projectType)
         } else if (link.classList.contains('counterLink')) {
           follower?.classList.add('activeCounter')
@@ -82,6 +88,9 @@ function App() {
           follower?.classList.remove('active')
         } else if (link.classList.contains('portfolioLink')) {
           follower?.classList.remove('activePortfolio')
+          if (follower?.classList.contains('_isBest')) {
+            follower?.classList.remove('_isBest')
+          }
         } else if (link.classList.contains('counterLink')) {
           follower?.classList.remove('activeCounter')
         }
