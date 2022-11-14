@@ -1,6 +1,6 @@
 @import 'normalize.css';
 @import './style/style.scss';
-
+@import "./style/_colors.scss";
 
 * {
   padding: 0;
@@ -144,7 +144,7 @@ body {
 // Cusrom cursor
 .cursor {
   position: fixed;
-  background: var(--primary-color);
+  background: $primary-color;
   width: 10px;
   height: 10px;
   border-radius: 100%;
@@ -176,7 +176,7 @@ body {
   position: fixed;
   width: 30px;
   height: 30px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid $primary-color;
   border-radius: 100%;
   user-select: none;
   pointer-events: none;
@@ -206,17 +206,17 @@ body {
 
   &.active {
     transform: scale(2);
-    background: var(--primary-color);
+    background: $primary-color;
     z-index: 0;
   }
 
   &.activePortfolio {
     transform: scale(2.5);
-    background: var(--primary-color);
+    background: $primary-color;
 
     &._isBest {
-      border-color: var(--best-project-border-color);
-      background: var(--best-project-border-color);
+      border-color: $best-project-border-color;
+      background: $best-project-border-color;
     }
 
     .follower__projectType {
@@ -227,7 +227,7 @@ body {
 
   &.activeCounter {
     transform: scale(2);
-    background: var(--primary-color);
+    background: $primary-color;
 
     .follower__counter {
       opacity: 1;

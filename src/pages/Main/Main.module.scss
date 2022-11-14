@@ -1,3 +1,5 @@
+@import "../../style/_colors.scss";
+
 .main {
   &Body {
     display: flex;
@@ -18,7 +20,7 @@
 
       &Hello {
         font-size: 40px;
-        color: var(--primary-font-color);
+        color: $primary-font-color;
       }
 
       &Im {
@@ -70,8 +72,8 @@
         width: 100%;
         max-width: 600px;
         height: 0;
-        background-color: var(--primary-color);
-        border: 4px solid var(--primary-color);
+        background-color: $primary-color;
+        border: 4px solid $primary-color;
         margin: 0 0 0 auto;
         position: relative;
         padding: 0 0 50%;
@@ -123,7 +125,7 @@
     height: 10px;
     border-radius: 50px;
     transition: all .3s ease;
-    background-color: var(--primary-color);
+    background-color: $primary-color;
     opacity: 1;
   }
 }
