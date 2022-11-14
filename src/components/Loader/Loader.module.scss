@@ -9,6 +9,10 @@
   background-color: $primary-color;
   animation: loader 1s;
 
+  @media (prefers-color-scheme:dark) {
+    background-color: $dark-primary-color;
+  }
+
   @media (max-width:767px) {
     animation: loaderMobile 1s;
   }

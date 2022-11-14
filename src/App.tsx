@@ -11,7 +11,6 @@ import { setLoaderPos, toggleLoader } from "./store/loader";
 function App() {
   let location = useLocation();
 
-
   const isLoader = useSelector((state: any) => state.loader.isLoader)
   const dispatch = useDispatch()
 
@@ -111,6 +110,11 @@ function App() {
   useEffect(() => {
     // custom cursor
     changeCursor()
+
+    // if (!window.matchMedia('(prefers-color-scheme:light)').matches) {
+    //   document.querySelector('body')?.classList.add('_dark')
+    // }
+
   }, [changeCursor, dispatch, location])
 
   return (

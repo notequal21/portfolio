@@ -1,5 +1,14 @@
+// default theme colors (light)
+$bg-primary-color: #fff;
+
+$bg-primary-font-color: #000;
+
 $primary-color: #00cd5e; // 1378ef
 $best-project-border-color: #FFA00B;
 $primary-font-color: #000;
 
-@media (prefers-color-scheme: light) {}
+// dark theme colors
+$dark-primary-color: #3abd77;
+$dark-best-project-border-color: #c48e37;
+$dark-bg-primary-color: #1a181f;
+$dark-bg-primary-font-color: #fff;

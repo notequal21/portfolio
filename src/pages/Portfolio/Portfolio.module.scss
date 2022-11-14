@@ -19,6 +19,11 @@
       transition: all .3s ease;
       border-radius: 5px;
 
+      @media (prefers-color-scheme:dark) {
+        background-color: $dark-primary-color;
+        border-color: $dark-primary-color;
+      }
+
       @media (max-width:992px) {
         flex: 0 0 calc(50% - 15px);
         padding: 0 0 24%;
@@ -31,6 +36,12 @@
 
       &._isBest {
         border-color: $best-project-border-color;
+        background-color: $best-project-border-color;
+
+        @media (prefers-color-scheme:dark) {
+          border-color: $dark-best-project-border-color;
+          background-color: $dark-best-project-border-color;
+        }
       }
 
       &.slider {
