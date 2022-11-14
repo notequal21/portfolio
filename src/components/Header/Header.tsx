@@ -21,7 +21,7 @@ const Header = ({ withLoader, isLoader, ...props }: any) => {
         <div className="container">
           <div className={s.headerBody}>
             <a
-              className={`${s.headerBody__github} link`}
+              className={`${s.headerBody__github} cursorHover link`}
               target="_blank"
               href="https://github.com/notequal21"
               rel="noreferrer">
@@ -30,7 +30,11 @@ const Header = ({ withLoader, isLoader, ...props }: any) => {
             </a>
             <div className={s.headerBody__menu}>
               {isLoader ? <Loader loaderX={loaderX} loaderY={loaderY} /> : ''}
-              <div className={`${s.headerBody__menuItem} link`}
+              <div className={`
+              ${s.headerBody__menuItem} 
+              cursorHover 
+              link
+              `}
                 onClick={(e) => {
                   withLoader(e.clientX, e.clientY)
 
@@ -45,7 +49,12 @@ const Header = ({ withLoader, isLoader, ...props }: any) => {
                 }}>
                 Главная
               </div>
-              <div className={`${s.headerBody__menuItem} ${s.count} counterLink`}
+              <div className={`
+              ${s.headerBody__menuItem} 
+              ${s.count} 
+              cursorHover 
+              counterLink`
+              }
                 onClick={(e) => {
                   withLoader(e.clientX, e.clientY)
 

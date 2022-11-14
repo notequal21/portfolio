@@ -39,6 +39,7 @@ export const PortfolioItem = ({ link, img, name, isSlider, isBest }: any) => {
         rel='noreferrer'
         href={link}
         className={`
+        cursorHover
         portfolioLink
         ${s.portfolioBody__item} 
         ${isBest ? s._isBest : ''}

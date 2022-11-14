@@ -26,9 +26,7 @@ function App() {
   let changeCursor = useCallback(() => {
     const cursor = document.querySelector(`.cursor`)
     const follower = document.querySelector(`.follower`)
-    let links = document.querySelectorAll(`.link`)
-    let portfolioLinks = document.querySelectorAll(`.portfolioLink`)
-    let counterLinks = document.querySelectorAll(`.counterLink`)
+    let cursorHover = document.querySelectorAll(`.cursorHover`)
 
     let posX = 0
     let posY = 0
@@ -63,34 +61,26 @@ function App() {
       mouseY = e.clientY
     })
 
-    links.forEach((link: any) => {
+    cursorHover.forEach((link) => {
       link.addEventListener('mouseenter', () => {
         cursor?.classList.add('active')
-        follower?.classList.add('active')
+        if (link.classList.contains('link')) {
+          follower?.classList.add('active')
+        } else if (link.classList.contains('portfolioLink')) {
+          follower?.classList.add('activePortfolio')
+        } else if (link.classList.contains('counterLink')) {
+          follower?.classList.add('activeCounter')
+        }
       })
       link.addEventListener('mouseleave', () => {
         cursor?.classList.remove('active')
-        follower?.classList.remove('active')
-      })
-    })
-    portfolioLinks.forEach((link: any) => {
-      link.addEventListener('mouseenter', () => {
-        cursor?.classList.add('active')
-        follower?.classList.add('activePortfolio')
-      })
-      link.addEventListener('mouseleave', () => {
-        cursor?.classList.remove('active')
-        follower?.classList.remove('activePortfolio')
-      })
-    })
-    counterLinks.forEach((link: any) => {
-      link.addEventListener('mouseenter', () => {
-        cursor?.classList.add('active')
-        follower?.classList.add('activeCounter')
-      })
-      link.addEventListener('mouseleave', () => {
-        cursor?.classList.remove('active')
-        follower?.classList.remove('activeCounter')
+        if (link.classList.contains('link')) {
+          follower?.classList.remove('active')
+        } else if (link.classList.contains('portfolioLink')) {
+          follower?.classList.remove('activePortfolio')
+        } else if (link.classList.contains('counterLink')) {
+          follower?.classList.remove('activeCounter')
+        }
       })
     })
   }, [])
