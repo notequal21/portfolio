@@ -203,6 +203,38 @@ body {
     transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
   }
 
+  &__projectName {
+    position: absolute;
+    bottom: -24px;
+    opacity: 0;
+    transform: scale(0) translate(0, -100px);
+    color: #fff;
+    background-color: $primary-color;
+    white-space: nowrap;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 10px;
+
+    // transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+    transition: .3s transform;
+
+    span {
+      position: absolute;
+      top: -9.5px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 18px;
+
+      svg {
+        width: 100%;
+
+        path {
+          fill: $primary-color;
+        }
+      }
+    }
+  }
+
   &.active {
     transform: scale(2);
     background: $primary-color;
@@ -216,9 +248,28 @@ body {
     &._isBest {
       border-color: $best-project-border-color;
       background: $best-project-border-color;
+
+      .follower__projectName {
+        background: $best-project-border-color;
+
+        span {
+          svg {
+            width: 100%;
+
+            path {
+              fill: $best-project-border-color;
+            }
+          }
+        }
+      }
     }
 
     .follower__projectType {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .follower__projectName {
       opacity: 1;
       transform: scale(1);
     }

@@ -26,6 +26,7 @@ function App() {
 
   // Custom cursor
   const [projectType, setProjectType] = useState('React')
+  const [projectName, setProjectName] = useState('')
   let changeCursor = useCallback(() => {
     const cursor = document.querySelector(`.cursor`)
     const follower = document.querySelector(`.follower`)
@@ -72,8 +73,7 @@ function App() {
           follower?.classList.add('active')
         } else if (link.classList.contains('portfolioLink')) {
           follower?.classList.add('activePortfolio')
-          console.log(link.dataset.isbest);
-
+          setProjectName(link.childNodes[1].innerHTML)
           if (link.dataset.isbest === 'true') {
             follower?.classList.add('_isBest')
           }
@@ -117,6 +117,14 @@ function App() {
         </div>
         <div className="follower__projectType">
           {projectType}
+        </div>
+        <div className="follower__projectName">
+          <span>
+            <svg width="21" height="11" viewBox="0 0 21 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.5438 0.244843C12.1231 5.94514 14.3632 8.08026 20.4158 10.2448H0.415771C6.36304 7.97114 8.9937 6.05081 10.5438 0.244843Z" />
+            </svg>
+          </span>
+          {projectName}
         </div>
       </div>
 
