@@ -17,7 +17,7 @@ export const loaderSlice = createSlice({
     },
     setLoaderPos: (state, action) => {
       state.pos = action.payload
-    },
+    }
   },
 })
 

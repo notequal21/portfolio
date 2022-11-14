@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import s from "./App.module.scss";
@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLoaderPos, toggleLoader } from "./store/loader";
 
 function App() {
+  let location = useLocation();
+
 
   const isLoader = useSelector((state: any) => state.loader.isLoader)
   const dispatch = useDispatch()
@@ -94,7 +96,7 @@ function App() {
   useEffect(() => {
     // custom cursor
     changeCursor()
-  }, [changeCursor])
+  }, [changeCursor, dispatch, location])
 
   return (
     <>
