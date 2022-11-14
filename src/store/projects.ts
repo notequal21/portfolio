@@ -4,57 +4,57 @@ const initialState = [
   {
     "IsBest": false,
     "Name": "Luftbase",
-    "Type": "nofw",
-    "Img": "nofw/luftbase",
+    "Type": "html",
+    "Img": "html/luftbase",
     "Link": "https://demo.notequal.website/luftbase/"
   },
   {
     "IsBest": false,
     "Name": "GetPort",
-    "Type": "nofw",
-    "Img": "nofw/getport",
+    "Type": "html",
+    "Img": "html/getport",
     "Link": "https://demo.notequal.website/get-port/"
   },
   {
     "IsBest": false,
     "Name": "Yeezypay - finance",
-    "Type": "nofw",
-    "Img": "nofw/yeezypay-finance",
+    "Type": "html",
+    "Img": "html/yeezypay-finance",
     "Link": "http://demo.notequal.website/yeezypay_finance/"
   },
   {
     "IsBest": false,
     "Name": "Pixture",
-    "Type": "nofw",
-    "Img": "nofw/pixture",
+    "Type": "html",
+    "Img": "html/pixture",
     "Link": "https://demo.notequal.website/pixture/"
   },
   {
     "IsBest": false,
     "Name": "Will Towers",
-    "Type": "nofw",
-    "Img": "nofw/willtowers",
+    "Type": "html",
+    "Img": "html/willtowers",
     "Link": "https://willtowers.ru/"
   },
   {
     "IsBest": false,
     "Name": "SmartPay",
-    "Type": "nofw",
-    "Img": "nofw/smartpay",
+    "Type": "html",
+    "Img": "html/smartpay",
     "Link": "https://demo.notequal.website/smartpay/"
   },
   {
     "IsBest": false,
     "Name": "LCS",
-    "Type": "nofw",
-    "Img": "nofw/lcs",
+    "Type": "html",
+    "Img": "html/lcs",
     "Link": "https://demo.notequal.website/lcs/"
   },
   {
     "IsBest": false,
     "Name": "NFTop",
-    "Type": "nofw",
-    "Img": "nofw/nftop",
+    "Type": "html",
+    "Img": "html/nftop",
     "Link": "https://demo.notequal.website/NFTop/"
   },
   {
@@ -67,43 +67,43 @@ const initialState = [
   {
     "IsBest": false,
     "Name": "Yeezypay",
-    "Type": "nofw",
-    "Img": "nofw/yeezypay",
+    "Type": "html",
+    "Img": "html/yeezypay",
     "Link": "https://demo.notequal.website/yeezypay/sitemap.html"
   },
   {
     "IsBest": false,
     "Name": "NFT Banker",
-    "Type": "nofw",
-    "Img": "nofw/nftbanker",
+    "Type": "html",
+    "Img": "html/nftbanker",
     "Link": "https://demo.notequal.website/nftbanker/"
   },
   {
     "IsBest": false,
     "Name": "Fredemo",
-    "Type": "nofw",
-    "Img": "nofw/fredemo",
+    "Type": "html",
+    "Img": "html/fredemo",
     "Link": "https://paradox.notequal.website/overview"
   },
   {
     "IsBest": false,
     "Name": "Yeezypay - conf",
-    "Type": "nofw",
-    "Img": "nofw/yeezypay-conf",
+    "Type": "html",
+    "Img": "html/yeezypay-conf",
     "Link": "http://demo.notequal.website/yeezypay_conf/"
   },
   {
     "IsBest": false,
     "Name": "Advertex",
-    "Type": "nofw",
-    "Img": "nofw/advertex",
+    "Type": "html",
+    "Img": "html/advertex",
     "Link": "https://demo.notequal.website/advertex/"
   },
   {
     "IsBest": false,
     "Name": "Atlant",
-    "Type": "nofw",
-    "Img": "nofw/atlant",
+    "Type": "html",
+    "Img": "html/atlant",
     "Link": "https://demo.notequal.website/inproc/sitemap.html"
   },
   {
@@ -116,8 +116,8 @@ const initialState = [
   {
     "IsBest": true,
     "Name": "Code Metal",
-    "Type": "nofw",
-    "Img": "nofw/metal",
+    "Type": "html",
+    "Img": "html/metal",
     "Link": "http://demo.notequal.website/metal/sitemap.html"
   },
   {
