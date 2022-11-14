@@ -80,6 +80,13 @@ const initialState = [
   },
   {
     "IsBest": false,
+    "Name": "Fredemo",
+    "Type": "nofw",
+    "Img": "nofw/fredemo",
+    "Link": "https://paradox.notequal.website/overview"
+  },
+  {
+    "IsBest": false,
     "Name": "Yeezypay - conf",
     "Type": "nofw",
     "Img": "nofw/yeezypay-conf",
