@@ -285,6 +285,26 @@ body {
     }
   }
 
+  &__projectBest {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+
+    svg {
+      width: 30px;
+      height: 30px;
+
+      path {
+        fill: $best-project-border-color;
+
+        @media (prefers-color-scheme: dark) {
+          fill: $dark-best-project-border-color;
+        }
+      }
+    }
+  }
+
   &.active {
     transform: scale(1.5);
     background: $primary-color;
@@ -385,6 +405,16 @@ body {
       &Next {
         opacity: 1;
       }
+    }
+  }
+
+  &.activeBest {
+    background: transparent;
+    border-color: transparent;
+
+    .follower__projectBest {
+      transform: scale(1.5);
+      opacity: 1;
     }
   }
 

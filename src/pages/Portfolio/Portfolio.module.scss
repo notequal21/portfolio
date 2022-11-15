@@ -7,23 +7,55 @@
     height: 60px;
 
     &__filterBest {
+      position: relative;
       display: flex;
       align-items: center;
       font-size: 22px;
       margin: 0 0 0 auto;
+      // padding: 0 30px 0 0;
+      opacity: .7;
+      transform: scale(.9);
+
+      transition: all .3s ease;
 
       &:hover {
+        opacity: .9;
+        transform: scale(.95);
+
         svg {
           transform: scale(0) translate(100px, 0);
           opacity: 0;
         }
       }
 
+      &.active {
+        opacity: 1;
+        transform: scale(1);
+
+        svg {
+          transform: scale(1) translate(0);
+          opacity: 1;
+          left: -32px;
+        }
+
+        &:hover {
+          svg {
+            transform: scale(0) translate(100px, 0);
+            opacity: 0;
+          }
+        }
+      }
+
       svg {
-        margin: 0 5px 0 0;
-        width: 24px;
-        height: 24px;
+        pointer-events: none;
+        position: absolute;
+        left: -28px;
+        width: 26px;
+        height: 26px;
         transition: all .3s ease;
+
+        opacity: 1;
+        transform: scale(.8) translate(0, 0);
 
         path {
           fill: $best-project-border-color;
@@ -41,6 +73,7 @@
   }
 
   &Body {
+    margin: 20px 0 0;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
