@@ -195,7 +195,7 @@ body {
   transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform, .2s ease background, .2s ease border-color;
 
   @media (prefers-color-scheme:dark) {
-    border: $dark-primary-color;
+    border-color: $dark-primary-color;
   }
 
   &__counter {
@@ -391,6 +391,7 @@ body {
   }
 
   &.activeNavigation-prev {
+
     .follower__navigation {
 
       &Prev {
