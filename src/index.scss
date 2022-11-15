@@ -258,8 +258,35 @@ body {
     }
   }
 
+  &__navigation {
+    position: absolute;
+    transform: scale(0);
+    transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+
+    svg {
+      width: 30px;
+      height: 30px;
+
+      path {
+        fill: $primary-color;
+
+        @media (prefers-color-scheme: dark) {
+          fill: $dark-primary-color;
+        }
+      }
+    }
+
+    &Prev,
+    &Next {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: .3s ease;
+    }
+  }
+
   &.active {
-    transform: scale(2);
+    transform: scale(1.5);
     background: $primary-color;
     z-index: 0;
 
@@ -330,6 +357,34 @@ body {
     .follower__counter {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+
+  &.activeNavigation-prev,
+  &.activeNavigation-next {
+    background: transparent;
+    border-color: transparent;
+
+    .follower__navigation {
+      transform: scale(2);
+    }
+  }
+
+  &.activeNavigation-prev {
+    .follower__navigation {
+
+      &Prev {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.activeNavigation-next {
+    .follower__navigation {
+
+      &Next {
+        opacity: 1;
+      }
     }
   }
 

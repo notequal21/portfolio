@@ -93,7 +93,7 @@ const MainContent = () => {
               </div>
             </div>
             <div className={s.mainBody__col}>
-              <div className={s.mainBody__colSlider}>
+              <div className={`${s.mainBody__colSlider} _main-slider`}>
                 <Swiper
                   modules={[Autoplay, Navigation, Pagination]}
                   className={s.slider}
@@ -115,9 +115,10 @@ const MainContent = () => {
                     modifierClass: 'bullet__list',
                   }}
                 >
-                  <div className="swiper-button-prev"></div>
+                  <div className="swiper-button-prev cursorHover _navigation-prev"></div>
                   {projectsListSlider}
-                  <div className="swiper-button-next"></div>
+                  <div className="swiper-button-next cursorHover _navigation-next">
+                  </div>
                 </Swiper>
               </div>
             </div>
@@ -202,9 +203,9 @@ const Advantages = () => {
                     modifierClass: 'bullet__list-light',
                   }}
                 >
-                  <div className="swiper-button-prev"></div>
+                  <div className="swiper-button-prev cursorHover _navigation-prev"></div>
                   {reviewsItems}
-                  <div className="swiper-button-next"></div>
+                  <div className="swiper-button-next cursorHover _navigation-next"></div>
                 </Swiper>
               </div>
             </div>
