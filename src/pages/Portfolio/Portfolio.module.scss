@@ -1,6 +1,14 @@
 @import "@styles";
 
 .portfolio {
+  &Top {
+    display: flex;
+
+    &__filterBest {
+      margin: 0 0 0 auto;
+    }
+  }
+
   &Body {
     display: flex;
     justify-content: flex-start;

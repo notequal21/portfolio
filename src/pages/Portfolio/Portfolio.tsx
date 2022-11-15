@@ -18,12 +18,25 @@ const Portfolio = () => {
   ).reverse()
 
 
+
+  const bestProjectsList = projectsList.filter((item: any) => item.isBest === true)
+
+  console.log(bestProjectsList);
+
+
   return (
     <>
       <div className={s.portfolio}>
         <div className="container">
+          <div className={s.portfolioTop}>
+            <label className={s.portfolioTop__filterBest}>
+              <input type="checkbox" name="" id="" />
+              Только лучше работы
+            </label>
+          </div>
           <div className={s.portfolioBody}>
-            {projectsList}
+            {/* {projectsList} */}
+            {/* {bestProjectsList} */}
           </div>
         </div>
       </div>
