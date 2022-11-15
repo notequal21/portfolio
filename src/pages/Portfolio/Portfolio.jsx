@@ -1,14 +1,15 @@
 import { useRef, useState } from "react"
 import { useSelector } from "react-redux"
+import { CSSTransition, SwitchTransition } from "react-transition-group"
 import s from "./Portfolio.module.scss"
 
 const Portfolio = () => {
 
   // List of protfolio items
-  const projectsListState = useSelector((state: any) => state.projects)
+  const projectsListState = useSelector((state) => state.projects)
 
   // Projects list 
-  const projectsList = projectsListState.map((item: any, index: number) =>
+  const projectsList = projectsListState.map((item, index) =>
     <PortfolioItem
       key={index}
       name={item.Name}
@@ -20,7 +21,7 @@ const Portfolio = () => {
   ).reverse()
 
   // Filtered projects list for best projects
-  const bestProjectsList = projectsListState.filter((item: any) => item.IsBest === true).map((item: any, index: number) =>
+  const bestProjectsList = projectsListState.filter((item) => item.IsBest === true).map((item, index) =>
     <PortfolioItem
       key={index}
       name={item.Name}
@@ -32,12 +33,17 @@ const Portfolio = () => {
   ).reverse()
 
   // Best projects toggler
-  const filterBtn: any = useRef(null)
+  const filterBtn = useRef(null)
   const [isBestProjects, setIsBestProjects] = useState(false)
 
   const toggleProjectList = () => {
     setIsBestProjects(!isBestProjects)
   }
+
+  // animation
+  const helloRef = useRef(null);
+  const goodbyeRef = useRef(null);
+  const nodeRef = isBestProjects ? helloRef : goodbyeRef;
 
   return (
     <>
@@ -64,16 +70,27 @@ const Portfolio = () => {
               </svg>
             </label>
           </div>
-          <div className={s.portfolioBody}>
-            {isBestProjects ? bestProjectsList : projectsList}
-          </div>
+          <SwitchTransition mode={'out-in'}>
+            <CSSTransition
+              key={isBestProjects}
+              nodeRef={nodeRef}
+              addEndListener={(done) => {
+                nodeRef.current.addEventListener("transitionend", done, false);
+              }}
+              classNames="item"
+            >
+              <div ref={nodeRef} className={s.portfolioBody}>
+                {isBestProjects ? bestProjectsList : projectsList}
+              </div>
+            </CSSTransition>
+          </SwitchTransition>
         </div>
       </div>
     </>
   )
 }
 
-export const PortfolioItem = ({ link, img, name, isSlider, isBest, type }: any) => {
+export const PortfolioItem = ({ link, img, name, isSlider, isBest, type }) => {
 
   return (
     <>
