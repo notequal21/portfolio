@@ -121,7 +121,6 @@ function App() {
   useEffect(() => {
     // custom cursor
     changeCursor()
-
   }, [changeCursor, dispatch, location])
 
   return (
