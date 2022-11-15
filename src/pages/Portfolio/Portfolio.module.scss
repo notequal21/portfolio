@@ -18,6 +18,46 @@
 
       transition: all .3s ease;
 
+      &__toggler {
+        position: relative;
+        margin: 0 0 0 10px;
+        width: 40px;
+        height: 20px;
+        border-radius: 15px;
+        background-color: $primary-color;
+
+        @media (prefers-color-scheme:dark) {
+          background-color: $dark-primary-color;
+        }
+
+        span {
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background-color: #000000;
+          transition: all .3s ease;
+        }
+      }
+
+      input {
+        display: none;
+
+        &:checked+.portfolioTop__filterBest__toggler {
+          background-color: $best-project-border-color;
+
+          @media (prefers-color-scheme:dark) {
+            background-color: $dark-best-project-border-color;
+          }
+
+          span {
+            transform: translate(20px, 0);
+          }
+        }
+      }
+
       &:hover {
         opacity: .9;
         transform: scale(.95);
@@ -64,10 +104,6 @@
             fill: $dark-best-project-border-color;
           }
         }
-      }
-
-      input {
-        display: none;
       }
     }
   }

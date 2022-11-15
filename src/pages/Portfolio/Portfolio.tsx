@@ -67,9 +67,13 @@ const Portfolio = () => {
               </svg>
               Только лучше работы
               <input onInput={toggleProjectList} ref={filterBtn} type="checkbox" />
+              <div className={s.portfolioTop__filterBest__toggler}>
+                <span></span>
+              </div>
             </label>
           </div>
           <div className={s.portfolioBody}>
+            {/* {isBestProjects ? bestProjectsList : projectsList} */}
             {isBestProjects ? bestProjectsList : projectsList}
           </div>
           {/* <SwitchTransition mode={'out-in'}>

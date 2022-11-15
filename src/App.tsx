@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import s from "./App.module.scss";
 import Main from "./pages/Main/Main";
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { gsap } from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoaderPos, toggleLoader } from "./store/loader";
@@ -26,6 +26,7 @@ function App() {
   // Custom cursor
   const [projectType, setProjectType] = useState('React')
   const [projectName, setProjectName] = useState('')
+
   let changeCursor = useCallback(() => {
     const cursor = document.querySelector(`.cursor`)
     const follower = document.querySelector(`.follower`)
