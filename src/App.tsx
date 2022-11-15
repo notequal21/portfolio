@@ -114,14 +114,9 @@ function App() {
   // projects count
   const projectsCountState = useSelector((state: any) => state.projects.length)
 
-
   useEffect(() => {
     // custom cursor
     changeCursor()
-
-    // if (!window.matchMedia('(prefers-color-scheme:light)').matches) {
-    //   document.querySelector('body')?.classList.add('_dark')
-    // }
 
   }, [changeCursor, dispatch, location])
 
