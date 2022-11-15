@@ -103,7 +103,10 @@ const MainContent = () => {
                     delay: 2000,
                     disableOnInteraction: false,
                   }}
-                  navigation
+                  navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                  }}
                   loop
                   pagination={{
                     clickable: true,
@@ -112,7 +115,9 @@ const MainContent = () => {
                     modifierClass: 'bullet__list',
                   }}
                 >
+                  <div className="swiper-button-prev"></div>
                   {projectsListSlider}
+                  <div className="swiper-button-next"></div>
                 </Swiper>
               </div>
             </div>
@@ -184,7 +189,10 @@ const Advantages = () => {
                     disableOnInteraction: false,
                   }}
                   autoHeight
-                  navigation
+                  navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                  }}
                   grabCursor
                   loop
                   pagination={{
@@ -194,7 +202,9 @@ const Advantages = () => {
                     modifierClass: 'bullet__list-light',
                   }}
                 >
+                  <div className="swiper-button-prev"></div>
                   {reviewsItems}
+                  <div className="swiper-button-next"></div>
                 </Swiper>
               </div>
             </div>
