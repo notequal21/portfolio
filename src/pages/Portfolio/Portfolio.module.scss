@@ -3,9 +3,40 @@
 .portfolio {
   &Top {
     display: flex;
+    align-items: center;
+    height: 60px;
 
     &__filterBest {
+      display: flex;
+      align-items: center;
+      font-size: 22px;
       margin: 0 0 0 auto;
+
+      &:hover {
+        svg {
+          transform: scale(0) translate(100px, 0);
+          opacity: 0;
+        }
+      }
+
+      svg {
+        margin: 0 5px 0 0;
+        width: 24px;
+        height: 24px;
+        transition: all .3s ease;
+
+        path {
+          fill: $best-project-border-color;
+
+          @media (prefers-color-scheme: dark) {
+            fill: $dark-best-project-border-color;
+          }
+        }
+      }
+
+      input {
+        display: none;
+      }
     }
   }
 
