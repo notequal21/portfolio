@@ -1,9 +1,10 @@
 import s from "./Header.module.scss"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 import Loader from "../Loader/Loader"
 
 const Header = ({ withLoader, isLoader, ...props }: any) => {
+  const location = useLocation()
 
   // projects count
   const projectsCountState = useSelector((state: any) => state.projects.length)
@@ -46,16 +47,16 @@ const Header = ({ withLoader, isLoader, ...props }: any) => {
               link
               `}
                 onClick={(e) => {
-                  withLoader(e.clientX, e.clientY)
-
-                  setTimeout(() => {
-                    navigate('/')
-                    window.scrollTo({
-                      top: 0,
-                      behavior: 'smooth'
-                    })
-                  }, 500)
-
+                  if (location.pathname !== '/') {
+                    withLoader(e.clientX, e.clientY)
+                    setTimeout(() => {
+                      navigate('/')
+                      window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                      })
+                    }, 500)
+                  }
                 }}>
                 Главная
               </div>
@@ -66,16 +67,17 @@ const Header = ({ withLoader, isLoader, ...props }: any) => {
               counterLink`
               }
                 onClick={(e) => {
-                  withLoader(e.clientX, e.clientY)
+                  if (location.pathname !== '/portfolio') {
+                    withLoader(e.clientX, e.clientY)
 
-                  setTimeout(() => {
-                    navigate('portfolio')
-                    window.scrollTo({
-                      top: 0,
-                      behavior: 'smooth'
-                    })
-                  }, 500)
-
+                    setTimeout(() => {
+                      navigate('portfolio')
+                      window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                      })
+                    }, 500)
+                  }
                 }}>
                 Портфолио
                 <span>
