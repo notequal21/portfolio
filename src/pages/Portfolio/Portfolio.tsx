@@ -1,9 +1,12 @@
 import { useRef, useState } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { setCursorUpdate } from "../../store/loader"
 // import { CSSTransition, SwitchTransition } from "react-transition-group"
 import s from "./Portfolio.module.scss"
 
 const Portfolio = () => {
+  const dispatch = useDispatch()
+
   // List of protfolio items
   const projectsListState = useSelector((state: any) => state.projects)
 
@@ -36,6 +39,7 @@ const Portfolio = () => {
   const [isBestProjects, setIsBestProjects] = useState(false)
 
   const toggleProjectList = () => {
+    dispatch(setCursorUpdate())
     setIsBestProjects(!isBestProjects)
   }
 

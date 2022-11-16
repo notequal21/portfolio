@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
+  cursorUpdate: false,
   isLoader: false,
   pos: {
     x: 0,
@@ -17,10 +18,13 @@ export const loaderSlice = createSlice({
     },
     setLoaderPos: (state, action) => {
       state.pos = action.payload
-    }
+    },
+    setCursorUpdate: (state) => {
+      state.cursorUpdate = !state.cursorUpdate
+    },
   },
 })
 
-export const { toggleLoader, setLoaderPos } = loaderSlice.actions
+export const { toggleLoader, setLoaderPos, setCursorUpdate } = loaderSlice.actions
 
 export default loaderSlice.reducer

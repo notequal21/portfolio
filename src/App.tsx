@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import s from "./App.module.scss";
 import Main from "./pages/Main/Main";
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { gsap } from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoaderPos, toggleLoader } from "./store/loader";
@@ -27,17 +27,23 @@ function App() {
   const [projectType, setProjectType] = useState('React')
   const [projectName, setProjectName] = useState('')
 
+
+
+  const listenCursorUpdate = useSelector((state: any) => state.loader.cursorUpdate)
+
   let changeCursor = useCallback(() => {
     const cursor = document.querySelector(`.cursor`)
     const follower = document.querySelector(`.follower`)
     const cursorHover = document.querySelectorAll(`.cursorHover`)
 
+    console.log(
+      'Cursor started'
+    );
     let posX = 0
     let posY = 0
 
     let mouseX = 0
     let mouseY = 0
-
     gsap.to({}, {
       duration: 0.01,
       repeat: -1,
@@ -122,7 +128,7 @@ function App() {
   useEffect(() => {
     // custom cursor
     changeCursor()
-  }, [changeCursor, dispatch, location])
+  }, [changeCursor, dispatch, location, listenCursorUpdate])
 
   return (
     <>
