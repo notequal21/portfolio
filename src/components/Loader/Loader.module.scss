@@ -1,11 +1,17 @@
+@import "@styles";
+
 .loader {
   position: fixed;
   width: 30px;
   height: 30px;
   z-index: 111111;
   border-radius: 50%;
-  background-color: #1378ef;
+  background-color: $primary-color;
   animation: loader 1s;
+
+  @media (prefers-color-scheme:dark) {
+    background-color: $dark-primary-color;
+  }
 
   @media (max-width:767px) {
     animation: loaderMobile 1s;

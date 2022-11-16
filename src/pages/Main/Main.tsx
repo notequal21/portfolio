@@ -5,10 +5,9 @@ import './Slider.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import projects from "../../store/projects.json"
-import reviews from "../../store/reviews.json"
 import { PortfolioItem } from '../Portfolio/Portfolio';
 import { useCallback, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Main = () => {
 
@@ -22,10 +21,11 @@ const Main = () => {
 }
 
 const MainContent = () => {
-
+  // Hello word vars
   const [currentDate, setCurrentDate] = useState(new Date(Date.now()).getHours())
   const [helloWord, setHelloWord] = useState('Здравствуйте!')
 
+  // Set hello word
   const setCurrentTime = useCallback(() => {
     setCurrentDate(new Date(Date.now()).getHours())
     if (currentDate >= 6 && currentDate <= 12) {
@@ -38,11 +38,20 @@ const MainContent = () => {
       setHelloWord('👋 Здравствуйте!')
     }
   }, [currentDate])
-  const projectsListSlider = projects.map(item =>
-    <SwiperSlide key={item.Id}>
-      <PortfolioItem isSlider name={item.Name} img={item.Img} link={item.Link} />
-    </SwiperSlide>
-  ).reverse()
+
+  // Slider for main screen 
+  const projectsListStateFiltered = useSelector((state: any) => state.projects.filter((item: any) => item.IsBest))
+  const projectsListSlider = projectsListStateFiltered.map((item: any, index: number) =>
+    <SwiperSlide key={index}>
+      <PortfolioItem
+        isSlider
+        name={item.Name}
+        img={item.Img}
+        link={item.Link}
+        isBest={item.IsBest}
+        type={item.Type}
+      />
+    </SwiperSlide>)
 
   useEffect(() => {
     setCurrentTime()
@@ -84,7 +93,7 @@ const MainContent = () => {
               </div>
             </div>
             <div className={s.mainBody__col}>
-              <div className={s.mainBody__colSlider}>
+              <div className={`${s.mainBody__colSlider} _main-slider`}>
                 <Swiper
                   modules={[Autoplay, Navigation, Pagination]}
                   className={s.slider}
@@ -94,7 +103,10 @@ const MainContent = () => {
                     delay: 2000,
                     disableOnInteraction: false,
                   }}
-                  navigation
+                  navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                  }}
                   loop
                   pagination={{
                     clickable: true,
@@ -103,7 +115,10 @@ const MainContent = () => {
                     modifierClass: 'bullet__list',
                   }}
                 >
+                  <div className="swiper-button-prev cursorHover _navigation-prev"></div>
                   {projectsListSlider}
+                  <div className="swiper-button-next cursorHover _navigation-next">
+                  </div>
                 </Swiper>
               </div>
             </div>
@@ -115,8 +130,10 @@ const MainContent = () => {
 }
 
 const Advantages = () => {
-  const reviewsItems = reviews.map(item =>
-    <SwiperSlide key={item.Id}>
+  // Reviews slider
+  const reviewsListState = useSelector((state: any) => state.reviews)
+  const reviewsItems = reviewsListState.map((item: any, index: number) =>
+    <SwiperSlide key={index}>
       <div className={s.review}>
         <span className={s.reviewName}>
           {item.Name}
@@ -173,7 +190,10 @@ const Advantages = () => {
                     disableOnInteraction: false,
                   }}
                   autoHeight
-                  navigation
+                  navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                  }}
                   grabCursor
                   loop
                   pagination={{
@@ -183,7 +203,9 @@ const Advantages = () => {
                     modifierClass: 'bullet__list-light',
                   }}
                 >
+                  <div className="swiper-button-prev cursorHover _navigation-prev"></div>
                   {reviewsItems}
+                  <div className="swiper-button-next cursorHover _navigation-next"></div>
                 </Swiper>
               </div>
             </div>

@@ -1,3 +1,5 @@
+@import "@styles";
+
 .main {
   &Body {
     display: flex;
@@ -18,7 +20,6 @@
 
       &Hello {
         font-size: 40px;
-        color: #000000;
       }
 
       &Im {
@@ -70,14 +71,19 @@
         width: 100%;
         max-width: 600px;
         height: 0;
-        background-color: #1378EF;
-        border: 1px solid #1378ef;
+        background-color: $primary-color;
+        border: 4px solid $primary-color;
         margin: 0 0 0 auto;
         position: relative;
         padding: 0 0 50%;
         transition: all .3s ease;
         border-radius: 5px;
         overflow: hidden;
+
+        @media (prefers-color-scheme:dark) {
+          background-color: $dark-primary-color;
+          border-color: $dark-primary-color;
+        }
 
         @media (max-width:992px) {
           margin: 50px auto 0;
@@ -123,8 +129,12 @@
     height: 10px;
     border-radius: 50px;
     transition: all .3s ease;
-    background-color: #1378EF;
+    background-color: $primary-color;
     opacity: 1;
+
+    @media (prefers-color-scheme:dark) {
+      background-color: $dark-primary-color;
+    }
   }
 }
 
@@ -272,7 +282,6 @@
 
         li {
           display: flex;
-          // align-items: center;
 
           &:not(:first-child) {
             margin: 10px 0 0;
@@ -283,7 +292,6 @@
             display: block;
             width: 10px;
             height: 10px;
-            // background-color: #969696;
             margin: 0 10px 0 0;
           }
         }
