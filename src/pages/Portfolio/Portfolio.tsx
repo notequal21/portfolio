@@ -1,11 +1,11 @@
-import { useRef, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { setCursorUpdate } from "../../store/loader"
+// import { useRef, useState } from "react"
+import { useSelector } from "react-redux"
+// import { setCursorUpdate } from "../../store/loader"
 // import { CSSTransition, SwitchTransition } from "react-transition-group"
 import s from "./Portfolio.module.scss"
 
 const Portfolio = () => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   // List of protfolio items
   const projectsListState = useSelector((state: any) => state.projects)
@@ -23,25 +23,25 @@ const Portfolio = () => {
   ).reverse()
 
   // Filtered projects list for best projects
-  const bestProjectsList = projectsListState.filter((item: any) => item.IsBest === true).map((item: any, index: number) =>
-    <PortfolioItem
-      key={index}
-      name={item.Name}
-      img={item.Img}
-      link={item.Link}
-      isBest={item.IsBest}
-      type={item.Type}
-    />
-  ).reverse()
+  // const bestProjectsList = projectsListState.filter((item: any) => item.IsBest === true).map((item: any, index: number) =>
+  //   <PortfolioItem
+  //     key={index}
+  //     name={item.Name}
+  //     img={item.Img}
+  //     link={item.Link}
+  //     isBest={item.IsBest}
+  //     type={item.Type}
+  //   />
+  // ).reverse()
 
   // Best projects toggler
-  const filterBtn = useRef(null)
-  const [isBestProjects, setIsBestProjects] = useState(false)
+  // const filterBtn = useRef(null)
+  // const [isBestProjects, setIsBestProjects] = useState(false)
 
-  const toggleProjectList = () => {
-    dispatch(setCursorUpdate())
-    setIsBestProjects(!isBestProjects)
-  }
+  // const toggleProjectList = () => {
+  //   dispatch(setCursorUpdate())
+  //   setIsBestProjects(!isBestProjects)
+  // }
 
   // animation
   // const helloRef = useRef(null);
@@ -52,7 +52,7 @@ const Portfolio = () => {
     <>
       <div className={s.portfolio}>
         <div className="container">
-          <div className={s.portfolioTop}>
+          {/* <div className={s.portfolioTop}>
             <label className={`
             ${s.portfolioTop__filterBest} 
             ${isBestProjects ? s.active : ''} 
@@ -75,10 +75,10 @@ const Portfolio = () => {
                 <span></span>
               </div>
             </label>
-          </div>
+          </div> */}
           <div className={s.portfolioBody}>
             {/* {isBestProjects ? bestProjectsList : projectsList} */}
-            {isBestProjects ? bestProjectsList : projectsList}
+            {projectsList}
           </div>
           {/* <SwitchTransition mode={'out-in'}>
             <CSSTransition

@@ -27,8 +27,6 @@ function App() {
   const [projectType, setProjectType] = useState('React')
   const [projectName, setProjectName] = useState('')
 
-
-
   const listenCursorUpdate = useSelector((state: any) => state.loader.cursorUpdate)
 
   let changeCursor = useCallback(() => {
@@ -36,14 +34,12 @@ function App() {
     const follower = document.querySelector(`.follower`)
     const cursorHover = document.querySelectorAll(`.cursorHover`)
 
-    console.log(
-      'Cursor started'
-    );
-    let posX = 0
-    let posY = 0
+    let posX: any = null
+    let posY: any = null
 
-    let mouseX = 0
-    let mouseY = 0
+    let mouseX: any = null
+    let mouseY: any = null
+
     gsap.to({}, {
       duration: 0.01,
       repeat: -1,
