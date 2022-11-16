@@ -29,13 +29,13 @@ const MainContent = () => {
   const setCurrentTime = useCallback(() => {
     setCurrentDate(new Date(Date.now()).getHours())
     if (currentDate >= 6 && currentDate <= 12) {
-      setHelloWord('⛅ Доброе утро!')
+      setHelloWord('⛅ Привет!')
     } else if (currentDate >= 12 && currentDate <= 18) {
-      setHelloWord('🌞 Добрый день!')
+      setHelloWord('🌞 Привет!')
     } else if (currentDate >= 18 && currentDate <= 24) {
-      setHelloWord('🌆 Добрый вечер!')
+      setHelloWord('🌆 Привет!')
     } else {
-      setHelloWord('👋 Здравствуйте!')
+      setHelloWord('👋 Привет!')
     }
   }, [currentDate])
 
