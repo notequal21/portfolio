@@ -122,13 +122,6 @@ const initialState = [
   },
   {
     "IsBest": true,
-    "Name": "CruxBits",
-    "Type": "react",
-    "Img": "react/cruxbits",
-    "Link": "http://crux.digit-nova.com/"
-  },
-  {
-    "IsBest": true,
     "Name": "Paradox - landing",
     "Type": "vue",
     "Img": "vue/paradox-index",
