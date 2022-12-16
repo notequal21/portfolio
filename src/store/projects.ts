@@ -66,6 +66,13 @@ const initialState = [
   },
   {
     "IsBest": false,
+    "Name": "Rebank",
+    "Type": "html",
+    "Img": "html/rebank",
+    "Link": "https://demo.notequal.website/rebank/"
+  },
+  {
+    "IsBest": false,
     "Name": "Yeezypay",
     "Type": "html",
     "Img": "html/yeezypay",
@@ -121,6 +128,13 @@ const initialState = [
     "Link": "http://demo.notequal.website/metal/sitemap.html"
   },
   {
+    "IsBest": false,
+    "Name": "Freedemo app",
+    "Type": "react",
+    "Img": "react/freedemo_app",
+    "Link": "https://freedemo.notequal.website/ "
+  },
+  {
     "IsBest": true,
     "Name": "Paradox - landing",
     "Type": "vue",
@@ -128,11 +142,18 @@ const initialState = [
     "Link": "https://paradox.notequal.website/"
   },
   {
-    "IsBest": true,
+    "IsBest": false,
     "Name": "Paradox - dashboard",
     "Type": "vue",
     "Img": "vue/paradox-dashboard",
     "Link": "https://paradox.notequal.website/overview"
+  },
+  {
+    "IsBest": true,
+    "Name": "Pikamoon",
+    "Type": "react",
+    "Img": "react/pikamoon",
+    "Link": "https://pikamoon.notequal.website/"
   }
 ]
 
