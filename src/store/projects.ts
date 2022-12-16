@@ -111,7 +111,7 @@ const initialState = [
     "Name": "BotSwap",
     "Type": "react",
     "Img": "react/botswap",
-    "Link": "botswap.app/"
+    "Link": "https://botswap.app/"
   },
   {
     "IsBest": true,
