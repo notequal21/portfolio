@@ -22,4 +22,4 @@ jobs:
       - run: yarn
       - run: yarn build
       # Deploy
-      - run: cd build && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . k100018.hostde37.fornex.host:/home/k100018/public_html/notequal.website
+      - run: cd build && rsync -e "ssh -p 20022 -i $HOME/.ssh/KEY -o StrictHostKeyChecking=no" --archive --compress --delete . k100018.hostde37.fornex.host:/home/k100018/public_html/notequal.website
