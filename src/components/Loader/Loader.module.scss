@@ -7,13 +7,13 @@
   z-index: 111111;
   border-radius: 50%;
   background-color: $primary-color;
-  animation: loader 1s;
+  animation: loader 1.5s;
 
-  @media (prefers-color-scheme:dark) {
+  @media (prefers-color-scheme: dark) {
     background-color: $dark-primary-color;
   }
 
-  @media (max-width:767px) {
+  @media (max-width: 767px) {
     animation: loaderMobile 1s;
   }
 

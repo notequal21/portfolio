@@ -1,61 +1,67 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper';
-import s from "./Main.module.scss"
-import './Slider.scss';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { PortfolioItem } from '../Portfolio/Portfolio';
-import { useCallback, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper";
+import s from "./Main.module.scss";
+import "./Slider.scss";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { PortfolioItem } from "../Portfolio/Portfolio";
+import { useCallback, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const Main = () => {
-
   return (
     <>
       <MainContent />
       <Advantages />
       <AboutMe />
     </>
-  )
-}
+  );
+};
 
 const MainContent = () => {
   // Hello word vars
-  const [currentDate, setCurrentDate] = useState(new Date(Date.now()).getHours())
-  const [helloWord, setHelloWord] = useState('Здравствуйте!')
+  const [currentDate, setCurrentDate] = useState(
+    new Date(Date.now()).getHours()
+  );
+  const [helloWord, setHelloWord] = useState("Здравствуйте!");
 
   // Set hello word
   const setCurrentTime = useCallback(() => {
-    setCurrentDate(new Date(Date.now()).getHours())
+    setCurrentDate(new Date(Date.now()).getHours());
     if (currentDate >= 6 && currentDate <= 12) {
-      setHelloWord('⛅ Привет!')
+      setHelloWord("⛅ Привет!");
     } else if (currentDate >= 12 && currentDate <= 18) {
-      setHelloWord('🌞 Привет!')
+      setHelloWord("🌞 Привет!");
     } else if (currentDate >= 18 && currentDate <= 24) {
-      setHelloWord('🌆 Привет!')
+      setHelloWord("🌆 Привет!");
     } else {
-      setHelloWord('👋 Привет!')
+      setHelloWord("👋 Привет!");
     }
-  }, [currentDate])
+  }, [currentDate]);
 
-  // Slider for main screen 
-  const projectsListStateFiltered = useSelector((state: any) => state.projects.filter((item: any) => item.IsBest))
-  const projectsListSlider = projectsListStateFiltered.map((item: any, index: number) =>
-    <SwiperSlide key={index}>
-      <PortfolioItem
-        isSlider
-        name={item.Name}
-        img={item.Img}
-        link={item.Link}
-        isBest={item.IsBest}
-        type={item.Type}
-      />
-    </SwiperSlide>)
+  // Slider for main screen
+  const projectsListStateFiltered = useSelector((state: any) =>
+    state.projects.filter((item: any) => item.IsBest)
+  );
+  const projectsListSlider = projectsListStateFiltered.map(
+    (item: any, index: number) => (
+      <SwiperSlide key={index}>
+        <PortfolioItem
+          isSlider
+          name={item.Name}
+          img={item.Img}
+          link={item.Link}
+          isBest={item.IsBest}
+          type={item.Type}
+        />
+      </SwiperSlide>
+    )
+  );
 
   useEffect(() => {
-    setCurrentTime()
-  }, [setCurrentDate, currentDate, setCurrentTime])
+    setCurrentTime();
+  }, [setCurrentDate, currentDate, setCurrentTime]);
 
   return (
     <>
@@ -63,32 +69,18 @@ const MainContent = () => {
         <div className="container small">
           <div className={s.mainBody}>
             <div className={s.mainBody__col}>
-              <div className={s.mainBody__colHello}>
-                {helloWord}
-              </div>
+              <div className={s.mainBody__colHello}>{helloWord}</div>
               <div className={s.mainBody__colIm}>
                 <span>Я</span> Кирилл Махнёв
               </div>
-              <div className={s.mainBody__colPos}>
-                Fronted Developer
-              </div>
+              <div className={s.mainBody__colPos}>Fronted Developer</div>
               <div className={s.mainBody__colAdvantages}>
-                <span>
-                  Свертаю ваш макет быстро и качественно!
-                </span>
+                <span>Свертаю ваш макет быстро и качественно!</span>
                 <ul>
-                  <li>
-                    Адаптивная верстка
-                  </li>
-                  <li>
-                    Кроссбраузерная верстка
-                  </li>
-                  <li>
-                    Верстка на React
-                  </li>
-                  <li>
-                    Поддержка проекта навсегда, после сдачи
-                  </li>
+                  <li>Адаптивная верстка</li>
+                  <li>Кроссбраузерная верстка</li>
+                  <li>Верстка на React</li>
+                  <li>Поддержка проекта навсегда, после сдачи</li>
                 </ul>
               </div>
             </div>
@@ -100,25 +92,24 @@ const MainContent = () => {
                   spaceBetween={0}
                   slidesPerView={1}
                   autoplay={{
-                    delay: 2000,
+                    delay: 4000,
                     disableOnInteraction: false,
                   }}
                   navigation={{
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
                   }}
                   loop
                   pagination={{
                     clickable: true,
                     bulletClass: s.bullet,
                     bulletActiveClass: s.bulletActive,
-                    modifierClass: 'bullet__list',
+                    modifierClass: "bullet__list",
                   }}
                 >
                   <div className="swiper-button-prev cursorHover _navigation-prev"></div>
                   {projectsListSlider}
-                  <div className="swiper-button-next cursorHover _navigation-next">
-                  </div>
+                  <div className="swiper-button-next cursorHover _navigation-next"></div>
                 </Swiper>
               </div>
             </div>
@@ -126,24 +117,20 @@ const MainContent = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 const Advantages = () => {
   // Reviews slider
-  const reviewsListState = useSelector((state: any) => state.reviews)
-  const reviewsItems = reviewsListState.map((item: any, index: number) =>
+  const reviewsListState = useSelector((state: any) => state.reviews);
+  const reviewsItems = reviewsListState.map((item: any, index: number) => (
     <SwiperSlide key={index}>
       <div className={s.review}>
-        <span className={s.reviewName}>
-          {item.Name}
-        </span>
-        <span className={s.reviewContent}>
-          “{item.Content}”
-        </span>
+        <span className={s.reviewName}>{item.Name}</span>
+        <span className={s.reviewContent}>“{item.Content}”</span>
       </div>
     </SwiperSlide>
-  )
+  ));
   return (
     <>
       <div className={s.advantages}>
@@ -155,27 +142,13 @@ const Advantages = () => {
                 Работы со мной
               </div>
               <ul className={s.advantagesBody__colList}>
-                <li>
-                  Выполненная работа в срок!
-                </li>
-                <li>
-                  Всегда на связи!
-                </li>
-                <li>
-                  Профессиональный подход к каждому заказу!
-                </li>
-                <li>
-                  Качественный и оптимизированный код!
-                </li>
-                <li>
-                  Адаптивная, валидная верстка.
-                </li>
-                <li>
-                  Ваши клиенты оценят удобный и быстрый сайт.
-                </li>
-                <li>
-                  С момента начала работы будет доступен тестовый домен.
-                </li>
+                <li>Выполненная работа в срок!</li>
+                <li>Всегда на связи!</li>
+                <li>Профессиональный подход к каждому заказу!</li>
+                <li>Качественный и оптимизированный код!</li>
+                <li>Адаптивная, валидная верстка.</li>
+                <li>Ваши клиенты оценят удобный и быстрый сайт.</li>
+                <li>С момента начала работы будет доступен тестовый домен.</li>
               </ul>
             </div>
             <div className={s.advantagesBody__col}>
@@ -186,13 +159,13 @@ const Advantages = () => {
                   spaceBetween={0}
                   slidesPerView={1}
                   autoplay={{
-                    delay: 3000,
+                    delay: 5000,
                     disableOnInteraction: false,
                   }}
                   autoHeight
                   navigation={{
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
                   }}
                   grabCursor
                   loop
@@ -200,7 +173,7 @@ const Advantages = () => {
                     clickable: true,
                     bulletClass: `${s.bullet} ${s.bulletLight}`,
                     bulletActiveClass: s.bulletActive,
-                    modifierClass: 'bullet__list-light',
+                    modifierClass: "bullet__list-light",
                   }}
                 >
                   <div className="swiper-button-prev cursorHover _navigation-prev"></div>
@@ -213,8 +186,8 @@ const Advantages = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 const AboutMe = () => {
   return (
@@ -232,69 +205,42 @@ const AboutMe = () => {
                   С 2020 года изучаю Frontend технологии. <br />
                   Опыт в разработке более двух лет. 🔥
                 </p>
+                <p>Верстаю адаппитво, кроссбраузерно, это стандарт)</p>
                 <p>
-                  Верстаю адаппитво, кроссбраузерно, это стандарт)
-                </p>
-                <p>
-                  Помимо классической верскти, умею версать на React, <br />
-                  а также работать с API.
+                  Помимо классической верскти, умею версать на React, <br />а
+                  также работать с API.
                 </p>
                 <p>
                   Открыт всему новому! Всегда обучаюсь, и делаю это быстро !)
                 </p>
                 <p>
-                  В работе использую лучшие современные технологии, чтобы вам и вашим клиентам было удобно пользоваться сайтом.
+                  В работе использую лучшие современные технологии, чтобы вам и
+                  вашим клиентам было удобно пользоваться сайтом.
                 </p>
               </div>
             </div>
             <div className={s.advantagesBody__col}>
-              <div className={s.advantagesBody__colTitle}>
-                Мой стек:
-              </div>
+              <div className={s.advantagesBody__colTitle}>Мой стек:</div>
               <ul className={s.advantagesBody__colStack}>
-                <li>
-                  React
-                </li>
-                <li>
-                  Redux
-                </li>
-                <li>
-                  JavaScript
-                </li>
-                <li>
-                  TypeScript
-                </li>
-                <li>
-                  HTML/CSS
-                </li>
-                <li>
-                  sass/SCSS
-                </li>
-                <li>
-                  axios
-                </li>
-                <li>
-                  Rest API
-                </li>
-                <li>
-                  GIT
-                </li>
-                <li>
-                  Gulp
-                </li>
-                <li>
-                  БЭМ
-                </li>
-                <li>
-                  Figma, Zeplin, Photoshop
-                </li>
+                <li>React</li>
+                <li>Redux</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>HTML/CSS</li>
+                <li>sass/SCSS</li>
+                <li>axios</li>
+                <li>Rest API</li>
+                <li>GIT</li>
+                <li>Gulp</li>
+                <li>БЭМ</li>
+                <li>Figma, Zeplin, Photoshop</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
