@@ -1,0 +1,27 @@
+name: Deployment
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:  
+  deploy: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Pull & build front
+      uses: appleboy/ssh-action@master 
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SECRET_KEY }}
+        port: 22
+        script: |
+          cd /home/pikamoon/front/
+          git fetch --all
+          git checkout main
+          git reset --hard HEAD
+          git pull
+          yarn install
+          yarn build
