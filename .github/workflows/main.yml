@@ -1,27 +1,25 @@
-name: Deployment
+name: Deploy
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Get code
-      uses: actions/checkout@v3
-    - name: Install deps
-      run: yarn
-    - name: Build project
-      run: yarn build
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v3
-      with: 
-        path: build
-        name: build-files
-  deploy: 
-    needs: build
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Get build project
-        uses: actions/download-artifact@v3
-        with: 
-          name: build-files
+      - uses: actions/checkout@v2
+      # Setup key
+      - run: set -eu
+      - run: mkdir "$HOME/.ssh"
+      - run: echo "$" > "$HOME/.ssh/key"
+      - run: chmod 600 "$HOME/.ssh/key"
+      # Build
+      - run: yarn
+      - run: yarn build
+      # Deploy
+      - run: cd build && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . k100018.hostde37.fornex.host:/home/k100018/public_html/notequal.website
