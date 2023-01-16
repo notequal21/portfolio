@@ -1,27 +1,19 @@
 name: Deployment
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-    
-jobs:  
-  deploy: 
+on: [push, pull_request]
+
+jobs:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Pull & build front
-      uses: appleboy/ssh-action@master 
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SECRET_KEY }}
-        port: 22
-        script: |
-          cd /home/pikamoon/front/
-          git fetch --all
-          git checkout main
-          git reset --hard HEAD
-          git pull
-          yarn install
-          yarn build
+    - name: Get code
+      uses: actions/checkout@v3
+    - name: Install deps
+      run: npm ci
+    - name: Build project
+      run: npm run build
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with: 
+        path: build
+        name: build-files
