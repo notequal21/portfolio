@@ -1,4 +1,4 @@
-@import 'normalize.css';
+@import "normalize.css";
 @import "@styles";
 
 * {
@@ -19,11 +19,11 @@
   padding: 0;
   margin: 0;
   border: 0;
-  cursor: none !important;
+  // cursor: none !important;
 
-  &:hover {
-    cursor: none !important;
-  }
+  // &:hover {
+  //   cursor: none !important;
+  // }
 }
 
 :focus,
@@ -101,16 +101,12 @@ h6 {
   font-weight: 400;
 }
 
-
-
-
-
 body {
   background-color: $bg-primary-color;
   font-family: roboto;
-  transition: .4s background-color;
+  transition: 0.4s background-color;
 
-  @media (prefers-color-scheme:dark) {
+  @media (prefers-color-scheme: dark) {
     color: $dark-bg-primary-font-color;
     background-color: $dark-bg-primary-color;
   }
@@ -119,17 +115,17 @@ body {
 .container {
   max-width: 2590px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 18px;
 
   &.small {
     max-width: 1310px;
 
-    @media (min-width:1440px) {
+    @media (min-width: 1440px) {
       padding: 0 15px;
     }
   }
 
-  @media (min-width:1440px) {
+  @media (min-width: 1440px) {
     padding: 0 50px;
   }
 }
@@ -145,10 +141,9 @@ body {
   flex: 1 1 auto;
 }
 
-
-
 // Cusrom cursor
 .cursor {
+  display: none;
   position: fixed;
   background: $primary-color;
   width: 10px;
@@ -158,9 +153,9 @@ body {
   pointer-events: none;
   z-index: 1111;
   transform: scale(1) translate(-2px, -2px);
-  transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform;
 
-  @media (prefers-color-scheme:dark) {
+  @media (prefers-color-scheme: dark) {
     background: $dark-primary-color;
   }
 
@@ -192,9 +187,10 @@ body {
   pointer-events: none;
   z-index: 1111;
   transform: scale(1);
-  transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform, .2s ease background, .2s ease border-color;
+  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s ease background, 0.2s ease border-color;
 
-  @media (prefers-color-scheme:dark) {
+  @media (prefers-color-scheme: dark) {
     border-color: $dark-primary-color;
   }
 
@@ -204,7 +200,7 @@ body {
     transform: scale(0);
     color: #fff;
 
-    transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+    transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform;
   }
 
   &__projectType {
@@ -215,7 +211,7 @@ body {
     text-transform: capitalize;
     font-size: 10px;
 
-    transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+    transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform;
   }
 
   &__projectName {
@@ -231,9 +227,9 @@ body {
     border-radius: 10px;
 
     // transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
-    transition: .3s transform;
+    transition: 0.3s transform;
 
-    @media (prefers-color-scheme:dark) {
+    @media (prefers-color-scheme: dark) {
       background-color: $dark-primary-color;
     }
 
@@ -250,7 +246,7 @@ body {
         path {
           fill: $primary-color;
 
-          @media (prefers-color-scheme:dark) {
+          @media (prefers-color-scheme: dark) {
             fill: $dark-primary-color;
           }
         }
@@ -261,7 +257,7 @@ body {
   &__navigation {
     position: absolute;
     transform: scale(0);
-    transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+    transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform;
 
     svg {
       width: 30px;
@@ -281,7 +277,7 @@ body {
       position: absolute;
       transform: translate(-50%, -50%);
       opacity: 0;
-      transition: .3s ease;
+      transition: 0.3s ease;
     }
   }
 
@@ -289,7 +285,7 @@ body {
     position: absolute;
     opacity: 0;
     transform: scale(0);
-    transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
+    transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform;
 
     svg {
       width: 30px;
@@ -310,16 +306,16 @@ body {
     background: $primary-color;
     z-index: 0;
 
-    @media (prefers-color-scheme:dark) {
+    @media (prefers-color-scheme: dark) {
       background: $dark-primary-color;
     }
   }
 
   &.activePortfolio {
-    transform: scale(2.5);
+    transform: scale(1.7) translate(0, -20px);
     background: $primary-color;
 
-    @media (prefers-color-scheme:dark) {
+    @media (prefers-color-scheme: dark) {
       background: $dark-primary-color;
     }
 
@@ -327,7 +323,7 @@ body {
       border-color: $best-project-border-color;
       background: $best-project-border-color;
 
-      @media (prefers-color-scheme:dark) {
+      @media (prefers-color-scheme: dark) {
         border-color: $dark-best-project-border-color;
         background: $dark-best-project-border-color;
       }
@@ -335,7 +331,7 @@ body {
       .follower__projectName {
         background: $best-project-border-color;
 
-        @media (prefers-color-scheme:dark) {
+        @media (prefers-color-scheme: dark) {
           background: $dark-best-project-border-color;
         }
 
@@ -346,7 +342,7 @@ body {
             path {
               fill: $best-project-border-color;
 
-              @media (prefers-color-scheme:dark) {
+              @media (prefers-color-scheme: dark) {
                 fill: $dark-best-project-border-color;
               }
             }
@@ -362,15 +358,15 @@ body {
 
     .follower__projectName {
       opacity: 1;
-      transform: scale(1);
+      transform: scale(1.3) translate(0, 14px);
     }
   }
 
   &.activeCounter {
-    transform: scale(2);
+    transform: scale(2) translate(-55%, 55%);
     background: $primary-color;
 
-    @media (prefers-color-scheme:dark) {
+    @media (prefers-color-scheme: dark) {
       background: $dark-primary-color;
     }
 
@@ -391,9 +387,7 @@ body {
   }
 
   &.activeNavigation-prev {
-
     .follower__navigation {
-
       &Prev {
         opacity: 1;
       }
@@ -402,7 +396,6 @@ body {
 
   &.activeNavigation-next {
     .follower__navigation {
-
       &Next {
         opacity: 1;
       }
@@ -428,7 +421,7 @@ body {
     border-color: $primary-color !important;
     background: $primary-color !important;
 
-    @media (prefers-color-scheme:dark) {
+    @media (prefers-color-scheme: dark) {
       border-color: $dark-primary-color !important;
       background: $dark-primary-color !important;
     }
@@ -437,7 +430,7 @@ body {
     .follower__projectName {
       background: $primary-color !important;
 
-      @media (prefers-color-scheme:dark) {
+      @media (prefers-color-scheme: dark) {
         background: $dark-primary-color !important;
       }
 
@@ -445,7 +438,7 @@ body {
         path {
           fill: $primary-color !important;
 
-          @media (prefers-color-scheme:dark) {
+          @media (prefers-color-scheme: dark) {
             fill: $dark-primary-color !important;
           }
         }
