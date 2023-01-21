@@ -228,7 +228,11 @@ function App() {
       </div>
 
       {/* Content */}
-      <div className='wrapper'>
+      <div
+        className={`wrapper ${
+          location.pathname === '/portfolio' ? 'portfolio' : ''
+        }`}
+      >
         <div className='content'>
           <Header withLoader={withLoader} isLoader={isLoader} />
 
@@ -239,7 +243,7 @@ function App() {
             </Routes>
           </div>
 
-          <Header withLoader={withLoader} isLoader={isLoader} />
+          <Header isFooter withLoader={withLoader} isLoader={isLoader} />
         </div>
       </div>
     </>

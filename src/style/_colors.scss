@@ -3,18 +3,18 @@ $bg-primary-color: #fff;
 
 $bg-primary-font-color: #000;
 
-$primary-color: #00cd5e; // 1378ef
-$best-project-border-color: #ffa00b;
-$primary-font-color: #000;
+$primary-color: #fff; // 1378ef 00cd5e
+$best-project-border-color: #212042; // ffa00b
+$primary-font-color: #fff; // #000
 
 // dark theme colors
 $dark-primary-color: #3abd77;
 $dark-best-project-border-color: #db8f14;
-$dark-bg-primary-color: #1a181f;
+$dark-bg-primary-color: #1a181f; // #1a181f
 $dark-bg-primary-font-color: #fff;
 
 // gradients
-$purple-gradient: linear-gradient(180deg, #9459ff 0%, #ff62d7 100%);
+$purple-gradient: linear-gradient(90deg, #9459ff 0%, #ff62d7 100%);
 $light-green-gradient: linear-gradient(180deg, #4cc9ae 0%, #fff9bf 100%);
 
 // new light theme colors
@@ -22,3 +22,6 @@ $toxic-yellow: #c8ff29;
 $light-purple: #c5afff;
 $white: #ffffff;
 $dark: #212042;
+
+// cursor colors
+$cursor-primary-color: #212042;
