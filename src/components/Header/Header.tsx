@@ -59,14 +59,14 @@ const Header = ({ withLoader, isLoader, isFooter, ...props }: any) => {
               `}
                 onClick={(e) => {
                   if (location.pathname !== '/') {
-                    withLoader(e.clientX, e.clientY)
-                    setTimeout(() => {
-                      navigate('/')
-                      window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth',
-                      })
-                    }, 500)
+                    // withLoader(e.clientX, e.clientY)
+                    navigate('/')
+                    window.scrollTo({
+                      top: 0,
+                      behavior: 'smooth',
+                    })
+                    // setTimeout(() => {
+                    // }, 500)
                   }
                 }}
               >
@@ -80,15 +80,15 @@ const Header = ({ withLoader, isLoader, isFooter, ...props }: any) => {
               counterLink`}
                 onClick={(e) => {
                   if (location.pathname !== '/portfolio') {
-                    withLoader(e.clientX, e.clientY)
+                    // withLoader(e.clientX, e.clientY)
 
-                    setTimeout(() => {
-                      navigate('portfolio')
-                      window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth',
-                      })
-                    }, 500)
+                    navigate('portfolio')
+                    window.scrollTo({
+                      top: 0,
+                      behavior: 'smooth',
+                    })
+                    // setTimeout(() => {
+                    // }, 500)
                   }
                 }}
               >

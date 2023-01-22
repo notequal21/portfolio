@@ -9,6 +9,8 @@ import { PortfolioItem } from '../Portfolio/Portfolio'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import StatsComponent from '../../components/Stats/Stats'
+import LiquidButton from './JellyButton'
+import { useNavigate } from 'react-router-dom'
 
 const Main = () => {
   const handleMargin = () => {
@@ -168,6 +170,17 @@ const Advantages = () => {
 }
 
 const PreviewProjects = () => {
+  const navigate = useNavigate()
+
+  const toPage = (page: string) => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+    return navigate(`${page}`)
+  }
+
   const projectsListStateFiltered = useSelector((state: any) =>
     state.projects.filter((item: any) => item.IsBest)
   )
@@ -185,6 +198,14 @@ const PreviewProjects = () => {
       </SwiperSlide>
     )
   )
+
+  useEffect(() => {
+    const buttons = document.getElementsByClassName('liquid-button')
+    for (let buttonIndex = 0; buttonIndex < buttons.length; buttonIndex++) {
+      const button: any = buttons[buttonIndex]
+      button.liquidButton = new LiquidButton(button)
+    }
+  })
 
   return (
     <div className={s.preview}>
@@ -216,6 +237,28 @@ const PreviewProjects = () => {
             {projectsListSlider}
             <div className='swiper-button-next cursorHover _navigation-next'></div>
           </Swiper>
+
+          {/* <div className={`${s.previewBody__more} liquid-button`}>
+            Больше работ
+          </div> */}
+
+          <svg
+            onClick={() => {
+              toPage('portfolio')
+            }}
+            className={`${s.previewBody__more} liquid-button`}
+            data-text='Больше работ'
+            data-force-factor='0.1'
+            data-layer-1-viscosity='0.5'
+            data-layer-2-viscosity='0.4'
+            data-layer-1-mouse-force='400'
+            data-layer-2-mouse-force='500'
+            data-layer-1-force-limit='1'
+            data-layer-2-force-limit='2'
+            data-color1='#c8ff29'
+            data-color2='#c5afff'
+            data-color3='#20D8F9'
+          ></svg>
         </div>
       </div>
     </div>
@@ -292,10 +335,10 @@ const MyStack = () => {
           <ListItem value='Redux' />
           <ListItem value='HTML/CSS' />
           <ListItem value='GIT' />
-          <ListItem value='Figma, Zeplin, PSD' />
           <ListItem value='JavaScript' />
           <ListItem value='sass/SCSS' />
           <ListItem value='БЭМ' />
+          <ListItem value='Figma, Zeplin, PSD' />
         </ul>
       </div>
     </div>
