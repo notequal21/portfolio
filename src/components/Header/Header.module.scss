@@ -1,9 +1,15 @@
-@import "@styles";
+@import '@styles';
 
 .header {
-  position: relative;
+  position: absolute;
+  z-index: 10;
   padding: 20px 0;
   width: 100%;
+
+  &._footer {
+    position: relative;
+    background: #4cc9ae;
+  }
 
   &Body {
     display: flex;
@@ -27,11 +33,12 @@
 
       svg {
         path {
-          fill: #161614;
+          // fill: #161614;
+          fill: $white;
 
-          @media (prefers-color-scheme: dark) {
-            fill: #d4d4d4;
-          }
+          // @media (prefers-color-scheme: dark) {
+          //   fill: #d4d4d4;
+          // }
         }
       }
 
@@ -69,16 +76,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: $primary-color;
+            background-color: $cursor-primary-color;
             border-radius: 50%;
             font-size: 12px;
             color: #fff;
             transition: all 0.3s ease;
 
             // transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
-            @media (prefers-color-scheme: dark) {
-              background-color: $dark-primary-color;
-            }
+            // @media (prefers-color-scheme: dark) {
+            //   background-color: $dark-primary-color;
+            // }
           }
 
           &:hover {
