@@ -11,6 +11,11 @@
     background: #4cc9ae;
   }
 
+  &._portfolio {
+    margin: 50px 0 0;
+    background: transparent;
+  }
+
   &Body {
     display: flex;
     align-items: center;

@@ -16,7 +16,10 @@ const Header = ({ withLoader, isLoader, isFooter, ...props }: any) => {
 
   return (
     <>
-      <div className={`${s.header} ${isFooter ? s._footer : ''}`}>
+      <div
+        className={`${s.header} ${isFooter ? s._footer : ''} 
+        ${location.pathname === '/portfolio' ? s._portfolio : ''}`}
+      >
         <div className='container'>
           <div className={s.headerBody}>
             <a

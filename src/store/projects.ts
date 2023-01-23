@@ -90,7 +90,7 @@ const initialState = [
     Name: 'Fredemo',
     Type: 'html',
     Img: 'html/fredemo',
-    Link: 'https://paradox.notequal.website/overview',
+    Link: 'https://demo.notequal.website/fredemo/',
   },
   {
     IsBest: false,
