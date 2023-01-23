@@ -1,0 +1,56 @@
+@import '@styles';
+
+.contacts {
+  margin: 120px 0 0;
+  min-height: calc(100vh - 244px);
+
+  &__title {
+    font-family: 'Inter';
+    font-size: 60px;
+    line-height: 1;
+    color: $primary-font-color;
+    text-align: center;
+
+    @media (max-width: 767px) {
+      font-size: 32px;
+    }
+  }
+
+  &Body {
+    margin: 100px auto 0;
+    max-width: 750px;
+
+    &__item {
+      position: relative;
+      padding: 0 0 0 34px;
+      font-size: 34px;
+      font-family: montserrat;
+      color: $primary-font-color;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      a {
+        color: $primary-font-color;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-color: $toxic-yellow;
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        left: 0;
+      }
+
+      &:not(:first-child) {
+        margin: 30px 0 0;
+      }
+    }
+  }
+}

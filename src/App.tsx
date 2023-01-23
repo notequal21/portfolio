@@ -7,6 +7,8 @@ import { useCallback, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLoaderPos, toggleLoader } from './store/loader'
+import Contacts from './pages/Contacts/Contacts'
+import TgLink from './components/TgLink/TgLink'
 
 function App() {
   let location = useLocation()
@@ -231,15 +233,19 @@ function App() {
       <div
         className={`wrapper ${
           location.pathname === '/portfolio' ? 'portfolio' : ''
-        }`}
+        } ${location.pathname === '/contacts' ? 'portfolio' : ''}
+        `}
       >
         <div className='content'>
           <Header withLoader={withLoader} isLoader={isLoader} />
+
+          <TgLink />
 
           <div className={s.content}>
             <Routes>
               <Route path='/' element={<Main />} />
               <Route path='/portfolio' element={<Portfolio />} />
+              <Route path='/contacts' element={<Contacts />} />
             </Routes>
           </div>
 
