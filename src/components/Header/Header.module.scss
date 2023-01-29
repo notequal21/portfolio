@@ -27,9 +27,9 @@
       font-size: 22px;
       color: $primary-font-color;
 
-      @media (prefers-color-scheme: dark) {
-        color: $dark-bg-primary-font-color;
-      }
+      // @media (prefers-color-scheme: dark) {
+      //   color: $dark-bg-primary-font-color;
+      // }
 
       img,
       svg {
@@ -68,9 +68,9 @@
         font-size: 18px;
         color: $primary-font-color;
 
-        @media (prefers-color-scheme: dark) {
-          color: $dark-bg-primary-font-color;
-        }
+        // @media (prefers-color-scheme: dark) {
+        //   color: $dark-bg-primary-font-color;
+        // }
 
         &.count {
           span {

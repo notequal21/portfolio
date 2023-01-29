@@ -159,9 +159,9 @@ body {
   transform: scale(1) translate(-2px, -2px);
   transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform;
 
-  @media (prefers-color-scheme: dark) {
-    background: $dark-primary-color;
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   background: $dark-primary-color;
+  // }
 
   &.active {
     transform: scale(0);
@@ -235,9 +235,9 @@ body {
     // transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
     transition: 0.3s transform;
 
-    @media (prefers-color-scheme: dark) {
-      background-color: $dark-primary-color;
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   background-color: $dark-primary-color;
+    // }
 
     span {
       position: absolute;
@@ -252,9 +252,9 @@ body {
         path {
           fill: $primary-color;
 
-          @media (prefers-color-scheme: dark) {
-            fill: $dark-primary-color;
-          }
+          // @media (prefers-color-scheme: dark) {
+          //   fill: $dark-primary-color;
+          // }
         }
       }
     }
@@ -272,9 +272,9 @@ body {
       path {
         fill: $primary-color;
 
-        @media (prefers-color-scheme: dark) {
-          fill: $dark-primary-color;
-        }
+        // @media (prefers-color-scheme: dark) {
+        //   fill: $dark-primary-color;
+        // }
       }
     }
 
@@ -300,9 +300,9 @@ body {
       path {
         fill: $best-project-border-color;
 
-        @media (prefers-color-scheme: dark) {
-          fill: $dark-best-project-border-color;
-        }
+        // @media (prefers-color-scheme: dark) {
+        //   fill: $dark-best-project-border-color;
+        // }
       }
     }
   }
@@ -343,9 +343,9 @@ body {
       .follower__projectName {
         background: $best-project-border-color;
 
-        @media (prefers-color-scheme: dark) {
-          background: $dark-best-project-border-color;
-        }
+        // @media (prefers-color-scheme: dark) {
+        //   background: $dark-best-project-border-color;
+        // }
 
         span {
           svg {
@@ -354,9 +354,9 @@ body {
             path {
               fill: $best-project-border-color;
 
-              @media (prefers-color-scheme: dark) {
-                fill: $dark-best-project-border-color;
-              }
+              // @media (prefers-color-scheme: dark) {
+              //   fill: $dark-best-project-border-color;
+              // }
             }
           }
         }
@@ -378,9 +378,9 @@ body {
     transform: scale(2) translate(-55%, 55%);
     background: $cursor-primary-color;
 
-    @media (prefers-color-scheme: dark) {
-      background: $dark-primary-color;
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   background: $dark-primary-color;
+    // }
 
     .follower__counter {
       opacity: 1;
@@ -451,9 +451,9 @@ body {
         path {
           fill: $primary-color !important;
 
-          @media (prefers-color-scheme: dark) {
-            fill: $dark-primary-color !important;
-          }
+          // @media (prefers-color-scheme: dark) {
+          //   fill: $dark-primary-color !important;
+          // }
         }
       }
     }

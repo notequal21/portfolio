@@ -135,16 +135,6 @@
     flex-direction: column;
     margin: 50px 0 0;
 
-    &__more {
-      align-items: center;
-      cursor: pointer;
-      margin: 60px auto 0;
-
-      text {
-        fill: $white !important;
-      }
-    }
-
     &__slider {
       margin: 0 auto;
       min-width: 0;
@@ -165,6 +155,16 @@
 
       @media (max-width: 767px) {
         font-size: 32px;
+      }
+    }
+
+    &__more {
+      align-items: center;
+      cursor: pointer;
+      margin: 60px auto 0;
+
+      text {
+        fill: $white !important;
       }
     }
   }
@@ -249,9 +249,9 @@
     background-color: $primary-color;
     opacity: 1;
 
-    @media (prefers-color-scheme: dark) {
-      background-color: $dark-primary-color;
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   background-color: $dark-primary-color;
+    // }
   }
 }
 
