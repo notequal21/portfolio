@@ -176,6 +176,13 @@ const initialState = [
     Img: 'react/pikamoon-db',
     Link: 'https://pikamoon.notequal.website/dashboard/',
   },
+  {
+    IsBest: false,
+    Name: 'noaxarta',
+    Type: 'react',
+    Img: 'react/noaxarta',
+    Link: 'https://dev-game.pro/',
+  },
 ]
 
 export const projectsSlice = createSlice({
