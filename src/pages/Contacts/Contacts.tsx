@@ -1,4 +1,4 @@
-import s from './Contacts.module.scss'
+import s from './Contacts.module.scss';
 
 const Contacts = () => {
   return (
@@ -40,7 +40,7 @@ const Contacts = () => {
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contacts
+export default Contacts;

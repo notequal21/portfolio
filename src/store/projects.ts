@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
   {
@@ -80,6 +80,20 @@ const initialState = [
   },
   {
     IsBest: false,
+    Name: 'Card To Card',
+    Type: 'html',
+    Img: 'html/card-to-card',
+    Link: 'https://demo.notequal.website/card-to-card/',
+  },
+  {
+    IsBest: false,
+    Name: 'TaxiPay',
+    Type: 'html',
+    Img: 'html/taxipay',
+    Link: 'https://demo.notequal.website/taxipay/',
+  },
+  {
+    IsBest: false,
     Name: 'NFT Banker',
     Type: 'html',
     Img: 'html/nftbanker',
@@ -128,6 +142,13 @@ const initialState = [
     Link: 'https://botswap.app/',
   },
   {
+    IsBest: false,
+    Name: 'Zelenec',
+    Type: 'html',
+    Img: 'html/zelenec',
+    Link: 'https://demo.notequal.website/zelenec/sitemap.html',
+  },
+  {
     IsBest: true,
     Name: 'Code Metal',
     Type: 'html',
@@ -140,6 +161,20 @@ const initialState = [
     Type: 'react',
     Img: 'react/freedemo_app',
     Link: 'https://freedemo.notequal.website/',
+  },
+  {
+    IsBest: false,
+    Name: 'Yeezypay - collab',
+    Type: 'react',
+    Img: 'react/yeezypay-collab',
+    Link: 'https://yeezypaycollab.notequal.website/',
+  },
+  {
+    IsBest: false,
+    Name: 'Specokraska',
+    Type: 'html',
+    Img: 'html/specokraska',
+    Link: 'https://demo.notequal.website/specokraska/index.html',
   },
   {
     IsBest: false,
@@ -183,12 +218,12 @@ const initialState = [
     Img: 'react/noaxarta',
     Link: 'https://dev-game.pro/',
   },
-]
+];
 
 export const projectsSlice = createSlice({
   name: 'projects',
   initialState,
   reducers: {},
-})
+});
 
-export default projectsSlice.reducer
+export default projectsSlice.reducer;
