@@ -1,14 +1,14 @@
-import s from './Stats.module.scss'
+import s from './Stats.module.scss';
 
 const StatsComponent = () => {
   return (
     <div className={s.stats}>
-      <StatsItem value='3+' title={`Лет опыта`} />
-      <StatsItem value='20+' title='Довольных клиентов' />
-      <StatsItem value='50+' title='Успешных проектов' />
+      <StatsItem value='4+' title={`Лет опыта`} />
+      <StatsItem value='30+' title='Довольных клиентов' />
+      <StatsItem value='80+' title='Успешных проектов' />
     </div>
-  )
-}
+  );
+};
 
 const StatsItem = ({ value, title }) => {
   return (
@@ -16,7 +16,7 @@ const StatsItem = ({ value, title }) => {
       <div className={s.stats__itemValue}>{value}</div>
       <div className={s.stats__itemTitle}>{title}</div>
     </div>
-  )
-}
+  );
+};
 
-export default StatsComponent
+export default StatsComponent;

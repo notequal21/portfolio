@@ -1,7 +1,6 @@
 @import '@styles';
 
 .main {
-  min-height: 100vh;
   padding: 100px 0;
   background: $purple-gradient;
 
@@ -23,9 +22,9 @@
     }
     &__description {
       font-family: 'Montserrat';
-      margin: 20px 0 0;
+      margin: 26px 0 0;
       font-size: 32px;
-      line-height: 1.15;
+      line-height: 1.25;
       text-align: center;
       color: $primary-color;
 
@@ -34,8 +33,12 @@
       }
     }
     &__list {
-      margin: 26px auto 0;
+      margin: 36px auto 0 350px;
       max-width: 920px;
+
+      @media (max-width: 1200px) {
+        margin: 26px auto 0;
+      }
 
       &Item {
         position: relative;
@@ -77,11 +80,11 @@
 }
 
 .about {
-  padding: 80px 0;
+  padding: 80px 0 40px;
   background: $dark;
 
   @media (max-width: 767px) {
-    padding: 50px 0;
+    padding: 50px 0 20px;
   }
 
   &Body {
@@ -108,6 +111,38 @@
         margin: 30px 0 0;
         font-size: 20px;
         line-height: 28px;
+
+        br {
+          display: none;
+        }
+      }
+
+      p {
+        max-width: 650px;
+        margin: 30px auto 0;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        color: $primary-font-color;
+
+        @media (max-width: 767px) {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        span {
+          display: block;
+          font-weight: 700;
+          margin: 0 0 10px;
+        }
+
+        &:not(:first-child) {
+          margin: 34px auto 0;
+
+          @media (max-width: 767px) {
+            margin: 24px auto 0;
+          }
+        }
       }
     }
   }
@@ -251,12 +286,12 @@
 }
 
 .advantages {
-  padding: 80px 0;
+  padding: 20px 0;
   background: $dark;
 
-  @media (max-width: 767px) {
-    padding: 50px 0;
-  }
+  // @media (max-width: 767px) {
+  //   padding: 50px 0;
+  // }
 
   &__title {
     font-family: 'Inter';
@@ -271,12 +306,12 @@
   }
 
   &Body {
-    margin: 70px 0 0;
+    // margin: 70px 0 0;
     display: flex;
     justify-content: center;
 
-    @media (max-width: 767px) {
-      margin: 30px 0 0;
+    @media (max-width: 991px) {
+      // margin: 30px 0 0;
       flex-wrap: wrap;
     }
 
@@ -292,7 +327,7 @@
         margin: 0 0 0 40px;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         flex: 1 1 100%;
         border-radius: 20px;
         padding: 20px;
@@ -304,28 +339,28 @@
 
       &Title {
         font-family: 'Inter';
-        font-size: 36px;
-        line-height: 44px;
+        font-size: 24px;
+        line-height: 34px;
         color: #212042;
         text-align: center;
 
         @media (max-width: 767px) {
-          font-size: 28px;
-          line-height: 36px;
+          font-size: 20px;
+          line-height: 26px;
         }
       }
       &Descr {
-        margin: 20px 0 0;
+        margin: 14px 0 0;
         font-family: 'Montserrat';
-        font-size: 22px;
+        font-size: 18px;
         line-height: 26px;
         text-align: center;
         color: #212042;
 
         @media (max-width: 767px) {
-          margin: 16px 0 0;
-          font-size: 18px;
-          line-height: 24px;
+          margin: 12px 0 0;
+          font-size: 16px;
+          line-height: 22px;
         }
         &.additional {
         }
@@ -366,8 +401,8 @@
     &__item {
       flex: 0 0 25%;
       font-family: 'Montserrat';
-      font-size: 28px;
-      line-height: 40px;
+      font-size: 24px;
+      line-height: 34px;
       color: #ffffff;
       padding: 0 0 0 20px;
       position: relative;
