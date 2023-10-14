@@ -1,12 +1,7 @@
 @import '@styles';
 
 .main {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  // min-height: 100vh;
-  // height: 100vh;
+  min-height: 100vh;
   padding: 100px 0;
   background: $purple-gradient;
 
@@ -413,15 +408,5 @@
         }
       }
     }
-  }
-}
-
-.parallaxCont {
-  margin: 807px 0 0;
-  position: relative;
-  z-index: 1;
-
-  @media (max-width: 767px) {
-    margin: 0 !important;
   }
 }

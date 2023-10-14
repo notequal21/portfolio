@@ -1,30 +1,18 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation, Pagination } from 'swiper'
-import s from './Main.module.scss'
-import './Slider.scss'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import { PortfolioItem } from '../Portfolio/Portfolio'
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
-import StatsComponent from '../../components/Stats/Stats'
-import LiquidButton from './JellyButton'
-import { useNavigate } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper';
+import s from './Main.module.scss';
+import './Slider.scss';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { PortfolioItem } from '../Portfolio/Portfolio';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import StatsComponent from '../../components/Stats/Stats';
+import LiquidButton from './JellyButton';
+import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
-  const handleMargin = () => {
-    const mainBlock = document.querySelector(`.${s.main}`)
-    let parallaxCont: any = document.querySelector(`.${s.parallaxCont}`)
-
-    parallaxCont.style.margin = `${mainBlock?.clientHeight}px 0 0`
-  }
-
-  useEffect(() => {
-    handleMargin()
-    window.addEventListener('resize', handleMargin)
-  }, [])
-
   return (
     <>
       <MainContent />
@@ -40,8 +28,8 @@ const Main = () => {
       </div>
       {/* <AboutMe /> */}
     </>
-  )
-}
+  );
+};
 
 const MainContent = () => {
   // Slider for main screen
@@ -92,8 +80,8 @@ const MainContent = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 const About = () => {
   return (
@@ -114,8 +102,8 @@ const About = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Advantages = () => {
   // Reviews slider
@@ -166,24 +154,24 @@ const Advantages = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 const PreviewProjects = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const toPage = (page: string) => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth',
-    })
-    return navigate(`${page}`)
-  }
+    });
+    return navigate(`${page}`);
+  };
 
   const projectsListStateFiltered = useSelector((state: any) =>
     state.projects.filter((item: any) => item.IsBest)
-  )
+  );
   const projectsListSlider = projectsListStateFiltered.map(
     (item: any, index: number) => (
       <SwiperSlide key={index}>
@@ -197,15 +185,15 @@ const PreviewProjects = () => {
         />
       </SwiperSlide>
     )
-  )
+  );
 
   useEffect(() => {
-    const buttons = document.getElementsByClassName('liquid-button')
+    const buttons = document.getElementsByClassName('liquid-button');
     for (let buttonIndex = 0; buttonIndex < buttons.length; buttonIndex++) {
-      const button: any = buttons[buttonIndex]
-      button.liquidButton = new LiquidButton(button)
+      const button: any = buttons[buttonIndex];
+      button.liquidButton = new LiquidButton(button);
     }
-  })
+  });
 
   return (
     <div className={s.preview}>
@@ -244,7 +232,7 @@ const PreviewProjects = () => {
 
           <svg
             onClick={() => {
-              toPage('portfolio')
+              toPage('portfolio');
             }}
             className={`${s.previewBody__more} liquid-button`}
             data-text='Больше работ'
@@ -262,12 +250,12 @@ const PreviewProjects = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Reviews = () => {
   // Reviews slider
-  const reviewsListState = useSelector((state: any) => state.reviews)
+  const reviewsListState = useSelector((state: any) => state.reviews);
   const reviewsItems = reviewsListState.map((item: any, index: number) => (
     <SwiperSlide key={index}>
       <div className={s.review}>
@@ -275,7 +263,7 @@ const Reviews = () => {
         <span className={s.reviewContent}>“{item.Content}”</span>
       </div>
     </SwiperSlide>
-  ))
+  ));
 
   return (
     <div className={s.reviews}>
@@ -315,13 +303,13 @@ const Reviews = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const MyStack = () => {
   const ListItem = ({ value }: any) => {
-    return <li className={s.stackBody__item}>{value}</li>
-  }
+    return <li className={s.stackBody__item}>{value}</li>;
+  };
 
   return (
     <div className={s.stack}>
@@ -342,8 +330,8 @@ const MyStack = () => {
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const AboutMe = () => {
   return (
@@ -396,7 +384,7 @@ const AboutMe = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
