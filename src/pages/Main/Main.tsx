@@ -38,10 +38,9 @@ const MainContent = () => {
           <div className={s.mainBody}>
             <div className={s.mainBody__hello}>Приветствую!</div>
             <div className={s.mainBody__description}>
-              Меня зовут Кирилл. <br /> Я предоставляю услуги
-              фриланс-разработчика. <br /> Создаю веб-сайты с использованием
-              React, <br /> а также занимаюсь версткой макетов. <br /> Почему
-              стоит выбрать меня:
+              Меня зовут Кирилл. <br /> Я фриланс-разработчик с опытом более 4х
+              лет. <br /> Создаю веб-сайты с использованием react, и верстаю
+              макеты. <br /> Почему стоит выбрать меня:
             </div>
             <ul className={s.mainBody__list}>
               <li className={s.mainBody__listItem}>Экспертность и Опыт</li>

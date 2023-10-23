@@ -1,0 +1,298 @@
+{
+  "projectsList": [
+    {
+      "IsBest": false,
+      "Name": "Luftbase",
+      "Type": "html",
+      "Img": "html/luftbase",
+      "Link": "https://demo.notequal.website/luftbase/"
+    },
+    {
+      "IsBest": false,
+      "Name": "GetPort",
+      "Type": "html",
+      "Img": "html/getport",
+      "Link": "https://demo.notequal.website/get-port/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Yeezypay - finance",
+      "Type": "html",
+      "Img": "html/yeezypay-finance",
+      "Link": "http://demo.notequal.website/yeezypay_finance/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Pixture",
+      "Type": "html",
+      "Img": "html/pixture",
+      "Link": "https://demo.notequal.website/pixture/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Will Towers",
+      "Type": "html",
+      "Img": "html/willtowers",
+      "Link": "https://willtowers.ru/"
+    },
+    {
+      "IsBest": false,
+      "Name": "SmartPay",
+      "Type": "html",
+      "Img": "html/smartpay",
+      "Link": "https://demo.notequal.website/smartpay/"
+    },
+    {
+      "IsBest": false,
+      "Name": "LCS",
+      "Type": "html",
+      "Img": "html/lcs",
+      "Link": "https://demo.notequal.website/lcs/"
+    },
+    {
+      "IsBest": false,
+      "Name": "NFTop",
+      "Type": "html",
+      "Img": "html/nftop",
+      "Link": "https://demo.notequal.website/NFTop/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Weather Check",
+      "Type": "vue",
+      "Img": "vue/weathercheck",
+      "Link": "https://demo.notequal.website/weather-vue/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Rebank",
+      "Type": "html",
+      "Img": "html/rebank",
+      "Link": "https://demo.notequal.website/rebank/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Yeezypay",
+      "Type": "html",
+      "Img": "html/yeezypay",
+      "Link": "https://demo.notequal.website/yeezypay/sitemap.html"
+    },
+    {
+      "IsBest": false,
+      "Name": "Card To Card",
+      "Type": "html",
+      "Img": "html/card-to-card",
+      "Link": "https://demo.notequal.website/card-to-card/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Agora",
+      "Type": "html",
+      "Img": "html/agora",
+      "Link": "https://demo.notequal.website/agora/"
+    },
+    {
+      "IsBest": false,
+      "Name": "TaxiPay",
+      "Type": "html",
+      "Img": "html/taxipay",
+      "Link": "https://demo.notequal.website/taxipay/"
+    },
+    {
+      "IsBest": false,
+      "Name": "NFT Banker",
+      "Type": "html",
+      "Img": "html/nftbanker",
+      "Link": "https://demo.notequal.website/nftbanker/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Fredemo",
+      "Type": "html",
+      "Img": "html/fredemo",
+      "Link": "https://demo.notequal.website/fredemo/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Yeezypay - conf",
+      "Type": "html",
+      "Img": "html/yeezypay-conf",
+      "Link": "http://demo.notequal.website/yeezypay_conf/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Advertex",
+      "Type": "html",
+      "Img": "html/advertex",
+      "Link": "https://demo.notequal.website/advertex/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Sports Bros",
+      "Type": "react",
+      "Img": "react/sports-bros",
+      "Link": "https://sportsbros.notequal.website/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Atlant",
+      "Type": "html",
+      "Img": "html/atlant",
+      "Link": "https://demo.notequal.website/inproc/sitemap.html"
+    },
+    {
+      "IsBest": true,
+      "Name": "BotSwap",
+      "Type": "react",
+      "Img": "react/botswap",
+      "Link": "https://botswap.app/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Zelenec",
+      "Type": "html",
+      "Img": "html/zelenec",
+      "Link": "https://demo.notequal.website/zelenec/sitemap.html"
+    },
+    {
+      "IsBest": true,
+      "Name": "Code Metal",
+      "Type": "html",
+      "Img": "html/metal",
+      "Link": "http://demo.notequal.website/metal/sitemap.html"
+    },
+    {
+      "IsBest": false,
+      "Name": "Freedemo app",
+      "Type": "react",
+      "Img": "react/freedemo_app",
+      "Link": "https://freedemo.notequal.website/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Yeezypay - collab",
+      "Type": "react",
+      "Img": "react/yeezypay-collab",
+      "Link": "https://yeezypaycollab.notequal.website/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Specokraska",
+      "Type": "html",
+      "Img": "html/specokraska",
+      "Link": "https://demo.notequal.website/specokraska/index.html"
+    },
+    {
+      "IsBest": false,
+      "Name": "Authors",
+      "Type": "html",
+      "Img": "html/authors",
+      "Link": "https://demo.notequal.website/authors/sitemap.html"
+    },
+    {
+      "IsBest": false,
+      "Name": "Paradox - landing",
+      "Type": "vue",
+      "Img": "vue/paradox-index",
+      "Link": "https://paradox.notequal.website/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Paradox - dashboard",
+      "Type": "vue",
+      "Img": "vue/paradox-dashboard",
+      "Link": "https://paradox.notequal.website/overview"
+    },
+    {
+      "IsBest": true,
+      "Name": "Pikamoon",
+      "Type": "react",
+      "Img": "react/pikamoon",
+      "Link": "https://pikamoon.notequal.website/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Pikamoon - dashboard",
+      "Type": "react",
+      "Img": "react/pikamoon-db",
+      "Link": "https://pikamoon.notequal.website/dashboard/"
+    },
+    {
+      "IsBest": false,
+      "Name": "noaxarta",
+      "Type": "react",
+      "Img": "react/noaxarta",
+      "Link": "https://dev-game.pro/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Ballin Venture Capital",
+      "Type": "react",
+      "Img": "react/ballin",
+      "Link": "https://ballin.notequal.website/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Authors V2",
+      "Type": "html",
+      "Img": "html/authors_v2",
+      "Link": "https://demo.notequal.website/authors_v2/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Boddea",
+      "Type": "html",
+      "Img": "html/boddea",
+      "Link": "https://demo.notequal.website/boddea/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Open Travel",
+      "Type": "html",
+      "Img": "html/open_travel",
+      "Link": "https://demo.notequal.website/open_travel/"
+    },
+    {
+      "IsBest": false,
+      "Name": "Algoquant",
+      "Type": "react",
+      "Img": "react/algoquant",
+      "Link": "https://algoquant.notequal.website/"
+    },
+    {
+      "IsBest": true,
+      "Name": "Rsh | Yandex",
+      "Type": "react",
+      "Img": "react/rshyandex",
+      "Link": "https://rshyandex.notequal.website/"
+    },
+    {
+      "IsBest": true,
+      "Name": "Rich Giveaway",
+      "Type": "react",
+      "Img": "react/richgive",
+      "Link": "https://richgive.notequal.website/"
+    },
+    {
+      "IsBest": false,
+      "Name": "VMD",
+      "Type": "react",
+      "Img": "react/vmd",
+      "Link": "https://vmd.notequal.website/"
+    },
+    {
+      "IsBest": true,
+      "Name": "Zeno",
+      "Type": "html",
+      "Img": "html/zeno",
+      "Link": "https://demo.notequal.website/zeno/"
+    },
+    {
+      "IsBest": true,
+      "Name": "Authors Na Bolshoy",
+      "Type": "html",
+      "Img": "html/authors_nabolshoy",
+      "Link": "https://demo.notequal.website/authors-nabolshoy/sitemap.html"
+    }
+  ]
+}

@@ -191,7 +191,7 @@ const initialState = [
     Link: 'https://demo.notequal.website/authors/sitemap.html',
   },
   {
-    IsBest: true,
+    IsBest: false,
     Name: 'Paradox - landing',
     Type: 'vue',
     Img: 'vue/paradox-index',
@@ -300,7 +300,13 @@ const initialState = [
 export const projectsSlice = createSlice({
   name: 'projects',
   initialState,
-  reducers: {},
+  reducers: {
+    uploadProjectList: (state, action) => {
+      state = action.payload;
+    },
+  },
 });
+
+export const { uploadProjectList } = projectsSlice.actions;
 
 export default projectsSlice.reducer;
