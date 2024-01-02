@@ -2,7 +2,8 @@
 
 .main {
   padding: 100px 0;
-  background: $purple-gradient;
+  // background: $purple-gradient;
+  // background: $dark-bg-primary-color;
 
   @media (max-width: 767px) {
     padding: 80px 0 60px;
@@ -58,7 +59,7 @@
           display: block;
           width: 14px;
           height: 14px;
-          background-color: $toxic-yellow;
+          background-color: $cursor-primary-color;
           border-radius: 50%;
           position: absolute;
           top: 7px;
@@ -81,7 +82,8 @@
 
 .about {
   padding: 80px 0 40px;
-  background: $dark;
+  // background: $dark;
+  // background: $dark-bg-primary-color;
 
   @media (max-width: 767px) {
     padding: 50px 0 20px;
@@ -149,7 +151,8 @@
 }
 
 .contentGradient {
-  background: linear-gradient(180deg, #212042 0%, #4cc9ae 100%);
+  // background: linear-gradient(180deg, #212042 0%, #4cc9ae 100%);
+  // background: $dark-bg-primary-color;
 }
 
 .preview {
@@ -267,7 +270,9 @@
   }
 
   &Light {
-    background-color: #000;
+    // background-color: #000;
+    // opacity: 0.4;
+    background-color: #fff;
     opacity: 0.4;
   }
 
@@ -287,7 +292,8 @@
 
 .advantages {
   padding: 20px 0;
-  background: $dark;
+  // background: $dark;
+  // background: $dark-bg-primary-color;
 
   // @media (max-width: 767px) {
   //   padding: 50px 0;
@@ -371,7 +377,8 @@
 
 .stack {
   padding: 80px 0;
-  background: #4cc9ae;
+  // background: #4cc9ae;
+  // background: $dark-bg-primary-color;
 
   @media (max-width: 767px) {
     padding: 50px 0;
@@ -425,7 +432,8 @@
         left: 0;
         width: 14px;
         height: 14px;
-        background: $toxic-yellow;
+        // background: $toxic-yellow;
+        background: $cursor-primary-color;
         border-radius: 50%;
       }
 

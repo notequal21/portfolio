@@ -17,6 +17,12 @@ const Contacts = () => {
             </a>
           </li>
           <li className={s.contactsBody__item}>
+            <a href='https://www.instagram.com/notequal21/' target={'_blank'}>
+              Instagram
+            </a>
+            {/* kmakhnevv */}
+          </li>
+          <li className={s.contactsBody__item}>
             <a
               href='https://www.fl.ru/users/notequal2/portfolio/?ref=225608'
               target={'_blank'}
@@ -24,19 +30,14 @@ const Contacts = () => {
               Fl.ru
             </a>
           </li>
-          <li className={s.contactsBody__item}>
-            <a href='https://www.instagram.com/notequal21/' target={'_blank'}>
-              Instagram
-            </a>
-          </li>
-          <li className={s.contactsBody__item}>
+          {/* <li className={s.contactsBody__item}>
             <a
               href='https://www.youtube.com/channel/UCApqtMBbo4636lbIpXYMbzw'
               target={'_blank'}
             >
               YouTube
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

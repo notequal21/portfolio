@@ -17,7 +17,7 @@
   }
 
   &Body {
-    margin: 100px auto 0;
+    margin: 50px auto 0;
     max-width: 750px;
 
     &__item {
@@ -41,7 +41,7 @@
         display: block;
         width: 24px;
         height: 24px;
-        background-color: $toxic-yellow;
+        background-color: $cursor-primary-color;
         border-radius: 50%;
         position: absolute;
         top: 6px;

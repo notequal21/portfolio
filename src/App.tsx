@@ -11,6 +11,7 @@ import Contacts from './pages/Contacts/Contacts';
 import TgLink from './components/TgLink/TgLink';
 import { useAppDispatch } from './app/hooks';
 import { uploadProjectList } from './store/projects';
+import Fluid from './components/Fluid';
 
 function App() {
   let location = useLocation();
@@ -238,6 +239,10 @@ function App() {
         } ${location.pathname === '/contacts' ? 'portfolio' : ''}
         `}
       >
+        <Fluid
+          className={`${location.pathname === '/portfolio' && '_hidden'}`}
+        />
+
         <div className='content'>
           <Header withLoader={withLoader} isLoader={isLoader} />
 
@@ -248,6 +253,7 @@ function App() {
               <Route path='/' element={<Main />} />
               <Route path='/portfolio' element={<Portfolio />} />
               <Route path='/contacts' element={<Contacts />} />
+              <Route path='*' element={<Main />} />
             </Routes>
           </div>
 

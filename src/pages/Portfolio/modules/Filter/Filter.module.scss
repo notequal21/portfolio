@@ -1,0 +1,48 @@
+@import '@styles';
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 50px;
+
+  @media (max-width: 767px) {
+    margin: 0 0 30px;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+    gap: 30px;
+  }
+
+  &__title {
+    font-size: 32px;
+    color: $white;
+  }
+
+  &List {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+
+    @media (max-width: 767px) {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+  }
+
+  &__button {
+    font-size: 18px;
+    color: $white;
+    background: transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $cursor-primary-color;
+    }
+
+    &.active {
+      color: $cursor-primary-color;
+    }
+  }
+}

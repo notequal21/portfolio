@@ -86,12 +86,12 @@ const About = () => {
             веб-решения.
             <br /> Вот что вы можете ожидать, работая со мной:
           </div>
-          <div className={s.aboutCards}>
+          {/* <div className={s.aboutCards}>
             <div className={s.aboutCards__item}>
               <div className={s.aboutCards__itemTitle}></div>
               <div className={s.aboutCards__itemDescr}></div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
@@ -222,7 +222,7 @@ const PreviewProjects = () => {
             data-layer-1-force-limit='1'
             data-layer-2-force-limit='2'
             data-color1='#c8ff29'
-            data-color2='#c5afff'
+            data-color2='#229ed9'
             data-color3='#20D8F9'
           ></svg>
         </div>

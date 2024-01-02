@@ -193,16 +193,16 @@ const initialState = [
   {
     IsBest: false,
     Name: 'Paradox - landing',
-    Type: 'vue',
-    Img: 'vue/paradox-index',
+    Type: 'react',
+    Img: 'react/paradox-index',
     Link: 'https://paradox.notequal.website/',
   },
   {
     IsBest: false,
     Name: 'Paradox - dashboard',
-    Type: 'vue',
-    Img: 'vue/paradox-dashboard',
-    Link: 'https://paradox.notequal.website/overview',
+    Type: 'react',
+    Img: 'react/paradox-dashboard',
+    Link: 'https://paradox.notequal.website/dashboard/overview',
   },
   {
     IsBest: true,
