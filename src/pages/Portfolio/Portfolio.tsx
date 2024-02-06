@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import s from './Portfolio.module.scss';
 import Filter from './modules/Filter';
 import { useState } from 'react';
+import Atropos from 'atropos/react';
+import { useMediaQuery } from 'usehooks-ts';
 
 const Portfolio = () => {
   // List of protfolio items
@@ -48,30 +50,59 @@ export const PortfolioItem = ({
   isBest,
   type,
 }: any) => {
+  const isMobile = useMediaQuery('(max-width:992px)');
+
   return (
     <>
-      <a
-        target='_blank'
-        rel='noreferrer'
-        href={link}
-        data-project-type={type}
-        data-isbest={isBest}
-        data-isslider={isSlider}
-        className={`
+      {isMobile ? (
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href={link}
+          data-project-type={type}
+          data-isbest={isBest}
+          data-isslider={isSlider}
+          className={`
         cursorHover
         portfolioLink
         ${s.portfolioBody__item} 
         ${isBest ? s._isBest : ''}
         ${isSlider ? s.slider : ''}
         `}
-      >
-        <picture>
-          <source type='image/webp' srcSet={`./assets/img/${img}.webp`} />
-          <source type='image/jpeg' srcSet={`./assets/img/${img}.jpg`} />
-          <img src={`./assets/img/${img}.jpg`} alt='' />
-        </picture>
-        <span>{name}</span>
-      </a>
+        >
+          <picture>
+            <source type='image/webp' srcSet={`./assets/img/${img}.webp`} />
+            <source type='image/jpeg' srcSet={`./assets/img/${img}.jpg`} />
+            <img src={`./assets/img/${img}.jpg`} alt='' />
+          </picture>
+          <span>{name}</span>
+        </a>
+      ) : (
+        <Atropos className={s.atropos}>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={link}
+            data-project-type={type}
+            data-isbest={isBest}
+            data-isslider={isSlider}
+            className={`
+        cursorHover
+        portfolioLink
+        ${s.portfolioBody__item} 
+        ${isBest ? s._isBest : ''}
+        ${isSlider ? s.slider : ''}
+        `}
+          >
+            <picture>
+              <source type='image/webp' srcSet={`./assets/img/${img}.webp`} />
+              <source type='image/jpeg' srcSet={`./assets/img/${img}.jpg`} />
+              <img src={`./assets/img/${img}.jpg`} alt='' />
+            </picture>
+            <span>{name}</span>
+          </a>
+        </Atropos>
+      )}
     </>
   );
 };

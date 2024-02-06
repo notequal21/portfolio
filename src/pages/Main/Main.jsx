@@ -11,6 +11,9 @@ import { useSelector } from 'react-redux';
 import StatsComponent from '../../components/Stats/Stats';
 import LiquidButton from './JellyButton';
 import { useNavigate } from 'react-router-dom';
+import Atropos from 'atropos/react';
+import { useMediaQuery } from 'usehooks-ts';
+// import './atropos.scss';
 
 const Main = () => {
   return (
@@ -137,8 +140,9 @@ const Advantages = () => {
 
 const PreviewProjects = () => {
   const navigate = useNavigate();
+  const isMobile = useMediaQuery('(max-width:992px)');
 
-  const toPage = (page: string) => {
+  const toPage = (page) => {
     window.scrollTo({
       top: 0,
       left: 0,
@@ -147,28 +151,26 @@ const PreviewProjects = () => {
     return navigate(`${page}`);
   };
 
-  const projectsListStateFiltered = useSelector((state: any) =>
-    state.projects.filter((item: any) => item.IsBest)
+  const projectsListStateFiltered = useSelector((state) =>
+    state.projects.filter((item) => item.IsBest)
   );
-  const projectsListSlider = projectsListStateFiltered.map(
-    (item: any, index: number) => (
-      <SwiperSlide key={index}>
-        <PortfolioItem
-          isSlider
-          name={item.Name}
-          img={item.Img}
-          link={item.Link}
-          isBest={item.IsBest}
-          type={item.Type}
-        />
-      </SwiperSlide>
-    )
-  );
+  const projectsListSlider = projectsListStateFiltered.map((item, index) => (
+    <SwiperSlide key={index}>
+      <PortfolioItem
+        isSlider
+        name={item.Name}
+        img={item.Img}
+        link={item.Link}
+        isBest={item.IsBest}
+        type={item.Type}
+      />
+    </SwiperSlide>
+  ));
 
   useEffect(() => {
     const buttons = document.getElementsByClassName('liquid-button');
     for (let buttonIndex = 0; buttonIndex < buttons.length; buttonIndex++) {
-      const button: any = buttons[buttonIndex];
+      const button = buttons[buttonIndex];
       button.liquidButton = new LiquidButton(button);
     }
   });
@@ -178,31 +180,65 @@ const PreviewProjects = () => {
       <div className='container'>
         <div className={s.previewBody__title}>ПРИМЕРЫ РАБОТ</div>
         <div className={s.previewBody}>
-          <Swiper
-            modules={[Autoplay, Navigation, Pagination]}
-            spaceBetween={0}
-            slidesPerView={1}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            navigation={{
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            }}
-            loop
-            pagination={{
-              clickable: true,
-              bulletClass: s.bullet,
-              bulletActiveClass: s.bulletActive,
-              modifierClass: 'bullet__list',
-            }}
-            className={`${s.previewBody__slider} ${s.slider}`}
-          >
-            <div className='swiper-button-prev cursorHover _navigation-prev'></div>
-            {projectsListSlider}
-            <div className='swiper-button-next cursorHover _navigation-next'></div>
-          </Swiper>
+          {isMobile ? (
+            <Swiper
+              modules={[Autoplay, Navigation, Pagination]}
+              spaceBetween={0}
+              slidesPerView={1}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              }}
+              loop
+              pagination={{
+                clickable: true,
+                bulletClass: s.bullet,
+                bulletActiveClass: s.bulletActive,
+                modifierClass: 'bullet__list',
+              }}
+              className={`${s.previewBody__slider} ${s.slider}`}
+            >
+              <div className='swiper-button-prev cursorHover _navigation-prev'></div>
+              {projectsListSlider}
+              <div className='swiper-button-next cursorHover _navigation-next'></div>
+            </Swiper>
+          ) : (
+            <Atropos
+              rotateXMax={5}
+              rotateYMax={5}
+              className={s.previewBody__atropos}
+            >
+              <Swiper
+                modules={[Autoplay, Navigation, Pagination]}
+                spaceBetween={0}
+                slidesPerView={1}
+                autoplay={{
+                  delay: 4000,
+                  disableOnInteraction: false,
+                }}
+                navigation={{
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                }}
+                loop
+                pagination={{
+                  clickable: true,
+                  bulletClass: s.bullet,
+                  bulletActiveClass: s.bulletActive,
+                  modifierClass: 'bullet__list',
+                }}
+                className={`${s.previewBody__slider} ${s.slider}`}
+              >
+                <div className='swiper-button-prev cursorHover _navigation-prev'></div>
+                {projectsListSlider}
+                <div className='swiper-button-next cursorHover _navigation-next'></div>
+              </Swiper>
+            </Atropos>
+          )}
 
           {/* <div className={`${s.previewBody__more} liquid-button`}>
             Больше работ
@@ -233,8 +269,8 @@ const PreviewProjects = () => {
 
 const Reviews = () => {
   // Reviews slider
-  const reviewsListState = useSelector((state: any) => state.reviews);
-  const reviewsItems = reviewsListState.map((item: any, index: number) => (
+  const reviewsListState = useSelector((state) => state.reviews);
+  const reviewsItems = reviewsListState.map((item, index) => (
     <SwiperSlide key={index}>
       <div className={s.review}>
         <span className={s.reviewName}>{item.Name}</span>
@@ -285,7 +321,7 @@ const Reviews = () => {
 };
 
 const MyStack = () => {
-  const ListItem = ({ value }: any) => {
+  const ListItem = ({ value }) => {
     return <li className={s.stackBody__item}>{value}</li>;
   };
 

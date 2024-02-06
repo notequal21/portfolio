@@ -166,7 +166,16 @@
   &Body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 50px 0 0;
+
+    &__atropos {
+      max-width: 920px;
+      width: 100%;
+      align-self: center;
+      // border-radius: 15px;
+      // background-color: transparent;
+    }
 
     &__slider {
       margin: 0 auto;
