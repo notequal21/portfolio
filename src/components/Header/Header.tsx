@@ -1,22 +1,26 @@
-import s from './Header.module.scss'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import Loader from '../Loader/Loader'
+import s from './Header.module.scss';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Loader from '../Loader/Loader';
 
 const Header = ({ withLoader, isLoader, isFooter, ...props }: any) => {
-  const location = useLocation()
+  const location = useLocation();
 
   // projects count
-  const projectsCountState = useSelector((state: any) => state.projects.length)
+  const projectsCountState = useSelector((state: any) => state.projects.length);
 
   // loader
-  const loaderX = useSelector((state: any) => state.loader.pos.x)
-  const loaderY = useSelector((state: any) => state.loader.pos.y)
-  let navigate = useNavigate()
+  const loaderX = useSelector((state: any) => state.loader.pos.x);
+  const loaderY = useSelector((state: any) => state.loader.pos.y);
+  let navigate = useNavigate();
 
   return (
     <>
-      <div className={`${s.header} ${isFooter ? s._footer : ''}`}>
+      <div
+        className={`${s.header} ${isFooter ? s._footer : ''} 
+        ${location.pathname === '/portfolio' ? s._portfolio : ''}
+        ${location.pathname === '/contacts' ? s._portfolio : ''}`}
+      >
         <div className='container'>
           <div className={s.headerBody}>
             <a
@@ -60,11 +64,11 @@ const Header = ({ withLoader, isLoader, isFooter, ...props }: any) => {
                 onClick={(e) => {
                   if (location.pathname !== '/') {
                     // withLoader(e.clientX, e.clientY)
-                    navigate('/')
+                    navigate('/');
                     window.scrollTo({
                       top: 0,
                       behavior: 'smooth',
-                    })
+                    });
                     // setTimeout(() => {
                     // }, 500)
                   }
@@ -82,11 +86,11 @@ const Header = ({ withLoader, isLoader, isFooter, ...props }: any) => {
                   if (location.pathname !== '/portfolio') {
                     // withLoader(e.clientX, e.clientY)
 
-                    navigate('portfolio')
+                    navigate('portfolio');
                     window.scrollTo({
                       top: 0,
                       behavior: 'smooth',
-                    })
+                    });
                     // setTimeout(() => {
                     // }, 500)
                   }
@@ -97,12 +101,33 @@ const Header = ({ withLoader, isLoader, isFooter, ...props }: any) => {
                   {projectsCountState > 9 ? '9+' : projectsCountState}
                 </span>
               </div>
+              <div
+                className={`
+              ${s.headerBody__menuItem} 
+              cursorHover 
+              link
+              `}
+                onClick={(e) => {
+                  if (location.pathname !== '/contacts') {
+                    // withLoader(e.clientX, e.clientY)
+                    navigate('/contacts');
+                    window.scrollTo({
+                      top: 0,
+                      behavior: 'smooth',
+                    });
+                    // setTimeout(() => {
+                    // }, 500)
+                  }
+                }}
+              >
+                Контакты
+              </div>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

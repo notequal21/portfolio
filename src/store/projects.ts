@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
   {
@@ -80,6 +80,27 @@ const initialState = [
   },
   {
     IsBest: false,
+    Name: 'Card To Card',
+    Type: 'html',
+    Img: 'html/card-to-card',
+    Link: 'https://demo.notequal.website/card-to-card/',
+  },
+  {
+    IsBest: false,
+    Name: 'Agora',
+    Type: 'html',
+    Img: 'html/agora',
+    Link: 'https://demo.notequal.website/agora/',
+  },
+  {
+    IsBest: false,
+    Name: 'TaxiPay',
+    Type: 'html',
+    Img: 'html/taxipay',
+    Link: 'https://demo.notequal.website/taxipay/',
+  },
+  {
+    IsBest: false,
     Name: 'NFT Banker',
     Type: 'html',
     Img: 'html/nftbanker',
@@ -90,7 +111,7 @@ const initialState = [
     Name: 'Fredemo',
     Type: 'html',
     Img: 'html/fredemo',
-    Link: 'https://paradox.notequal.website/overview',
+    Link: 'https://demo.notequal.website/fredemo/',
   },
   {
     IsBest: false,
@@ -128,6 +149,13 @@ const initialState = [
     Link: 'https://botswap.app/',
   },
   {
+    IsBest: false,
+    Name: 'Zelenec',
+    Type: 'html',
+    Img: 'html/zelenec',
+    Link: 'https://demo.notequal.website/zelenec/sitemap.html',
+  },
+  {
     IsBest: true,
     Name: 'Code Metal',
     Type: 'html',
@@ -143,24 +171,38 @@ const initialState = [
   },
   {
     IsBest: false,
+    Name: 'Yeezypay - collab',
+    Type: 'react',
+    Img: 'react/yeezypay-collab',
+    Link: 'https://yeezypaycollab.notequal.website/',
+  },
+  {
+    IsBest: false,
+    Name: 'Specokraska',
+    Type: 'html',
+    Img: 'html/specokraska',
+    Link: 'https://demo.notequal.website/specokraska/index.html',
+  },
+  {
+    IsBest: false,
     Name: 'Authors',
     Type: 'html',
     Img: 'html/authors',
     Link: 'https://demo.notequal.website/authors/sitemap.html',
   },
   {
-    IsBest: true,
+    IsBest: false,
     Name: 'Paradox - landing',
-    Type: 'vue',
-    Img: 'vue/paradox-index',
+    Type: 'react',
+    Img: 'react/paradox-index',
     Link: 'https://paradox.notequal.website/',
   },
   {
     IsBest: false,
     Name: 'Paradox - dashboard',
-    Type: 'vue',
-    Img: 'vue/paradox-dashboard',
-    Link: 'https://paradox.notequal.website/overview',
+    Type: 'react',
+    Img: 'react/paradox-dashboard',
+    Link: 'https://paradox.notequal.website/dashboard/overview',
   },
   {
     IsBest: true,
@@ -176,12 +218,95 @@ const initialState = [
     Img: 'react/pikamoon-db',
     Link: 'https://pikamoon.notequal.website/dashboard/',
   },
-]
+  {
+    IsBest: false,
+    Name: 'noaxarta',
+    Type: 'react',
+    Img: 'react/noaxarta',
+    Link: 'https://dev-game.pro/',
+  },
+  {
+    IsBest: false,
+    Name: 'Ballin Venture Capital',
+    Type: 'react',
+    Img: 'react/ballin',
+    Link: 'https://ballin.notequal.website/',
+  },
+  {
+    IsBest: false,
+    Name: 'Authors V2',
+    Type: 'html',
+    Img: 'html/authors_v2',
+    Link: 'https://demo.notequal.website/authors_v2/',
+  },
+  {
+    IsBest: false,
+    Name: 'Boddea',
+    Type: 'html',
+    Img: 'html/boddea',
+    Link: 'https://demo.notequal.website/boddea/',
+  },
+  {
+    IsBest: false,
+    Name: 'Open Travel',
+    Type: 'html',
+    Img: 'html/open_travel',
+    Link: 'https://demo.notequal.website/open_travel/',
+  },
+  {
+    IsBest: false,
+    Name: 'Algoquant',
+    Type: 'react',
+    Img: 'react/algoquant',
+    Link: 'https://algoquant.notequal.website/',
+  },
+  {
+    IsBest: true,
+    Name: 'Rsh | Yandex',
+    Type: 'react',
+    Img: 'react/rshyandex',
+    Link: 'https://rshyandex.notequal.website/',
+  },
+  {
+    IsBest: true,
+    Name: 'Rich Giveaway',
+    Type: 'react',
+    Img: 'react/richgive',
+    Link: 'https://richgive.notequal.website/',
+  },
+  {
+    IsBest: false,
+    Name: 'VMD',
+    Type: 'react',
+    Img: 'react/vmd',
+    Link: 'https://vmd.notequal.website/',
+  },
+  {
+    IsBest: true,
+    Name: 'Zeno',
+    Type: 'html',
+    Img: 'html/zeno',
+    Link: 'https://demo.notequal.website/zeno/',
+  },
+  {
+    IsBest: true,
+    Name: 'Authors Na Bolshoy',
+    Type: 'html',
+    Img: 'html/authors_nabolshoy',
+    Link: 'https://demo.notequal.website/authors-nabolshoy/sitemap.html',
+  },
+];
 
 export const projectsSlice = createSlice({
   name: 'projects',
   initialState,
-  reducers: {},
-})
+  reducers: {
+    uploadProjectList: (state, action) => {
+      state = action.payload;
+    },
+  },
+});
 
-export default projectsSlice.reducer
+export const { uploadProjectList } = projectsSlice.actions;
+
+export default projectsSlice.reducer;

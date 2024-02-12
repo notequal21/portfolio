@@ -8,7 +8,13 @@
 
   &._footer {
     position: relative;
-    background: #4cc9ae;
+    z-index: 1;
+    // background: #4cc9ae;
+
+    &._portfolio {
+      margin: 50px 0 0;
+      background: transparent;
+    }
   }
 
   &Body {
@@ -22,9 +28,9 @@
       font-size: 22px;
       color: $primary-font-color;
 
-      @media (prefers-color-scheme: dark) {
-        color: $dark-bg-primary-font-color;
-      }
+      // @media (prefers-color-scheme: dark) {
+      //   color: $dark-bg-primary-font-color;
+      // }
 
       img,
       svg {
@@ -63,9 +69,9 @@
         font-size: 18px;
         color: $primary-font-color;
 
-        @media (prefers-color-scheme: dark) {
-          color: $dark-bg-primary-font-color;
-        }
+        // @media (prefers-color-scheme: dark) {
+        //   color: $dark-bg-primary-font-color;
+        // }
 
         &.count {
           span {

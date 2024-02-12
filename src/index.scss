@@ -1,4 +1,5 @@
 @import 'normalize.css';
+@import 'atropos/scss';
 @import '@styles';
 
 * {
@@ -102,7 +103,8 @@ h6 {
 }
 
 body {
-  background-color: $bg-primary-color;
+  // background-color: $bg-primary-color;
+  background: $dark-bg-primary-color;
   font-family: roboto;
   transition: 0.4s background-color;
 
@@ -137,12 +139,22 @@ body {
   flex-direction: column;
 
   &.portfolio {
-    background: $purple-gradient;
+    // background: $purple-gradient;
+    background: $dark-bg-primary-color;
   }
 }
 
 .content {
+  position: relative;
+  z-index: 1;
   flex: 1 1 auto;
+}
+
+.fluid-canvas {
+  &._hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 // Cusrom cursor
@@ -159,9 +171,9 @@ body {
   transform: scale(1) translate(-2px, -2px);
   transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform;
 
-  @media (prefers-color-scheme: dark) {
-    background: $dark-primary-color;
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   background: $dark-primary-color;
+  // }
 
   &.active {
     transform: scale(0);
@@ -192,7 +204,9 @@ body {
   z-index: 1111;
   transform: scale(1);
   transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
-    0.2s ease background, 0.2s ease border-color;
+    0.2s ease background, 0.2s ease border-color, 0.2s ease opacity;
+
+  opacity: 0;
 
   // @media (prefers-color-scheme: dark) {
   //   border-color: $dark-primary-color;
@@ -212,7 +226,7 @@ body {
     opacity: 0;
     transform: scale(0);
     // color: #fff;
-    color: $cursor-primary-color;
+    color: $bg-primary-font-color;
     text-transform: capitalize;
     font-size: 10px;
 
@@ -225,7 +239,7 @@ body {
     opacity: 0;
     transform: scale(0) translate(0, -100px);
     // color: #fff;
-    color: $cursor-primary-color;
+    color: $bg-primary-font-color;
     background-color: $primary-color;
     white-space: nowrap;
     font-size: 10px;
@@ -235,9 +249,9 @@ body {
     // transition: .3s cubic-bezier(.75, -1.27, .3, 2.33) transform;
     transition: 0.3s transform;
 
-    @media (prefers-color-scheme: dark) {
-      background-color: $dark-primary-color;
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   background-color: $dark-primary-color;
+    // }
 
     span {
       position: absolute;
@@ -252,9 +266,9 @@ body {
         path {
           fill: $primary-color;
 
-          @media (prefers-color-scheme: dark) {
-            fill: $dark-primary-color;
-          }
+          // @media (prefers-color-scheme: dark) {
+          //   fill: $dark-primary-color;
+          // }
         }
       }
     }
@@ -272,9 +286,9 @@ body {
       path {
         fill: $primary-color;
 
-        @media (prefers-color-scheme: dark) {
-          fill: $dark-primary-color;
-        }
+        // @media (prefers-color-scheme: dark) {
+        //   fill: $dark-primary-color;
+        // }
       }
     }
 
@@ -300,9 +314,9 @@ body {
       path {
         fill: $best-project-border-color;
 
-        @media (prefers-color-scheme: dark) {
-          fill: $dark-best-project-border-color;
-        }
+        // @media (prefers-color-scheme: dark) {
+        //   fill: $dark-best-project-border-color;
+        // }
       }
     }
   }
@@ -311,6 +325,7 @@ body {
     transform: scale(1.5);
     background: $cursor-primary-color; // primary-color
     z-index: 1;
+    opacity: 1;
 
     // @media (prefers-color-scheme: dark) {
     //   background: $dark-primary-color;
@@ -321,13 +336,14 @@ body {
     transform: scale(1.7) translate(0, -20px);
     background: $primary-color;
     border-color: $primary-color;
+    opacity: 1;
 
     // @media (prefers-color-scheme: dark) {
     //   background: $dark-primary-color;
     // }
 
     &._isBest {
-      border-color: $cursor-primary-color;
+      border-color: $best-project-border-color;
       background: $best-project-border-color;
 
       .follower__projectType,
@@ -343,9 +359,9 @@ body {
       .follower__projectName {
         background: $best-project-border-color;
 
-        @media (prefers-color-scheme: dark) {
-          background: $dark-best-project-border-color;
-        }
+        // @media (prefers-color-scheme: dark) {
+        //   background: $dark-best-project-border-color;
+        // }
 
         span {
           svg {
@@ -354,9 +370,9 @@ body {
             path {
               fill: $best-project-border-color;
 
-              @media (prefers-color-scheme: dark) {
-                fill: $dark-best-project-border-color;
-              }
+              // @media (prefers-color-scheme: dark) {
+              //   fill: $dark-best-project-border-color;
+              // }
             }
           }
         }
@@ -377,10 +393,11 @@ body {
   &.activeCounter {
     transform: scale(2) translate(-55%, 55%);
     background: $cursor-primary-color;
+    opacity: 1;
 
-    @media (prefers-color-scheme: dark) {
-      background: $dark-primary-color;
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   background: $dark-primary-color;
+    // }
 
     .follower__counter {
       opacity: 1;
@@ -392,6 +409,7 @@ body {
   &.activeNavigation-next {
     background: transparent;
     border-color: transparent;
+    opacity: 1;
 
     .follower__navigation {
       transform: scale(2);
@@ -415,6 +433,7 @@ body {
   }
 
   &.activeBest {
+    opacity: 1;
     background: transparent;
     border-color: transparent;
 
@@ -430,6 +449,7 @@ body {
   }
 
   &._isSlider {
+    opacity: 1;
     border-color: $primary-color !important;
     background: $primary-color !important;
 
@@ -451,9 +471,9 @@ body {
         path {
           fill: $primary-color !important;
 
-          @media (prefers-color-scheme: dark) {
-            fill: $dark-primary-color !important;
-          }
+          // @media (prefers-color-scheme: dark) {
+          //   fill: $dark-primary-color !important;
+          // }
         }
       }
     }

@@ -1,46 +1,51 @@
-import { Route, Routes, useLocation } from 'react-router-dom'
-import Header from './components/Header/Header'
-import Portfolio from './pages/Portfolio/Portfolio'
-import s from './App.module.scss'
-import Main from './pages/Main/Main'
-import { useCallback, useEffect, useState } from 'react'
-import { gsap } from 'gsap'
-import { useDispatch, useSelector } from 'react-redux'
-import { setLoaderPos, toggleLoader } from './store/loader'
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Portfolio from './pages/Portfolio/Portfolio';
+import s from './App.module.scss';
+import Main from './pages/Main/Main';
+import { useCallback, useEffect, useState } from 'react';
+import { gsap } from 'gsap';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLoaderPos, toggleLoader } from './store/loader';
+import Contacts from './pages/Contacts/Contacts';
+import TgLink from './components/TgLink/TgLink';
+import { useAppDispatch } from './app/hooks';
+import { uploadProjectList } from './store/projects';
+import Fluid from './components/Fluid';
 
 function App() {
-  let location = useLocation()
+  let location = useLocation();
 
-  const isLoader = useSelector((state: any) => state.loader.isLoader)
-  const dispatch = useDispatch()
+  const isLoader = useSelector((state: any) => state.loader.isLoader);
+  const dispatch = useDispatch();
 
   // Loader for change page
   const withLoader = (x: any, y: any) => {
-    dispatch(toggleLoader())
-    dispatch(setLoaderPos({ x, y }))
+    dispatch(toggleLoader());
+    dispatch(setLoaderPos({ x, y }));
     setTimeout(() => {
-      dispatch(toggleLoader())
-    }, 1500)
-  }
+      dispatch(toggleLoader());
+    }, 1500);
+  };
 
   // Custom cursor
-  const [projectType, setProjectType] = useState('React')
-  const [projectName, setProjectName] = useState('')
+  const [projectType, setProjectType] = useState('React');
+  const [projectName, setProjectName] = useState('');
 
   const listenCursorUpdate = useSelector(
     (state: any) => state.loader.cursorUpdate
-  )
+  );
 
   let changeCursor = useCallback(() => {
-    const cursor = document.querySelector(`.cursor`)
-    const follower = document.querySelector(`.follower`)
-    const cursorHover = document.querySelectorAll(`.cursorHover`)
+    const cursor = document.querySelector(`.cursor`);
+    const follower = document.querySelector(`.follower`);
+    const cursorHover = document.querySelectorAll(`.cursorHover`);
 
-    let posX: any = null
-    let posY: any = null
+    let posX: any = null;
+    let posY: any = null;
 
-    let mouseX: any = null
-    let mouseY: any = null
+    let mouseX: any = null;
+    let mouseY: any = null;
 
     gsap.to(
       {},
@@ -48,87 +53,87 @@ function App() {
         duration: 0.01,
         repeat: -1,
         onRepeat: () => {
-          posX += (mouseX - posX) / 5
-          posY += (mouseY - posY) / 5
+          posX += (mouseX - posX) / 5;
+          posY += (mouseY - posY) / 5;
 
           gsap.set(follower, {
             css: {
               left: posX - 12,
               top: posY - 12,
             },
-          })
+          });
           gsap.set(cursor, {
             css: {
               left: mouseX,
               top: mouseY,
             },
-          })
+          });
         },
       }
-    )
+    );
 
     window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX
-      mouseY = e.clientY
-    })
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
 
     cursorHover.forEach((link: any) => {
       link.addEventListener('mouseenter', () => {
-        cursor?.classList.add('active')
+        cursor?.classList.add('active');
         if (link.classList.contains('link')) {
-          follower?.classList.add('active')
+          follower?.classList.add('active');
         } else if (link.classList.contains('portfolioLink')) {
-          follower?.classList.add('activePortfolio')
+          follower?.classList.add('activePortfolio');
           if (link.dataset.isbest === 'true') {
-            follower?.classList.add('_isBest')
+            follower?.classList.add('_isBest');
           }
           if (link.dataset.isslider === 'true') {
-            follower?.classList.add('_isSlider')
+            follower?.classList.add('_isSlider');
           }
-          setProjectName(link.childNodes[1].innerHTML)
-          setProjectType(link.dataset.projectType)
+          setProjectName(link.childNodes[1].innerHTML);
+          setProjectType(link.dataset.projectType);
         } else if (link.classList.contains('counterLink')) {
-          follower?.classList.add('activeCounter')
+          follower?.classList.add('activeCounter');
         } else if (link.classList.contains('_navigation-prev')) {
-          follower?.classList.add('activeNavigation-prev')
+          follower?.classList.add('activeNavigation-prev');
         } else if (link.classList.contains('_navigation-next')) {
-          follower?.classList.add('activeNavigation-next')
+          follower?.classList.add('activeNavigation-next');
         } else if (link.classList.contains('bestLink')) {
-          follower?.classList.add('activeBest')
+          follower?.classList.add('activeBest');
         }
-      })
+      });
       link.addEventListener('mouseleave', () => {
-        cursor?.classList.remove('active')
+        cursor?.classList.remove('active');
         if (link.classList.contains('link')) {
-          follower?.classList.remove('active')
+          follower?.classList.remove('active');
         } else if (link.classList.contains('portfolioLink')) {
-          follower?.classList.remove('activePortfolio')
+          follower?.classList.remove('activePortfolio');
           if (follower?.classList.contains('_isBest')) {
-            follower?.classList.remove('_isBest')
+            follower?.classList.remove('_isBest');
           }
           if (follower?.classList.contains('_isSlider')) {
-            follower?.classList.remove('_isSlider')
+            follower?.classList.remove('_isSlider');
           }
         } else if (link.classList.contains('counterLink')) {
-          follower?.classList.remove('activeCounter')
+          follower?.classList.remove('activeCounter');
         } else if (follower?.classList.contains('activeNavigation-prev')) {
-          follower?.classList.remove('activeNavigation-prev')
+          follower?.classList.remove('activeNavigation-prev');
         } else if (follower?.classList.contains('activeNavigation-next')) {
-          follower?.classList.remove('activeNavigation-next')
+          follower?.classList.remove('activeNavigation-next');
         } else if (follower?.classList.contains('activeBest')) {
-          follower?.classList.remove('activeBest')
+          follower?.classList.remove('activeBest');
         }
-      })
-    })
-  }, [])
+      });
+    });
+  }, []);
 
   // projects count
-  const projectsCountState = useSelector((state: any) => state.projects.length)
+  const projectsCountState = useSelector((state: any) => state.projects.length);
 
   useEffect(() => {
     // custom cursor
-    changeCursor()
-  }, [changeCursor, dispatch, location, listenCursorUpdate])
+    changeCursor();
+  }, [changeCursor, dispatch, location, listenCursorUpdate]);
 
   return (
     <>
@@ -231,15 +236,24 @@ function App() {
       <div
         className={`wrapper ${
           location.pathname === '/portfolio' ? 'portfolio' : ''
-        }`}
+        } ${location.pathname === '/contacts' ? 'portfolio' : ''}
+        `}
       >
+        <Fluid
+          className={`${location.pathname === '/portfolio' && '_hidden'}`}
+        />
+
         <div className='content'>
           <Header withLoader={withLoader} isLoader={isLoader} />
+
+          <TgLink />
 
           <div className={s.content}>
             <Routes>
               <Route path='/' element={<Main />} />
               <Route path='/portfolio' element={<Portfolio />} />
+              <Route path='/contacts' element={<Contacts />} />
+              <Route path='*' element={<Main />} />
             </Routes>
           </div>
 
@@ -247,7 +261,7 @@ function App() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
