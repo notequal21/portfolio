@@ -51,10 +51,22 @@ export const PortfolioItem = ({
   type,
 }: any) => {
   const isMobile = useMediaQuery('(max-width:992px)');
+  // @ts-ignore
+  const isSafari =
+    // @ts-ignore
+    /constructor/i.test(window.HTMLElement) ||
+    (function (p) {
+      return p.toString() === '[object SafariRemoteNotification]';
+    })(
+      // @ts-ignore
+      !window['safari'] ||
+        // @ts-ignore
+        (typeof safari !== 'undefined' && safari.pushNotification)
+    );
 
   return (
     <>
-      {isMobile ? (
+      {isMobile || isSafari ? (
         <a
           target='_blank'
           rel='noreferrer'
@@ -68,6 +80,7 @@ export const PortfolioItem = ({
         ${s.portfolioBody__item} 
         ${isBest ? s._isBest : ''}
         ${isSlider ? s.slider : ''}
+        ${isSafari ? s.isSafari : ''}
         `}
         >
           <picture>

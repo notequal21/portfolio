@@ -141,6 +141,15 @@ const Advantages = () => {
 const PreviewProjects = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width:992px)');
+  const isSafari =
+    /constructor/i.test(window.HTMLElement) ||
+    (function (p) {
+      return p.toString() === '[object SafariRemoteNotification]';
+    })(
+      !window['safari'] ||
+        // eslint-disable-next-line
+        (typeof safari !== 'undefined' && safari.pushNotification)
+    );
 
   const toPage = (page) => {
     window.scrollTo({
@@ -180,7 +189,7 @@ const PreviewProjects = () => {
       <div className='container'>
         <div className={s.previewBody__title}>ПРИМЕРЫ РАБОТ</div>
         <div className={s.previewBody}>
-          {isMobile ? (
+          {isMobile || isSafari ? (
             <Swiper
               modules={[Autoplay, Navigation, Pagination]}
               spaceBetween={0}
